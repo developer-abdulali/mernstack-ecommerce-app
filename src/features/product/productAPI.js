@@ -6,10 +6,20 @@ export function fetchAllProducts() {
   });
 }
 
-export function fetchAllProductsByFilters(filter) {
+export function fetchAllProductsByFilters(filter, sort, pagination) {
   let queryString = "";
   for (let key in filter) {
-    queryString += `${key}=${filter[key]}&`;
+    let categoryValues = filter[key];
+    if (categoryValues.length) {
+      const lasCategoryValue = categoryValues[categoryValues.length - 1];
+      queryString += `${key}=${lasCategoryValue}&`;
+    }
+  }
+  for (let key in sort) {
+    queryString += `${key}=${sort[key]}&`;
+  }
+  for (let key in pagination) {
+    queryString += `${key}=${pagination[key]}&`;
   }
   return new Promise(async (resolve) => {
     const response = await fetch(

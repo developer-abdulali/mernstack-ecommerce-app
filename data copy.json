@@ -13,11 +13,7 @@
       "brand": "Essence",
       "sku": "RCH45Q1A",
       "weight": 2,
-      "dimensions": {
-        "width": 23.17,
-        "height": 14.43,
-        "depth": 28.01
-      },
+      "dimensions": { "width": 23.17, "height": 14.43, "depth": 28.01 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "Low Stock",
@@ -70,11 +66,7 @@
       "brand": "Glamour Beauty",
       "sku": "MVCFH27F",
       "weight": 3,
-      "dimensions": {
-        "width": 12.42,
-        "height": 8.63,
-        "depth": 29.13
-      },
+      "dimensions": { "width": 12.42, "height": 8.63, "depth": 29.13 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -127,11 +119,7 @@
       "brand": "Velvet Touch",
       "sku": "9EN8WLT2",
       "weight": 8,
-      "dimensions": {
-        "width": 24.16,
-        "height": 10.7,
-        "depth": 11.07
-      },
+      "dimensions": { "width": 24.16, "height": 10.7, "depth": 11.07 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -184,11 +172,7 @@
       "brand": "Chic Cosmetics",
       "sku": "O5IF1NTA",
       "weight": 5,
-      "dimensions": {
-        "width": 14.37,
-        "height": 13.94,
-        "depth": 14.6
-      },
+      "dimensions": { "width": 14.37, "height": 13.94, "depth": 14.6 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -241,11 +225,7 @@
       "brand": "Nail Couture",
       "sku": "YUIIIP4W",
       "weight": 9,
-      "dimensions": {
-        "width": 8.11,
-        "height": 10.89,
-        "depth": 29.06
-      },
+      "dimensions": { "width": 8.11, "height": 10.89, "depth": 29.06 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -298,11 +278,7 @@
       "brand": "Calvin Klein",
       "sku": "DZM2JQZE",
       "weight": 5,
-      "dimensions": {
-        "width": 11.53,
-        "height": 14.44,
-        "depth": 6.81
-      },
+      "dimensions": { "width": 11.53, "height": 14.44, "depth": 6.81 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -357,11 +333,7 @@
       "brand": "Chanel",
       "sku": "K71HBCGS",
       "weight": 4,
-      "dimensions": {
-        "width": 21.27,
-        "height": 28,
-        "depth": 11.89
-      },
+      "dimensions": { "width": 21.27, "height": 28, "depth": 11.89 },
       "warrantyInformation": "1 week warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -416,11 +388,7 @@
       "brand": "Dior",
       "sku": "E70NB03B",
       "weight": 10,
-      "dimensions": {
-        "width": 21.51,
-        "height": 7,
-        "depth": 26.51
-      },
+      "dimensions": { "width": 21.51, "height": 7, "depth": 26.51 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -475,11 +443,7 @@
       "brand": "Dolce & Gabbana",
       "sku": "1NBFK980",
       "weight": 5,
-      "dimensions": {
-        "width": 17,
-        "height": 24.57,
-        "depth": 13.3
-      },
+      "dimensions": { "width": 17, "height": 24.57, "depth": 13.3 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "Low Stock",
@@ -534,11 +498,7 @@
       "brand": "Gucci",
       "sku": "FFKZ6HOF",
       "weight": 10,
-      "dimensions": {
-        "width": 22.28,
-        "height": 17.81,
-        "depth": 27.18
-      },
+      "dimensions": { "width": 22.28, "height": 17.81, "depth": 27.18 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -593,11 +553,7 @@
       "brand": "Annibale Colombo",
       "sku": "4KMDTZWF",
       "weight": 3,
-      "dimensions": {
-        "width": 28.75,
-        "height": 26.88,
-        "depth": 24.47
-      },
+      "dimensions": { "width": 28.75, "height": 26.88, "depth": 24.47 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -652,11 +608,7 @@
       "brand": "Annibale Colombo",
       "sku": "LUU95CQP",
       "weight": 3,
-      "dimensions": {
-        "width": 20.97,
-        "height": 19.11,
-        "depth": 25.81
-      },
+      "dimensions": { "width": 20.97, "height": 19.11, "depth": 25.81 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -711,11 +663,7 @@
       "brand": "Furniture Co.",
       "sku": "OWPLTZYX",
       "weight": 10,
-      "dimensions": {
-        "width": 25.43,
-        "height": 20.2,
-        "depth": 24.95
-      },
+      "dimensions": { "width": 25.43, "height": 20.2, "depth": 24.95 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -770,11 +718,7 @@
       "brand": "Knoll",
       "sku": "RKHVJ4FE",
       "weight": 3,
-      "dimensions": {
-        "width": 16.59,
-        "height": 21.46,
-        "depth": 29.07
-      },
+      "dimensions": { "width": 16.59, "height": 21.46, "depth": 29.07 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -829,11 +773,7 @@
       "brand": "Bath Trends",
       "sku": "7OLTIEVO",
       "weight": 6,
-      "dimensions": {
-        "width": 7.32,
-        "height": 22.64,
-        "depth": 12.37
-      },
+      "dimensions": { "width": 7.32, "height": 22.64, "depth": 12.37 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -887,11 +827,7 @@
       "tags": ["fruits"],
       "sku": "QTROUV79",
       "weight": 8,
-      "dimensions": {
-        "width": 8.29,
-        "height": 5.58,
-        "depth": 12.41
-      },
+      "dimensions": { "width": 8.29, "height": 5.58, "depth": 12.41 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -943,11 +879,7 @@
       "tags": ["meat"],
       "sku": "BWWA2MSO",
       "weight": 9,
-      "dimensions": {
-        "width": 23.35,
-        "height": 13.48,
-        "depth": 26.4
-      },
+      "dimensions": { "width": 23.35, "height": 13.48, "depth": 26.4 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -999,11 +931,7 @@
       "tags": ["pet supplies", "cat food"],
       "sku": "C3F8QN6O",
       "weight": 9,
-      "dimensions": {
-        "width": 15.4,
-        "height": 13.97,
-        "depth": 25.13
-      },
+      "dimensions": { "width": 15.4, "height": 13.97, "depth": 25.13 },
       "warrantyInformation": "3 months warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -1055,11 +983,7 @@
       "tags": ["meat"],
       "sku": "G5YEHW7B",
       "weight": 7,
-      "dimensions": {
-        "width": 15.96,
-        "height": 29.24,
-        "depth": 26.25
-      },
+      "dimensions": { "width": 15.96, "height": 29.24, "depth": 26.25 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -1112,11 +1036,7 @@
       "tags": ["cooking essentials"],
       "sku": "Q6ZP1UY8",
       "weight": 8,
-      "dimensions": {
-        "width": 8.18,
-        "height": 27.45,
-        "depth": 27.88
-      },
+      "dimensions": { "width": 8.18, "height": 27.45, "depth": 27.88 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -1168,11 +1088,7 @@
       "tags": ["vegetables"],
       "sku": "6KGF2K6Z",
       "weight": 9,
-      "dimensions": {
-        "width": 11.04,
-        "height": 20.5,
-        "depth": 8.18
-      },
+      "dimensions": { "width": 11.04, "height": 20.5, "depth": 8.18 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -1224,11 +1140,7 @@
       "tags": ["pet supplies", "dog food"],
       "sku": "A6QRCH37",
       "weight": 2,
-      "dimensions": {
-        "width": 29.39,
-        "height": 29.77,
-        "depth": 20.54
-      },
+      "dimensions": { "width": 29.39, "height": 29.77, "depth": 20.54 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -1280,11 +1192,7 @@
       "tags": ["dairy"],
       "sku": "YA617RI7",
       "weight": 4,
-      "dimensions": {
-        "width": 12.3,
-        "height": 10.99,
-        "depth": 15.53
-      },
+      "dimensions": { "width": 12.3, "height": 10.99, "depth": 15.53 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -1336,11 +1244,7 @@
       "tags": ["seafood"],
       "sku": "XNIH1MTA",
       "weight": 8,
-      "dimensions": {
-        "width": 20.14,
-        "height": 8.4,
-        "depth": 10.01
-      },
+      "dimensions": { "width": 20.14, "height": 8.4, "depth": 10.01 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -1392,11 +1296,7 @@
       "tags": ["vegetables"],
       "sku": "HU7S7VQ0",
       "weight": 7,
-      "dimensions": {
-        "width": 7.32,
-        "height": 14.31,
-        "depth": 21.38
-      },
+      "dimensions": { "width": 7.32, "height": 14.31, "depth": 21.38 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -1448,11 +1348,7 @@
       "tags": ["vegetables"],
       "sku": "Y4RM3JCB",
       "weight": 2,
-      "dimensions": {
-        "width": 18.67,
-        "height": 21.17,
-        "depth": 25.26
-      },
+      "dimensions": { "width": 18.67, "height": 21.17, "depth": 25.26 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -1504,11 +1400,7 @@
       "tags": ["condiments"],
       "sku": "BTBNIIOU",
       "weight": 9,
-      "dimensions": {
-        "width": 26.53,
-        "height": 27.11,
-        "depth": 6.63
-      },
+      "dimensions": { "width": 26.53, "height": 27.11, "depth": 6.63 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -1560,11 +1452,7 @@
       "tags": ["desserts"],
       "sku": "VEZMU1EQ",
       "weight": 5,
-      "dimensions": {
-        "width": 17.66,
-        "height": 24.49,
-        "depth": 25.98
-      },
+      "dimensions": { "width": 17.66, "height": 24.49, "depth": 25.98 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -1619,11 +1507,7 @@
       "tags": ["beverages"],
       "sku": "M2K19S06",
       "weight": 2,
-      "dimensions": {
-        "width": 8.97,
-        "height": 12.26,
-        "depth": 15.05
-      },
+      "dimensions": { "width": 8.97, "height": 12.26, "depth": 15.05 },
       "warrantyInformation": "1 week warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -1675,11 +1559,7 @@
       "tags": ["fruits"],
       "sku": "0X3NORB9",
       "weight": 8,
-      "dimensions": {
-        "width": 27.3,
-        "height": 7.48,
-        "depth": 15.08
-      },
+      "dimensions": { "width": 27.3, "height": 7.48, "depth": 15.08 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "Low Stock",
@@ -1731,11 +1611,7 @@
       "tags": ["fruits"],
       "sku": "J074TE3H",
       "weight": 10,
-      "dimensions": {
-        "width": 25.97,
-        "height": 27.47,
-        "depth": 6.31
-      },
+      "dimensions": { "width": 25.97, "height": 27.47, "depth": 6.31 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "Out of Stock",
@@ -1787,11 +1663,7 @@
       "tags": ["dairy"],
       "sku": "VOZKMF40",
       "weight": 1,
-      "dimensions": {
-        "width": 22.42,
-        "height": 20.9,
-        "depth": 12.48
-      },
+      "dimensions": { "width": 22.42, "height": 20.9, "depth": 12.48 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -1843,11 +1715,7 @@
       "tags": ["fruits"],
       "sku": "0M1K7RRC",
       "weight": 4,
-      "dimensions": {
-        "width": 11.12,
-        "height": 27.3,
-        "depth": 27.57
-      },
+      "dimensions": { "width": 11.12, "height": 27.3, "depth": 27.57 },
       "warrantyInformation": "3 months warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -1899,11 +1767,7 @@
       "tags": ["beverages", "coffee"],
       "sku": "FP5H3065",
       "weight": 9,
-      "dimensions": {
-        "width": 11.21,
-        "height": 24.54,
-        "depth": 15.05
-      },
+      "dimensions": { "width": 11.21, "height": 24.54, "depth": 15.05 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -1955,11 +1819,7 @@
       "tags": ["vegetables"],
       "sku": "W4NOBW45",
       "weight": 9,
-      "dimensions": {
-        "width": 20,
-        "height": 6.44,
-        "depth": 20.07
-      },
+      "dimensions": { "width": 20, "height": 6.44, "depth": 20.07 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -2011,11 +1871,7 @@
       "tags": ["health supplements"],
       "sku": "BT2QOWKZ",
       "weight": 2,
-      "dimensions": {
-        "width": 5.62,
-        "height": 7.88,
-        "depth": 23.48
-      },
+      "dimensions": { "width": 5.62, "height": 7.88, "depth": 23.48 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -2067,11 +1923,7 @@
       "tags": ["vegetables"],
       "sku": "TAF870KJ",
       "weight": 2,
-      "dimensions": {
-        "width": 14.05,
-        "height": 17.13,
-        "depth": 14.05
-      },
+      "dimensions": { "width": 14.05, "height": 17.13, "depth": 14.05 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -2123,11 +1975,7 @@
       "tags": ["grains"],
       "sku": "905JXMXM",
       "weight": 1,
-      "dimensions": {
-        "width": 28.86,
-        "height": 6.26,
-        "depth": 11.04
-      },
+      "dimensions": { "width": 28.86, "height": 6.26, "depth": 11.04 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -2179,11 +2027,7 @@
       "tags": ["beverages"],
       "sku": "I1ZNSLXJ",
       "weight": 9,
-      "dimensions": {
-        "width": 15.73,
-        "height": 24.93,
-        "depth": 27.19
-      },
+      "dimensions": { "width": 15.73, "height": 24.93, "depth": 27.19 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -2235,11 +2079,7 @@
       "tags": ["fruits"],
       "sku": "LPP7I4JZ",
       "weight": 4,
-      "dimensions": {
-        "width": 20.82,
-        "height": 15.81,
-        "depth": 14.89
-      },
+      "dimensions": { "width": 20.82, "height": 15.81, "depth": 14.89 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -2291,11 +2131,7 @@
       "tags": ["household essentials"],
       "sku": "IQEZWXMJ",
       "weight": 3,
-      "dimensions": {
-        "width": 24.1,
-        "height": 19.74,
-        "depth": 5.48
-      },
+      "dimensions": { "width": 24.1, "height": 19.74, "depth": 5.48 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -2348,11 +2184,7 @@
       "tags": ["beverages"],
       "sku": "LZG5PPHA",
       "weight": 2,
-      "dimensions": {
-        "width": 25.46,
-        "height": 25.86,
-        "depth": 18.06
-      },
+      "dimensions": { "width": 25.46, "height": 25.86, "depth": 18.06 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -2404,11 +2236,7 @@
       "tags": ["home decor", "swing"],
       "sku": "MBEK52ST",
       "weight": 8,
-      "dimensions": {
-        "width": 20.75,
-        "height": 11.18,
-        "depth": 7.92
-      },
+      "dimensions": { "width": 20.75, "height": 11.18, "depth": 7.92 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -2462,11 +2290,7 @@
       "tags": ["home decor", "photo frame"],
       "sku": "EZOJC792",
       "weight": 4,
-      "dimensions": {
-        "width": 15.46,
-        "height": 26.32,
-        "depth": 17.1
-      },
+      "dimensions": { "width": 15.46, "height": 26.32, "depth": 17.1 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -2518,11 +2342,7 @@
       "tags": ["home decor", "artificial plants"],
       "sku": "LLNHNIFU",
       "weight": 9,
-      "dimensions": {
-        "width": 27.15,
-        "height": 14.43,
-        "depth": 10.05
-      },
+      "dimensions": { "width": 27.15, "height": 14.43, "depth": 10.05 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -2576,11 +2396,7 @@
       "tags": ["home decor", "plant accessories"],
       "sku": "M8IWE8MF",
       "weight": 8,
-      "dimensions": {
-        "width": 16.28,
-        "height": 8.72,
-        "depth": 18.47
-      },
+      "dimensions": { "width": 16.28, "height": 8.72, "depth": 18.47 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -2635,11 +2451,7 @@
       "tags": ["home decor", "lighting"],
       "sku": "0K9UDIUB",
       "weight": 2,
-      "dimensions": {
-        "width": 29.6,
-        "height": 19.68,
-        "depth": 10.12
-      },
+      "dimensions": { "width": 29.6, "height": 19.68, "depth": 10.12 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -2691,11 +2503,7 @@
       "tags": ["kitchen tools", "utensils"],
       "sku": "MYIWU1I6",
       "weight": 4,
-      "dimensions": {
-        "width": 27.97,
-        "height": 21.77,
-        "depth": 21.38
-      },
+      "dimensions": { "width": 27.97, "height": 21.77, "depth": 21.38 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "Out of Stock",
@@ -2747,11 +2555,7 @@
       "tags": ["drinkware", "cups"],
       "sku": "1CSCC3UH",
       "weight": 8,
-      "dimensions": {
-        "width": 7.48,
-        "height": 23.98,
-        "depth": 12.84
-      },
+      "dimensions": { "width": 7.48, "height": 23.98, "depth": 12.84 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -2804,11 +2608,7 @@
       "tags": ["kitchen tools", "utensils"],
       "sku": "0TDFNB1Q",
       "weight": 6,
-      "dimensions": {
-        "width": 21.06,
-        "height": 15.46,
-        "depth": 13.28
-      },
+      "dimensions": { "width": 21.06, "height": 15.46, "depth": 13.28 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -2860,11 +2660,7 @@
       "tags": ["kitchen appliances", "blenders"],
       "sku": "6HG6U3Q9",
       "weight": 10,
-      "dimensions": {
-        "width": 16.73,
-        "height": 10.93,
-        "depth": 14.75
-      },
+      "dimensions": { "width": 16.73, "height": 10.93, "depth": 14.75 },
       "warrantyInformation": "3 months warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -2919,11 +2715,7 @@
       "tags": ["cookware", "woks"],
       "sku": "OOE6KF9I",
       "weight": 4,
-      "dimensions": {
-        "width": 14.69,
-        "height": 11.23,
-        "depth": 28.05
-      },
+      "dimensions": { "width": 14.69, "height": 11.23, "depth": 28.05 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "Low Stock",
@@ -2975,11 +2767,7 @@
       "tags": ["kitchen tools", "cutting boards"],
       "sku": "B7MZ3JGK",
       "weight": 3,
-      "dimensions": {
-        "width": 24.38,
-        "height": 26.51,
-        "depth": 6.93
-      },
+      "dimensions": { "width": 24.38, "height": 26.51, "depth": 6.93 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -3031,11 +2819,7 @@
       "tags": ["kitchen tools", "juicers"],
       "sku": "PIUKVEZ4",
       "weight": 9,
-      "dimensions": {
-        "width": 21.74,
-        "height": 7.6,
-        "depth": 18.04
-      },
+      "dimensions": { "width": 21.74, "height": 7.6, "depth": 18.04 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -3087,11 +2871,7 @@
       "tags": ["kitchen tools", "slicers"],
       "sku": "WG4L41YK",
       "weight": 5,
-      "dimensions": {
-        "width": 17.18,
-        "height": 11.58,
-        "depth": 11.79
-      },
+      "dimensions": { "width": 17.18, "height": 11.58, "depth": 11.79 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -3143,11 +2923,7 @@
       "tags": ["kitchen appliances", "cooktops"],
       "sku": "D88AMROJ",
       "weight": 9,
-      "dimensions": {
-        "width": 28.07,
-        "height": 11.43,
-        "depth": 20.68
-      },
+      "dimensions": { "width": 28.07, "height": 11.43, "depth": 20.68 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -3202,11 +2978,7 @@
       "tags": ["kitchen tools", "strainers"],
       "sku": "4XB2EHHJ",
       "weight": 6,
-      "dimensions": {
-        "width": 5.19,
-        "height": 9.64,
-        "depth": 20.53
-      },
+      "dimensions": { "width": 5.19, "height": 9.64, "depth": 20.53 },
       "warrantyInformation": "1 week warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -3258,11 +3030,7 @@
       "tags": ["kitchen tools", "utensils"],
       "sku": "5XHGD6PF",
       "weight": 6,
-      "dimensions": {
-        "width": 23.61,
-        "height": 25.62,
-        "depth": 5.67
-      },
+      "dimensions": { "width": 23.61, "height": 25.62, "depth": 5.67 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -3314,11 +3082,7 @@
       "tags": ["drinkware", "glasses"],
       "sku": "2RO2KDHM",
       "weight": 5,
-      "dimensions": {
-        "width": 14.7,
-        "height": 18.98,
-        "depth": 21.93
-      },
+      "dimensions": { "width": 14.7, "height": 18.98, "depth": 21.93 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -3370,11 +3134,7 @@
       "tags": ["kitchen tools", "graters"],
       "sku": "UBA8CV8A",
       "weight": 3,
-      "dimensions": {
-        "width": 12.6,
-        "height": 28.86,
-        "depth": 21.12
-      },
+      "dimensions": { "width": 12.6, "height": 28.86, "depth": 21.12 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -3426,11 +3186,7 @@
       "tags": ["kitchen appliances", "blenders"],
       "sku": "JZNXDL37",
       "weight": 4,
-      "dimensions": {
-        "width": 13.3,
-        "height": 6.21,
-        "depth": 16.77
-      },
+      "dimensions": { "width": 13.3, "height": 6.21, "depth": 16.77 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -3482,11 +3238,7 @@
       "tags": ["kitchen tools", "ice cube trays"],
       "sku": "K0UE7U34",
       "weight": 8,
-      "dimensions": {
-        "width": 27.19,
-        "height": 20.42,
-        "depth": 17.45
-      },
+      "dimensions": { "width": 27.19, "height": 20.42, "depth": 17.45 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -3538,11 +3290,7 @@
       "tags": ["kitchen tools", "strainers"],
       "sku": "4U0L9HB6",
       "weight": 5,
-      "dimensions": {
-        "width": 22.94,
-        "height": 11.91,
-        "depth": 20.47
-      },
+      "dimensions": { "width": 22.94, "height": 11.91, "depth": 20.47 },
       "warrantyInformation": "1 week warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -3594,11 +3342,7 @@
       "tags": ["kitchen tools", "cutlery"],
       "sku": "NHTTZ30W",
       "weight": 7,
-      "dimensions": {
-        "width": 11.63,
-        "height": 23.99,
-        "depth": 24.62
-      },
+      "dimensions": { "width": 11.63, "height": 23.99, "depth": 24.62 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -3650,11 +3394,7 @@
       "tags": ["kitchen tools", "storage"],
       "sku": "T4T5IDXP",
       "weight": 1,
-      "dimensions": {
-        "width": 13.76,
-        "height": 18.36,
-        "depth": 27.9
-      },
+      "dimensions": { "width": 13.76, "height": 18.36, "depth": 27.9 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -3706,11 +3446,7 @@
       "tags": ["kitchen appliances", "microwaves"],
       "sku": "7CERPRRE",
       "weight": 8,
-      "dimensions": {
-        "width": 9.61,
-        "height": 25.64,
-        "depth": 12.31
-      },
+      "dimensions": { "width": 9.61, "height": 25.64, "depth": 12.31 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -3765,11 +3501,7 @@
       "tags": ["kitchen tools", "organization"],
       "sku": "T4EBCVSS",
       "weight": 7,
-      "dimensions": {
-        "width": 7.37,
-        "height": 13.1,
-        "depth": 12
-      },
+      "dimensions": { "width": 7.37, "height": 13.1, "depth": 12 },
       "warrantyInformation": "1 week warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -3822,11 +3554,7 @@
       "tags": ["cookware", "pans"],
       "sku": "3E1WZOKX",
       "weight": 7,
-      "dimensions": {
-        "width": 19.51,
-        "height": 17.96,
-        "depth": 23.24
-      },
+      "dimensions": { "width": 19.51, "height": 17.96, "depth": 23.24 },
       "warrantyInformation": "3 months warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -3878,11 +3606,7 @@
       "tags": ["dinnerware", "plates"],
       "sku": "S8T5CGBD",
       "weight": 8,
-      "dimensions": {
-        "width": 14.77,
-        "height": 21.78,
-        "depth": 29.1
-      },
+      "dimensions": { "width": 14.77, "height": 21.78, "depth": 29.1 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -3934,11 +3658,7 @@
       "tags": ["kitchen tools", "tongs"],
       "sku": "BTNVE4CT",
       "weight": 3,
-      "dimensions": {
-        "width": 27.38,
-        "height": 20.49,
-        "depth": 26.65
-      },
+      "dimensions": { "width": 27.38, "height": 20.49, "depth": 26.65 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -3990,11 +3710,7 @@
       "tags": ["cookware", "pots"],
       "sku": "BSFNUA3V",
       "weight": 9,
-      "dimensions": {
-        "width": 9.58,
-        "height": 25.84,
-        "depth": 26.13
-      },
+      "dimensions": { "width": 9.58, "height": 25.84, "depth": 26.13 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -4046,11 +3762,7 @@
       "tags": ["kitchen tools", "turners"],
       "sku": "HCKJ62ZJ",
       "weight": 4,
-      "dimensions": {
-        "width": 22.29,
-        "height": 24.06,
-        "depth": 7.05
-      },
+      "dimensions": { "width": 22.29, "height": 24.06, "depth": 7.05 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -4102,11 +3814,7 @@
       "tags": ["kitchen tools", "organization"],
       "sku": "WFKJQQRD",
       "weight": 8,
-      "dimensions": {
-        "width": 20.73,
-        "height": 6.81,
-        "depth": 24.14
-      },
+      "dimensions": { "width": 20.73, "height": 6.81, "depth": 24.14 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -4158,11 +3866,7 @@
       "tags": ["kitchen tools", "utensils"],
       "sku": "PPBAZ4TS",
       "weight": 9,
-      "dimensions": {
-        "width": 8.45,
-        "height": 25.16,
-        "depth": 17.43
-      },
+      "dimensions": { "width": 8.45, "height": 25.16, "depth": 17.43 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -4214,11 +3918,7 @@
       "tags": ["serveware", "trays"],
       "sku": "PCU0I0A1",
       "weight": 8,
-      "dimensions": {
-        "width": 25.01,
-        "height": 5.72,
-        "depth": 5.25
-      },
+      "dimensions": { "width": 25.01, "height": 5.72, "depth": 5.25 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -4270,11 +3970,7 @@
       "tags": ["kitchen tools", "baking"],
       "sku": "WHUXD7N8",
       "weight": 7,
-      "dimensions": {
-        "width": 19.66,
-        "height": 19.62,
-        "depth": 25.23
-      },
+      "dimensions": { "width": 19.66, "height": 19.62, "depth": 25.23 },
       "warrantyInformation": "1 week warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -4326,11 +4022,7 @@
       "tags": ["kitchen tools", "peelers"],
       "sku": "YR9GLZ3I",
       "weight": 4,
-      "dimensions": {
-        "width": 17.36,
-        "height": 17.41,
-        "depth": 27.38
-      },
+      "dimensions": { "width": 17.36, "height": 17.41, "depth": 27.38 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -4383,11 +4075,7 @@
       "brand": "Apple",
       "sku": "QDKO6NRJ",
       "weight": 4,
-      "dimensions": {
-        "width": 12.38,
-        "height": 21.55,
-        "depth": 27.95
-      },
+      "dimensions": { "width": 12.38, "height": 21.55, "depth": 27.95 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -4442,11 +4130,7 @@
       "brand": "Asus",
       "sku": "4A9KFMBG",
       "weight": 8,
-      "dimensions": {
-        "width": 19.67,
-        "height": 11.05,
-        "depth": 14.32
-      },
+      "dimensions": { "width": 19.67, "height": 11.05, "depth": 14.32 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -4501,11 +4185,7 @@
       "brand": "Huawei",
       "sku": "U2CBNNB0",
       "weight": 9,
-      "dimensions": {
-        "width": 22.11,
-        "height": 11.11,
-        "depth": 23.07
-      },
+      "dimensions": { "width": 22.11, "height": 11.11, "depth": 23.07 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -4560,11 +4240,7 @@
       "brand": "Lenovo",
       "sku": "MST9WZQY",
       "weight": 7,
-      "dimensions": {
-        "width": 11.02,
-        "height": 14.45,
-        "depth": 24.09
-      },
+      "dimensions": { "width": 11.02, "height": 14.45, "depth": 24.09 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -4619,11 +4295,7 @@
       "brand": "Dell",
       "sku": "XBJJ446X",
       "weight": 10,
-      "dimensions": {
-        "width": 12.09,
-        "height": 6.43,
-        "depth": 15.69
-      },
+      "dimensions": { "width": 12.09, "height": 6.43, "depth": 15.69 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -4678,11 +4350,7 @@
       "brand": "Fashion Trends",
       "sku": "6RJDTVCU",
       "weight": 6,
-      "dimensions": {
-        "width": 17.25,
-        "height": 27.31,
-        "depth": 20.88
-      },
+      "dimensions": { "width": 17.25, "height": 27.31, "depth": 20.88 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -4738,11 +4406,7 @@
       "brand": "Gigabyte",
       "sku": "QA703Y60",
       "weight": 2,
-      "dimensions": {
-        "width": 8.54,
-        "height": 23.52,
-        "depth": 5.66
-      },
+      "dimensions": { "width": 8.54, "height": 23.52, "depth": 5.66 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -4798,11 +4462,7 @@
       "brand": "Classic Wear",
       "sku": "TWL7HRBB",
       "weight": 1,
-      "dimensions": {
-        "width": 29.56,
-        "height": 29.84,
-        "depth": 7.77
-      },
+      "dimensions": { "width": 29.56, "height": 29.84, "depth": 7.77 },
       "warrantyInformation": "Lifetime warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -4858,11 +4518,7 @@
       "brand": "Casual Comfort",
       "sku": "KEVGVDTV",
       "weight": 2,
-      "dimensions": {
-        "width": 7.11,
-        "height": 28.63,
-        "depth": 27.54
-      },
+      "dimensions": { "width": 7.11, "height": 28.63, "depth": 27.54 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships in 2 weeks",
       "availabilityStatus": "In Stock",
@@ -4918,11 +4574,7 @@
       "brand": "Urban Chic",
       "sku": "L902AU9L",
       "weight": 1,
-      "dimensions": {
-        "width": 18.43,
-        "height": 6.96,
-        "depth": 20.73
-      },
+      "dimensions": { "width": 18.43, "height": 6.96, "depth": 20.73 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -4978,11 +4630,7 @@
       "brand": "Nike",
       "sku": "84YC5J67",
       "weight": 5,
-      "dimensions": {
-        "width": 19.29,
-        "height": 13.2,
-        "depth": 29.13
-      },
+      "dimensions": { "width": 19.29, "height": 13.2, "depth": 29.13 },
       "warrantyInformation": "1 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -5038,11 +4686,7 @@
       "brand": "Nike",
       "sku": "81LRTRP5",
       "weight": 7,
-      "dimensions": {
-        "width": 14.83,
-        "height": 19.16,
-        "depth": 28.98
-      },
+      "dimensions": { "width": 14.83, "height": 19.16, "depth": 28.98 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -5098,11 +4742,7 @@
       "brand": "Puma",
       "sku": "64ORN32I",
       "weight": 8,
-      "dimensions": {
-        "width": 14.58,
-        "height": 25.54,
-        "depth": 19.57
-      },
+      "dimensions": { "width": 14.58, "height": 25.54, "depth": 19.57 },
       "warrantyInformation": "2 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -5158,11 +4798,7 @@
       "brand": "Off White",
       "sku": "8SRWW2RM",
       "weight": 3,
-      "dimensions": {
-        "width": 10.71,
-        "height": 19.23,
-        "depth": 19.85
-      },
+      "dimensions": { "width": 10.71, "height": 19.23, "depth": 19.85 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -5218,11 +4854,7 @@
       "brand": "Off White",
       "sku": "1SFJZOT2",
       "weight": 4,
-      "dimensions": {
-        "width": 18.32,
-        "height": 19.34,
-        "depth": 28.56
-      },
+      "dimensions": { "width": 18.32, "height": 19.34, "depth": 28.56 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -5278,11 +4910,7 @@
       "brand": "Fashion Timepieces",
       "sku": "WGZ21MSA",
       "weight": 10,
-      "dimensions": {
-        "width": 18.39,
-        "height": 10.82,
-        "depth": 10.52
-      },
+      "dimensions": { "width": 18.39, "height": 10.82, "depth": 10.52 },
       "warrantyInformation": "3 months warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -5337,11 +4965,7 @@
       "brand": "Longines",
       "sku": "LA7B9XEV",
       "weight": 2,
-      "dimensions": {
-        "width": 5.83,
-        "height": 12.48,
-        "depth": 7.65
-      },
+      "dimensions": { "width": 5.83, "height": 12.48, "depth": 7.65 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -5396,11 +5020,7 @@
       "brand": "Rolex",
       "sku": "J3GPKQW0",
       "weight": 6,
-      "dimensions": {
-        "width": 12.17,
-        "height": 27.99,
-        "depth": 10.36
-      },
+      "dimensions": { "width": 12.17, "height": 27.99, "depth": 10.36 },
       "warrantyInformation": "5 year warranty",
       "shippingInformation": "Ships in 1 month",
       "availabilityStatus": "In Stock",
@@ -5455,11 +5075,7 @@
       "brand": "Rolex",
       "sku": "LUZDIKKR",
       "weight": 5,
-      "dimensions": {
-        "width": 28.07,
-        "height": 13.43,
-        "depth": 10.81
-      },
+      "dimensions": { "width": 28.07, "height": 13.43, "depth": 10.81 },
       "warrantyInformation": "3 year warranty",
       "shippingInformation": "Ships overnight",
       "availabilityStatus": "In Stock",
@@ -5514,11 +5130,7 @@
       "brand": "Rolex",
       "sku": "86V20NWJ",
       "weight": 5,
-      "dimensions": {
-        "width": 9.68,
-        "height": 7.29,
-        "depth": 5.67
-      },
+      "dimensions": { "width": 9.68, "height": 7.29, "depth": 5.67 },
       "warrantyInformation": "6 months warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
@@ -5573,11 +5185,7 @@
       "brand": "Rolex",
       "sku": "XFGRO0O5",
       "weight": 5,
-      "dimensions": {
-        "width": 5.22,
-        "height": 27.59,
-        "depth": 16.93
-      },
+      "dimensions": { "width": 5.22, "height": 27.59, "depth": 16.93 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 1-2 business days",
       "availabilityStatus": "In Stock",
@@ -5632,11 +5240,7 @@
       "brand": "Amazon",
       "sku": "YHLK4W9V",
       "weight": 7,
-      "dimensions": {
-        "width": 8.1,
-        "height": 7.74,
-        "depth": 5.68
-      },
+      "dimensions": { "width": 8.1, "height": 7.74, "depth": 5.68 },
       "warrantyInformation": "1 month warranty",
       "shippingInformation": "Ships in 1 week",
       "availabilityStatus": "In Stock",
@@ -5690,11 +5294,7 @@
       "brand": "Apple",
       "sku": "H76W8TSP",
       "weight": 3,
-      "dimensions": {
-        "width": 22.62,
-        "height": 9.92,
-        "depth": 18.15
-      },
+      "dimensions": { "width": 22.62, "height": 9.92, "depth": 18.15 },
       "warrantyInformation": "No warranty",
       "shippingInformation": "Ships in 3-5 business days",
       "availabilityStatus": "In Stock",
