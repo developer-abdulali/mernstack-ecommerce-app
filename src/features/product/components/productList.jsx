@@ -389,10 +389,16 @@ const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
   return (
     <>
       <div className="flex flex-1 justify-between sm:hidden">
-        <div className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+        <div
+          onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
+          className="relative inline-flex cursor-pointer items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+        >
           Previous
         </div>
-        <div className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+        <div
+          onClick={(e) => handlePage(page < 1 ? page - 1 : page)}
+          className="relative ml-3 inline-flex cursor-pointer items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+        >
           Next
         </div>
       </div>
@@ -414,13 +420,13 @@ const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
           >
             <div
               onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+              className="relative cursor-pointer inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Previous</span>
               <FaChevronLeft className="h-4 w-5" aria-hidden="true" />
             </div>
-            {/* {Array.from({ length: totalPages }).map( */}
             {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }).map(
+              // {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }).map(
               (el, index) => (
                 <div
                   key={index + 1}
@@ -438,13 +444,7 @@ const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
             )}
 
             <div
-              onChange={(e) => handlePage(page - 1)}
-              className="relative hidden cursor-pointer items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
-            >
-              3
-            </div>
-            <div
-              onChange={(e) => handlePage(page < totalItems ? page + 1 : page)}
+              onClick={(e) => handlePage(page < totalItems ? page + 1 : page)}
               className="relative cursor-pointer inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Next</span>
@@ -462,7 +462,7 @@ const ProductGrid = ({ products }) => {
       <div className="mx-auto bg-white max-w-2xl px-4 py-16 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {products?.map((product) => (
-            <Link to="/product-details">
+            <Link to={`/product-details/${product.id}`}>
               <div
                 key={product.id}
                 className="group relative border-solid border-2 border-gray-200 p-2"
