@@ -55,7 +55,12 @@
 // export default cartSlice.reducer;
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addToCart, fetchItemsByUserId } from "./cartAPI";
+import {
+  addToCart,
+  deleteItemFromCart,
+  fetchItemsByUserId,
+  updateCart,
+} from "./cartAPI";
 
 const initialState = {
   cart: [],
@@ -74,6 +79,20 @@ export const fetchItemsByUserIdAsync = createAsyncThunk(
   "cart/fetchItemsByUserId",
   async (userId) => {
     const response = await fetchItemsByUserId(userId);
+    return response.data; // Return the data from the API response
+  }
+);
+export const updateItemsAsync = createAsyncThunk(
+  "cart/updateCart",
+  async (update) => {
+    const response = await updateCart(update);
+    return response.data; // Return the data from the API response
+  }
+);
+export const deleteItemsFromCartAsync = createAsyncThunk(
+  "cart/ deleteItemFromCart",
+  async (itemId) => {
+    const response = await deleteItemFromCart(itemId);
     return response.data; // Return the data from the API response
   }
 );
@@ -97,6 +116,26 @@ export const cartSlice = createSlice({
       .addCase(fetchItemsByUserIdAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.cart = action.payload; // Correctly update the 'cart' array
+      })
+      .addCase(updateItemsAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(updateItemsAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        const index = state.cart.findIndex(
+          (item) => item.id === action.payload.id
+        );
+        state.cart[index] = action.payload; // Correctly update the 'cart' array
+      })
+      .addCase(deleteItemsFromCartAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(deleteItemsFromCartAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        const index = state.cart.findIndex(
+          (item) => item.id === action.payload.id
+        );
+        state.cart.splice(index, 1);
       });
   },
 });

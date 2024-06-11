@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { checkUserAsync, selectError, selectLoggedInUser } from "../authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { toast, ToastContainer } from "react-toastify";
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const error = useSelector(selectError);
   const {
@@ -13,7 +15,6 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
   const user = useSelector(selectLoggedInUser);
-  console.log("Registered users: " + user);
 
   return (
     <>
@@ -35,12 +36,19 @@ const Signup = () => {
             noValidate
             className="space-y-6"
             onSubmit={handleSubmit((data) => {
-              dispatch(
-                checkUserAsync({
-                  email: data.email,
-                  password: data.password,
-                })
-              );
+              try {
+                dispatch(
+                  checkUserAsync({
+                    email: data.email,
+                    password: data.password,
+                  })
+                );
+                toast.success("Account logged in successfully!");
+                setLoading(false);
+              } catch (error) {
+                toast.error("Error while account logging in: " + error.message);
+                setLoading(false);
+              }
               console.log("form submitted", data);
             })}
           >
@@ -104,8 +112,9 @@ const Signup = () => {
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                disabled={loading}
               >
-                Sign In
+                {loading ? "Loading..." : "Sign In"}
               </button>
             </div>
           </form>

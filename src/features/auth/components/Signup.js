@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { createUserAsync, selectLoggedInUser } from "../authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { toast, ToastContainer } from "react-toastify";
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const {
     register,
@@ -13,7 +15,25 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
   const user = useSelector(selectLoggedInUser);
-  console.log("Registered users: " + user);
+
+  const onSubmit = async (data) => {
+    setLoading(true);
+    try {
+      await dispatch(
+        createUserAsync({
+          name: data.name,
+          email: data.email,
+          password: data.password,
+          confirmPassword: data.confirmPassword,
+        })
+      );
+      toast.success("Account created successfully!");
+      setLoading(false);
+    } catch (error) {
+      toast.error("Error creating account: " + error.message);
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -35,17 +55,7 @@ const Signup = () => {
           <form
             noValidate
             className="space-y-6"
-            onSubmit={handleSubmit((data) => {
-              dispatch(
-                createUserAsync({
-                  name: data.name,
-                  email: data.email,
-                  password: data.password,
-                  confirmPassword: data.confirmPassword,
-                })
-              );
-              console.log("form submitted", data);
-            })}
+            onSubmit={handleSubmit(onSubmit)}
           >
             <div>
               <label
@@ -156,18 +166,19 @@ const Signup = () => {
                   </p>
                 )}
               </div>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Sign up
-              </button>
+              <div className="my-3">
+                <button
+                  type="submit"
+                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  disabled={loading}
+                >
+                  {loading ? "Loading..." : "Sign up"}
+                </button>
+              </div>
             </div>
           </form>
 
+          {/* <ToastContainer /> */}
           <p className="mt-10 text-center text-sm text-gray-500">
             Already a member?{" "}
             <Link

@@ -7,6 +7,8 @@ import { fetchAllProductByIdAsync, selectedProductById } from "../productSlice";
 import { useParams } from "react-router-dom";
 import { addToCartAsync } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const colors = [
   { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
@@ -47,6 +49,7 @@ const ProductDetails = () => {
   const handleCart = (e) => {
     e.preventDefault();
     dispatch(addToCartAsync({ ...product, quantity: 1, user: user.id }));
+    toast.success("Added to cart successfully!");
   };
 
   useEffect(() => {
