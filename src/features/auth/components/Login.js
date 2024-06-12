@@ -49,7 +49,6 @@ const Signup = () => {
                 toast.error("Error while account logging in: " + error.message);
                 setLoading(false);
               }
-              console.log("form submitted", data);
             })}
           >
             <div>

@@ -48,7 +48,9 @@ const ProductDetails = () => {
 
   const handleCart = (e) => {
     e.preventDefault();
-    dispatch(addToCartAsync({ ...product, quantity: 1, user: user.id }));
+    const newItem = { ...product, quantity: 1, user: user.id };
+    dispatch(addToCartAsync(newItem));
+    // dispatch(addToCartAsync({ ...product, quantity: 1, user: user.id }));
     toast.success("Added to cart successfully!");
   };
 

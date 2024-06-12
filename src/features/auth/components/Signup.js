@@ -24,7 +24,7 @@ const Signup = () => {
           name: data.name,
           email: data.email,
           password: data.password,
-          confirmPassword: data.confirmPassword,
+          addresses: [],
         })
       );
       toast.success("Account created successfully!");
