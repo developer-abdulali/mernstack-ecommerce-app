@@ -15,6 +15,8 @@ import { selectLoggedInUser } from "./features/auth/authSlice";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
+import UserOrder from "./features/user/components/UserOrders";
+import UserOrders from "./features/user/components/UserOrders";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +64,14 @@ const router = createBrowserRouter([
     element: (
       // <Protected>
       <OrderSuccessPage />
+      // </Protected>
+    ),
+  },
+  {
+    path: "/orders",
+    element: (
+      // <Protected>
+      <UserOrders />
       // </Protected>
     ),
   },

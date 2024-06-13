@@ -1,21 +1,21 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchCount } from "./userAPI";
+import { fetchLoggedInUserOrders } from "./userAPI";
 
 const initialState = {
-  value: 0,
+  userOrders: [],
   status: "idle",
 };
-export const incrementAsync = createAsyncThunk(
-  "counter/fetchCount",
-  async (amount) => {
-    const response = await fetchCount(amount);
+export const fechLoggedInUserOrdersAsync = createAsyncThunk(
+  "user/fetchLoggedInUser",
+  async (id) => {
+    const response = await fetchLoggedInUserOrders(id);
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }
 );
 
-export const counterSlice = createSlice({
-  name: "counter",
+export const userSlice = createSlice({
+  name: "user",
   initialState,
   reducers: {
     increment: (state) => {
@@ -24,18 +24,17 @@ export const counterSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(fechLoggedInUserOrdersAsync.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
+      .addCase(fechLoggedInUserOrdersAsync.fulfilled, (state, action) => {
         state.status = "idle";
-        state.value += action.payload;
+        state.userOrders = action.payload;
       });
   },
 });
 
-export const { increment } = counterSlice.actions;
-
+export const { increment } = userSlice.actions;
 export const selectCount = (state) => state.counter.value;
-
-export default counterSlice.reducer;
+export const selectUserOrders = (state) => state.user.userOrders;
+export default userSlice.reducer;

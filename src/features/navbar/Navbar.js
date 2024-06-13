@@ -29,8 +29,8 @@ const navigation = [
   { name: "Team", href: "#", current: false },
 ];
 const userNavigation = [
-  { name: "Your Profile", link: "/profile" },
-  { name: "Settings", link: "/" },
+  { name: "My Profile", link: "/profile" },
+  { name: "My Orders", link: "/orders" },
   { name: "Sign out", link: "/login" },
 ];
 
@@ -40,8 +40,6 @@ function classNames(...classes) {
 
 const Navbar = ({ children }) => {
   const items = useSelector(selectCart);
-
-  console.log(items);
   return (
     <>
       <div className="min-h-full ">

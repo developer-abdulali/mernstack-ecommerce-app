@@ -53,11 +53,9 @@ const Checkout = () => {
       });
   };
   const handleAddress = (e) => {
-    console.log("Address", e.target.value);
     setSelectedAddress(user.addresses[e.target.value]);
   };
   const handlePayment = (e) => {
-    console.log("PAYMENT", e.target.value);
     setPaymentMethod(e.target.value);
   };
   const handleOrder = (e) => {
