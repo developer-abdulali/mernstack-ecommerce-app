@@ -6,6 +6,7 @@ const UserProfilePage = () => {
   return (
     <div>
       <Navbar>
+        <h1 className="text-2xl">My Profile</h1>
         <UserProfile />
       </Navbar>
     </div>

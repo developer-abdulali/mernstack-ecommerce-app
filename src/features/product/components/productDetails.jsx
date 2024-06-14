@@ -9,6 +9,7 @@ import { addToCartAsync } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import { selectUserInfo } from "../../user/userSlice";
 
 const colors = [
   { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
@@ -43,6 +44,7 @@ const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const product = useSelector(selectedProductById);
   const user = useSelector(selectLoggedInUser);
+  // const user = useSelector(selectUserInfo);
   const params = useParams();
   const dispatch = useDispatch();
 

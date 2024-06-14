@@ -3,7 +3,8 @@ import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { checkUserAsync, selectError, selectLoggedInUser } from "../authSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import { selectUserInfo } from "../../user/userSlice";
 
 const Signup = () => {
   const [loading, setLoading] = useState(false);
@@ -15,6 +16,7 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
   const user = useSelector(selectLoggedInUser);
+  // const user = useSelector(selectUserInfo);
 
   return (
     <>
@@ -99,7 +101,6 @@ const Signup = () => {
                   {...register("password", {
                     required: "password is required!",
                   })}
-                  // name="password"
                   type="password"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
