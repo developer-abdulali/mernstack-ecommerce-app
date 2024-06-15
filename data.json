@@ -6303,22 +6303,22 @@
       "password": "Ali121212",
       "addresses": [
         {
-          "name": "Ali Ahmed",
-          "email": "aliahmed@gmail.com",
-          "phone": "123123123",
-          "street": "Shp",
-          "city": "shp",
-          "state": "sindh",
-          "pinCode": "448000"
-        },
-        {
-          "name": "Shahbaz",
-          "email": "shahbaz@gmail.com",
-          "phone": "03300237904",
-          "street": "Latif Shah Shikarpur Sindh",
+          "name": "Ghulam Ali",
+          "email": "ghulamali@gmail.com",
+          "phone": "03331212123",
+          "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
           "city": "Shikarpur",
           "state": "Sindh",
           "pinCode": "78100"
+        },
+        {
+          "name": "Ghulam Ali Soomro",
+          "email": "ghulamalisoomro@gmail.com",
+          "city": "Shikarpur",
+          "state": "Sindh",
+          "pinCode": "78100",
+          "phone": "03331212124",
+          "street": "Mohalla Ghareeb Abad Shikarpur"
         }
       ]
     },
@@ -6347,72 +6347,7 @@
       ]
     }
   ],
-  "cart": [
-    {
-      "id": "10",
-      "title": "Gucci Bloom Eau de",
-      "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
-      "category": "fragrances",
-      "price": 79.99,
-      "discountPercentage": 8.9,
-      "rating": 2.69,
-      "stock": 93,
-      "tags": [
-        "fragrances",
-        "perfumes"
-      ],
-      "brand": "Gucci",
-      "sku": "FFKZ6HOF",
-      "weight": 10,
-      "dimensions": {
-        "width": 22.28,
-        "height": 17.81,
-        "depth": 27.18
-      },
-      "warrantyInformation": "No warranty",
-      "shippingInformation": "Ships in 2 weeks",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 5,
-          "comment": "Great value for money!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Aria Parker",
-          "reviewerEmail": "aria.parker@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Excellent quality!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Natalie Harris",
-          "reviewerEmail": "natalie.harris@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Fast shipping!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Ava Harris",
-          "reviewerEmail": "ava.harris@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "No return policy",
-      "minimumOrderQuantity": 10,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.620Z",
-        "updatedAt": "2024-05-23T08:56:21.620Z",
-        "barcode": "8232190382069",
-        "qrCode": "https://dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/1.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/2.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/3.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/thumbnail.png",
-      "quantity": 1,
-      "user": "dd38"
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "id": "9b12",
@@ -6886,6 +6821,554 @@
         "city": "Shikarpur",
         "state": "Sindh",
         "pinCode": "78100"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "935e",
+      "items": [
+        {
+          "id": "13",
+          "title": "Bedside Table African Cherry",
+          "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
+          "category": "furniture",
+          "price": 299.99,
+          "discountPercentage": 9.58,
+          "rating": 4.48,
+          "stock": 16,
+          "tags": [
+            "furniture",
+            "bedside tables"
+          ],
+          "brand": "Furniture Co.",
+          "sku": "OWPLTZYX",
+          "weight": 10,
+          "dimensions": {
+            "width": 25.43,
+            "height": 20.2,
+            "depth": 24.95
+          },
+          "warrantyInformation": "6 months warranty",
+          "shippingInformation": "Ships in 1-2 business days",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very happy with my purchase!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "John Doe",
+              "reviewerEmail": "john.doe@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Highly recommended!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Avery Carter",
+              "reviewerEmail": "avery.carter@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Very pleased!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Evelyn Sanchez",
+              "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "No return policy",
+          "minimumOrderQuantity": 5,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.620Z",
+            "updatedAt": "2024-05-23T08:56:21.620Z",
+            "barcode": "2913244159666",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/2.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 299.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "addresses": [
+          {
+            "name": "Ali Ahmed",
+            "email": "aliahmed@gmail.com",
+            "phone": "123123123",
+            "street": "Shp",
+            "city": "shp",
+            "state": "sindh",
+            "pinCode": "448000"
+          },
+          {
+            "name": "Shahbaz",
+            "email": "shahbaz@gmail.com",
+            "phone": "03300237904",
+            "street": "Latif Shah Shikarpur Sindh",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Shahid",
+            "email": "sahid@gmail.com",
+            "phone": "03332323234",
+            "street": "Khanpur Shikarpur Sindh",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "22003"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Shahid",
+        "email": "sahid@gmail.com",
+        "phone": "03332323234",
+        "street": "Khanpur Shikarpur Sindh",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "22003"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "2af0",
+      "items": [
+        {
+          "id": "45",
+          "title": "House Showpiece Plant",
+          "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
+          "category": "home-decoration",
+          "price": 39.99,
+          "discountPercentage": 19.45,
+          "rating": 3.61,
+          "stock": 89,
+          "tags": [
+            "home decor",
+            "artificial plants"
+          ],
+          "sku": "LLNHNIFU",
+          "weight": 9,
+          "dimensions": {
+            "width": 27.15,
+            "height": 14.43,
+            "depth": 10.05
+          },
+          "warrantyInformation": "5 year warranty",
+          "shippingInformation": "Ships in 1 week",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Great value for money!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Olivia Anderson",
+              "reviewerEmail": "olivia.anderson@x.dummyjson.com"
+            },
+            {
+              "rating": 2,
+              "comment": "Very unhappy with my purchase!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Grace Perry",
+              "reviewerEmail": "grace.perry@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Highly recommended!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Emma Wilson",
+              "reviewerEmail": "emma.wilson@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 7,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.621Z",
+            "updatedAt": "2024-05-23T08:56:21.621Z",
+            "barcode": "1895440764997",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 39.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "addresses": [
+          {
+            "name": "Ali Ahmed",
+            "email": "aliahmed@gmail.com",
+            "phone": "123123123",
+            "street": "Shp",
+            "city": "shp",
+            "state": "sindh",
+            "pinCode": "448000"
+          },
+          {
+            "name": "Shahbaz",
+            "email": "shahbaz@gmail.com",
+            "phone": "03300237904",
+            "street": "Latif Shah Shikarpur Sindh",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Shahid",
+            "email": "sahid@gmail.com",
+            "phone": "03332323234",
+            "street": "Khanpur Shikarpur Sindh",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "22003"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Shahid",
+        "email": "sahid@gmail.com",
+        "phone": "03332323234",
+        "street": "Khanpur Shikarpur Sindh",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "22003"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "49f2",
+      "items": [
+        {
+          "id": "78",
+          "title": "Apple MacBook Pro 14 Inch Space Grey",
+          "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
+          "category": "laptops",
+          "price": 1999.99,
+          "discountPercentage": 9.25,
+          "rating": 3.13,
+          "stock": 39,
+          "tags": [
+            "laptops",
+            "apple"
+          ],
+          "brand": "Apple",
+          "sku": "QDKO6NRJ",
+          "weight": 4,
+          "dimensions": {
+            "width": 12.38,
+            "height": 21.55,
+            "depth": 27.95
+          },
+          "warrantyInformation": "1 month warranty",
+          "shippingInformation": "Ships in 1 week",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Would buy again!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "Hunter Gordon",
+              "reviewerEmail": "hunter.gordon@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Would buy again!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "Emma Wilson",
+              "reviewerEmail": "emma.wilson@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Very pleased!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "David Martinez",
+              "reviewerEmail": "david.martinez@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.622Z",
+            "updatedAt": "2024-05-23T08:56:21.622Z",
+            "barcode": "3883623063065",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/1.png",
+            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/2.png",
+            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 1999.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "addresses": [
+          {
+            "name": "Ali",
+            "email": "ali@gmail.com",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "phone": "03331212123",
+        "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "78100"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "1887",
+      "items": [
+        {
+          "id": "9",
+          "title": "Dolce Shine Eau de",
+          "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+          "category": "fragrances",
+          "price": 69.99,
+          "discountPercentage": 11.47,
+          "rating": 2.68,
+          "stock": 3,
+          "tags": [
+            "fragrances",
+            "perfumes"
+          ],
+          "brand": "Dolce & Gabbana",
+          "sku": "1NBFK980",
+          "weight": 5,
+          "dimensions": {
+            "width": 17,
+            "height": 24.57,
+            "depth": 13.3
+          },
+          "warrantyInformation": "5 year warranty",
+          "shippingInformation": "Ships in 1-2 business days",
+          "availabilityStatus": "Low Stock",
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Xavier Wright",
+              "reviewerEmail": "xavier.wright@x.dummyjson.com"
+            },
+            {
+              "rating": 1,
+              "comment": "Poor quality!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Mila Hernandez",
+              "reviewerEmail": "mila.hernandez@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Very happy with my purchase!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Sophia Brown",
+              "reviewerEmail": "sophia.brown@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 9,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.619Z",
+            "updatedAt": "2024-05-23T08:56:21.619Z",
+            "barcode": "1939383392674",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png",
+            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/2.png",
+            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 69.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "addresses": [
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Ghulam Ali Soomro",
+            "email": "ghulamalisoomro@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212124",
+            "street": "Mohalla Ghareeb Abad Shikarpur"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Ghulam Ali Soomro",
+        "email": "ghulamalisoomro@gmail.com",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "78100",
+        "phone": "03331212124",
+        "street": "Mohalla Ghareeb Abad Shikarpur"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "a872",
+      "items": [
+        {
+          "id": "14",
+          "title": "Knoll Saarinen Executive Conference Chair",
+          "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
+          "category": "furniture",
+          "price": 499.99,
+          "discountPercentage": 15.23,
+          "rating": 4.11,
+          "stock": 47,
+          "tags": [
+            "furniture",
+            "office chairs"
+          ],
+          "brand": "Knoll",
+          "sku": "RKHVJ4FE",
+          "weight": 3,
+          "dimensions": {
+            "width": 16.59,
+            "height": 21.46,
+            "depth": 29.07
+          },
+          "warrantyInformation": "Lifetime warranty",
+          "shippingInformation": "Ships in 3-5 business days",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Very happy with my purchase!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Leah Gutierrez",
+              "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Would buy again!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Nolan Gonzalez",
+              "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+            },
+            {
+              "rating": 2,
+              "comment": "Waste of money!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Stella Morris",
+              "reviewerEmail": "stella.morris@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 5,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.620Z",
+            "updatedAt": "2024-05-23T08:56:21.620Z",
+            "barcode": "0726316339746",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/2.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 499.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "addresses": [
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Ghulam Ali Soomro",
+            "email": "ghulamalisoomro@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212124",
+            "street": "Mohalla Ghareeb Abad Shikarpur"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Ghulam Ali Soomro",
+        "email": "ghulamalisoomro@gmail.com",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "78100",
+        "phone": "03331212124",
+        "street": "Mohalla Ghareeb Abad Shikarpur"
       },
       "status": "pending"
     }

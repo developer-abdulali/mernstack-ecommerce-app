@@ -9,8 +9,8 @@ import { selectUserInfo } from "../features/user/userSlice";
 const OrderSuccessPage = () => {
   const dispatch = useDispatch();
   const params = useParams();
-  // const user = useSelector(selectLoggedInUser);
-  const user = useSelector(selectUserInfo);
+  const user = useSelector(selectLoggedInUser);
+  // const user = useSelector(selectUserInfo);
 
   useEffect(() => {
     // reset cart

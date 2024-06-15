@@ -30,8 +30,8 @@ const Checkout = () => {
     0
   );
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
-  // const user = useSelector(selectLoggedInUser);
-  const user = useSelector(selectUserInfo);
+  const user = useSelector(selectLoggedInUser);
+  // const user = useSelector(selectUserInfo);
   const dispatch = useDispatch();
   const {
     register,
@@ -61,17 +61,21 @@ const Checkout = () => {
     setPaymentMethod(e.target.value);
   };
   const handleOrder = (e) => {
-    const order = {
-      items,
-      totalAmount,
-      totalItems,
-      user,
-      paymentMethod,
-      selectedAddress,
-      status: "pending",
-    };
-    dispatch(createOrderAsync(order));
-    toast.success("Order created successfully");
+    if (selectedAddress && paymentMethod) {
+      const order = {
+        items,
+        totalAmount,
+        totalItems,
+        user,
+        paymentMethod,
+        selectedAddress,
+        status: "pending",
+      };
+      dispatch(createOrderAsync(order));
+      toast.success("Order created successfully");
+    } else {
+      alert("Enter address and payment method");
+    }
   };
   const handleQuantity = (e, item) => {
     dispatch(updateItemsAsync({ ...item, quantity: +e.target.value }));
