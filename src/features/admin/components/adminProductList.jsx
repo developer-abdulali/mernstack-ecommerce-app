@@ -7,7 +7,7 @@ import {
   selectCategories,
   fetchCategoriesAsync,
   fetchBrandsAsync,
-} from "../productSlice";
+} from "../../product/productSlice";
 import classNames from "classnames";
 import {
   FaChevronDown,
@@ -41,7 +41,7 @@ const sortOptions = [
   { name: "Price: High to Low", sort: "price", order: "desc", current: false },
 ];
 
-export default function ProductList() {
+export default function AdminProductList() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
@@ -139,7 +139,7 @@ export default function ProductList() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <MenuItems className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl">
+                <MenuItems className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="py-1">
                     {sortOptions.map((option) => (
                       <MenuItem key={option.name}>
@@ -190,9 +190,14 @@ export default function ProductList() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
             {/* Filters */}
             <DesktopFilters handleFilter={handleFilter} filters={filters} />
-
             {/* Product grid start */}
             <div className="lg:col-span-3">
+              <Link to="/admin/product-form">
+                <button className="rounded-md mx-8 bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  Add New Product
+                </button>
+              </Link>
+
               <ProductGrid products={products} />
             </div>
             {/* Product grid end */}
@@ -245,7 +250,7 @@ const DesktopFilters = ({ handleFilter, filters }) => {
                           type="checkbox"
                           defaultChecked={option.checked}
                           onChange={(e) => handleFilter(e, section, option)}
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:border-none foucs:border-none active:border-none active:outline-none"
+                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                         />
                         <label
                           htmlFor={`filter-${section.id}-${optionIdx}`}
@@ -360,7 +365,7 @@ const MobileFilters = ({
                                   onChange={(e) =>
                                     handleFilter(e, section, option)
                                   }
-                                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 "
+                                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                 />
                                 <label
                                   htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
@@ -420,7 +425,7 @@ const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
           >
             <div
               onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
-              className="relative cursor-pointer inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 hover:bg-gray-50 focus:z-20"
+              className="relative cursor-pointer inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Previous</span>
               <FaChevronLeft className="h-4 w-5" aria-hidden="true" />
@@ -436,7 +441,7 @@ const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
                     index + 1 === page
                       ? "bg-indigo-600 text-white"
                       : "text-gray-400"
-                  } px-4 py-2 text-sm font-semibold focus:z-20 `}
+                  } px-4 py-2 text-sm font-semibold focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
                 >
                   {index + 1}
                 </div>
@@ -445,7 +450,7 @@ const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
 
             <div
               onClick={(e) => handlePage(page < totalItems ? page + 1 : page)}
-              className="relative cursor-pointer inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 hover:bg-gray-50 focus:z-20"
+              className="relative cursor-pointer inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Next</span>
               <FaChevronRight className="h-4 w-4" aria-hidden="true" />
@@ -462,47 +467,57 @@ const ProductGrid = ({ products }) => {
       <div className="mx-auto bg-white max-w-2xl px-4 py-16 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {products?.map((product) => (
-            <Link to={`/product-details/${product.id}`}>
-              <div
-                key={product.id}
-                className="group relative border-solid border-2 border-gray-200 p-2"
-              >
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                  />
-                </div>
-                <div className="mt-4 flex justify-between">
-                  <div>
-                    <h3 className="text-sm text-gray-700 font-semibold">
-                      <div href={product.thumbnail}>
-                        <span aria-hidden="true" className="absolute inset-0" />
-                        {product.title}
-                      </div>
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      <FaStar className="w-5 h-5 inline" />
-                      <span className="align-bottom pl-2">
-                        {product.rating}
-                      </span>
-                    </p>
+            <div>
+              <Link to={`/product-details/${product.id}`}>
+                <div
+                  key={product.id}
+                  className="group relative border-solid border-2 border-gray-200 p-2"
+                >
+                  <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                    <img
+                      src={product.thumbnail}
+                      alt={product.title}
+                      className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                    />
                   </div>
-                  <div>
-                    <p className="text-sm block font-medium text-gray-900">
-                      $
-                      {Math.round(
-                        product.price * (1 - product.discountPercentage / 100)
-                      )}
-                    </p>
-                    <p className="text-sm block line-through font-medium text-gray-400">
-                      ${product.price}
-                    </p>
+                  <div className="mt-4 flex justify-between">
+                    <div>
+                      <h3 className="text-sm text-gray-700 font-semibold">
+                        <div href={product.thumbnail}>
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-0"
+                          />
+                          {product.title}
+                        </div>
+                      </h3>
+                      <p className="mt-1 text-sm text-gray-500">
+                        <FaStar className="w-5 h-5 inline" />
+                        <span className="align-bottom pl-2">
+                          {product.rating}
+                        </span>
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-sm block font-medium text-gray-900">
+                        $
+                        {Math.round(
+                          product.price * (1 - product.discountPercentage / 100)
+                        )}
+                      </p>
+                      <p className="text-sm block line-through font-medium text-gray-400">
+                        ${product.price}
+                      </p>
+                    </div>
                   </div>
                 </div>
+              </Link>
+              <div>
+                <button className="rounded-md my-2 w-full bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  Edit Product
+                </button>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

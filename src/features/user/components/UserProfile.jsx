@@ -13,7 +13,6 @@ const UserProfile = () => {
     register,
     handleSubmit,
     setValue,
-    reset,
     formState: { errors },
   } = useForm();
   const user = useSelector(selectLoggedInUser);
@@ -56,6 +55,11 @@ const UserProfile = () => {
         <h3 className="text-xl my-6 font-bold tracking-tight text-red-900">
           Email Address: {user.email}
         </h3>
+        {user.role === "admin" && (
+          <h3 className="text-xl my-6 font-bold tracking-tight text-red-900">
+            Role: {user.role}
+          </h3>
+        )}
       </div>
 
       <div className="border-t my-5 border-gray-200 px-4 py-6 sm:px-6">

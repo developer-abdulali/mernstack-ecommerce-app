@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
+import AdminHome from "./pages/AdminHome";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -17,10 +18,13 @@ import "react-toastify/dist/ReactToastify.css";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import UserOrdersPage from "./pages/UserOrdersPage";
 import UserProfilePage from "./pages/UserProfilePage";
-import {
-  fetchLoggedInUserAsync,
-  selectUserInfo,
-} from "./features/user/userSlice";
+import { fetchLoggedInUserAsync } from "./features/user/userSlice";
+import Logout from "./features/auth/components/Logout";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import AdminProtected from "./features/auth/components/ProtectedAdmin";
+import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
+import AdminProductDetailsPage from "./pages/AdminProductDetailPage";
+import ProductFromPage from "./pages/AdminProductFormPage";
 
 const router = createBrowserRouter([
   {
@@ -32,12 +36,28 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/admin",
+    element: (
+      <AdminProtected>
+        <AdminHome />
+      </AdminProtected>
+    ),
+  },
+  {
     path: "/signup",
     element: <SignupPage />,
   },
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/logout",
+    element: <Logout />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPasswordPage />,
   },
   {
     path: "/cart",
@@ -61,6 +81,22 @@ const router = createBrowserRouter([
       <Protected>
         <ProductDetailsPage />
       </Protected>
+    ),
+  },
+  {
+    path: "/admin/product-details/:id",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductDetailsPage />
+      </ProtectedAdmin>
+    ),
+  },
+  {
+    path: "/admin/product-form",
+    element: (
+      <ProtectedAdmin>
+        <ProductFromPage />
+      </ProtectedAdmin>
     ),
   },
   {
@@ -96,7 +132,6 @@ const router = createBrowserRouter([
 function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
-  // const user = useSelector(selectUserInfo);
 
   useEffect(() => {
     if (user) {

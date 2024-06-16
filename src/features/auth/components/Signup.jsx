@@ -25,6 +25,7 @@ const Signup = () => {
           email: data.email,
           password: data.password,
           addresses: [],
+          role: "user",
         })
       );
       toast.success("Account created successfully!");
