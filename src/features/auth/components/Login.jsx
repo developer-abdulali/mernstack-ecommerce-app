@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { checkUserAsync, selectError, selectLoggedInUser } from "../authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { selectUserInfo } from "../../user/userSlice";
 
 const Signup = () => {
   const [loading, setLoading] = useState(false);
@@ -16,7 +15,6 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
   const user = useSelector(selectLoggedInUser);
-  // const user = useSelector(selectUserInfo);
 
   return (
     <>

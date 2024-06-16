@@ -3,7 +3,7 @@ import { StarIcon } from "@heroicons/react/solid";
 // import { StarIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllProductByIdAsync, selectedProductById } from "../productSlice";
+import { fetchProductByIdAsync, selectedProductById } from "../productSlice";
 import { useParams } from "react-router-dom";
 import { addToCartAsync } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
@@ -57,7 +57,7 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchAllProductByIdAsync(params.id));
+    dispatch(fetchProductByIdAsync(params.id));
   }, [dispatch, params.id]);
   return (
     <div className="bg-white">
