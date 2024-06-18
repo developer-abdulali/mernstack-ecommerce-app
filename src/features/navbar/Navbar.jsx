@@ -23,6 +23,7 @@ const navigation = [
   { name: "Dashboard", link: "#", user: true },
   { name: "Team", link: "#", user: true },
   { name: "Admin", link: "/admin", admin: true },
+  { name: "Order", link: "/admin/orders", admin: true },
 ];
 const userNavigation = [
   { name: "My Profile", link: "/profile" },
@@ -228,9 +229,9 @@ const Navbar = ({ children }) => {
 
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+            <button className="text-3xl font-bold tracking-tight text-gray-900">
               E-Commerce
-            </h1>
+            </button>
           </div>
         </header>
         <main>

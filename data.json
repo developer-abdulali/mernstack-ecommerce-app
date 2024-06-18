@@ -6494,7 +6494,7 @@
         "state": "Sindh",
         "pinCode": "78100"
       },
-      "status": "pending"
+      "status": "delivered"
     },
     {
       "id": "b145",
@@ -6600,506 +6600,10 @@
         "state": "sindh",
         "pinCode": "448000"
       },
-      "status": "pending"
+      "status": "delivered"
     },
     {
-      "id": "e4f1",
-      "items": [
-        {
-          "id": "6",
-          "title": "Calvin Klein CK One",
-          "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
-          "category": "fragrances",
-          "price": 49.99,
-          "discountPercentage": 0.32,
-          "rating": 4.85,
-          "stock": 17,
-          "tags": [
-            "fragrances",
-            "perfumes"
-          ],
-          "brand": "Calvin Klein",
-          "sku": "DZM2JQZE",
-          "weight": 5,
-          "dimensions": {
-            "width": 11.53,
-            "height": 14.44,
-            "depth": 6.81
-          },
-          "warrantyInformation": "5 year warranty",
-          "shippingInformation": "Ships overnight",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Great value for money!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Sophia Brown",
-              "reviewerEmail": "sophia.brown@x.dummyjson.com"
-            },
-            {
-              "rating": 3,
-              "comment": "Very disappointed!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Madison Collins",
-              "reviewerEmail": "madison.collins@x.dummyjson.com"
-            },
-            {
-              "rating": 1,
-              "comment": "Poor quality!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Maya Reed",
-              "reviewerEmail": "maya.reed@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "No return policy",
-          "minimumOrderQuantity": 20,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.619Z",
-            "updatedAt": "2024-05-23T08:56:21.619Z",
-            "barcode": "2210136215089",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/thumbnail.png",
-          "quantity": 1,
-          "user": "dd38"
-        },
-        {
-          "id": "6",
-          "title": "Calvin Klein CK One",
-          "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
-          "category": "fragrances",
-          "price": 49.99,
-          "discountPercentage": 0.32,
-          "rating": 4.85,
-          "stock": 17,
-          "tags": [
-            "fragrances",
-            "perfumes"
-          ],
-          "brand": "Calvin Klein",
-          "sku": "DZM2JQZE",
-          "weight": 5,
-          "dimensions": {
-            "width": 11.53,
-            "height": 14.44,
-            "depth": 6.81
-          },
-          "warrantyInformation": "5 year warranty",
-          "shippingInformation": "Ships overnight",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Great value for money!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Sophia Brown",
-              "reviewerEmail": "sophia.brown@x.dummyjson.com"
-            },
-            {
-              "rating": 3,
-              "comment": "Very disappointed!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Madison Collins",
-              "reviewerEmail": "madison.collins@x.dummyjson.com"
-            },
-            {
-              "rating": 1,
-              "comment": "Poor quality!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Maya Reed",
-              "reviewerEmail": "maya.reed@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "No return policy",
-          "minimumOrderQuantity": 20,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.619Z",
-            "updatedAt": "2024-05-23T08:56:21.619Z",
-            "barcode": "2210136215089",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/thumbnail.png",
-          "quantity": 1,
-          "user": "dd38"
-        }
-      ],
-      "totalAmount": 99.98,
-      "totalItems": 2,
-      "user": {
-        "id": "dd38",
-        "name": "Ali",
-        "email": "ali@gmail.com",
-        "password": "Ali121212",
-        "addresses": [
-          {
-            "name": "Ali Ahmed",
-            "email": "aliahmed@gmail.com",
-            "phone": "123123123",
-            "street": "Shp",
-            "city": "shp",
-            "state": "sindh",
-            "pinCode": "448000"
-          },
-          {
-            "name": "Shahbaz",
-            "email": "shahbaz@gmail.com",
-            "phone": "03300237904",
-            "street": "Latif Shah Shikarpur Sindh",
-            "city": "Shikarpur",
-            "state": "Sindh",
-            "pinCode": "78100"
-          }
-        ]
-      },
-      "paymentMethod": "cash",
-      "selectedAddress": null,
-      "status": "pending"
-    },
-    {
-      "id": "770f",
-      "items": [
-        {
-          "id": "78",
-          "title": "Apple MacBook Pro 14 Inch Space Grey",
-          "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
-          "category": "laptops",
-          "price": 1999.99,
-          "discountPercentage": 9.25,
-          "rating": 3.13,
-          "stock": 39,
-          "tags": [
-            "laptops",
-            "apple"
-          ],
-          "brand": "Apple",
-          "sku": "QDKO6NRJ",
-          "weight": 4,
-          "dimensions": {
-            "width": 12.38,
-            "height": 21.55,
-            "depth": 27.95
-          },
-          "warrantyInformation": "1 month warranty",
-          "shippingInformation": "Ships in 1 week",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Would buy again!",
-              "date": "2024-05-23T08:56:21.622Z",
-              "reviewerName": "Hunter Gordon",
-              "reviewerEmail": "hunter.gordon@x.dummyjson.com"
-            },
-            {
-              "rating": 5,
-              "comment": "Would buy again!",
-              "date": "2024-05-23T08:56:21.622Z",
-              "reviewerName": "Emma Wilson",
-              "reviewerEmail": "emma.wilson@x.dummyjson.com"
-            },
-            {
-              "rating": 5,
-              "comment": "Very pleased!",
-              "date": "2024-05-23T08:56:21.622Z",
-              "reviewerName": "David Martinez",
-              "reviewerEmail": "david.martinez@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "30 days return policy",
-          "minimumOrderQuantity": 1,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.622Z",
-            "updatedAt": "2024-05-23T08:56:21.622Z",
-            "barcode": "3883623063065",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/1.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/2.png",
-            "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png",
-          "quantity": 1,
-          "user": "5543"
-        }
-      ],
-      "totalAmount": 1999.99,
-      "totalItems": 1,
-      "user": {
-        "id": "5543",
-        "name": "Shakeel",
-        "email": "shakeel@gmail.com",
-        "password": "Shakeel123",
-        "addresses": [
-          {
-            "name": "Shakeel",
-            "email": "shakeel@gmail.com",
-            "phone": "03331212123",
-            "street": "Bus Stand Shikarpur Sindh",
-            "city": "Shikarpur",
-            "state": "Sindh",
-            "pinCode": "78100"
-          }
-        ]
-      },
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "Shakeel",
-        "email": "shakeel@gmail.com",
-        "phone": "03331212123",
-        "street": "Bus Stand Shikarpur Sindh",
-        "city": "Shikarpur",
-        "state": "Sindh",
-        "pinCode": "78100"
-      },
-      "status": "pending"
-    },
-    {
-      "id": "935e",
-      "items": [
-        {
-          "id": "13",
-          "title": "Bedside Table African Cherry",
-          "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
-          "category": "furniture",
-          "price": 299.99,
-          "discountPercentage": 9.58,
-          "rating": 4.48,
-          "stock": 16,
-          "tags": [
-            "furniture",
-            "bedside tables"
-          ],
-          "brand": "Furniture Co.",
-          "sku": "OWPLTZYX",
-          "weight": 10,
-          "dimensions": {
-            "width": 25.43,
-            "height": 20.2,
-            "depth": 24.95
-          },
-          "warrantyInformation": "6 months warranty",
-          "shippingInformation": "Ships in 1-2 business days",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Very happy with my purchase!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "John Doe",
-              "reviewerEmail": "john.doe@x.dummyjson.com"
-            },
-            {
-              "rating": 4,
-              "comment": "Highly recommended!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Avery Carter",
-              "reviewerEmail": "avery.carter@x.dummyjson.com"
-            },
-            {
-              "rating": 4,
-              "comment": "Very pleased!",
-              "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Evelyn Sanchez",
-              "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "No return policy",
-          "minimumOrderQuantity": 5,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.620Z",
-            "updatedAt": "2024-05-23T08:56:21.620Z",
-            "barcode": "2913244159666",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png",
-          "quantity": 1,
-          "user": "dd38"
-        }
-      ],
-      "totalAmount": 299.99,
-      "totalItems": 1,
-      "user": {
-        "id": "dd38",
-        "name": "Ali",
-        "email": "ali@gmail.com",
-        "password": "Ali121212",
-        "addresses": [
-          {
-            "name": "Ali Ahmed",
-            "email": "aliahmed@gmail.com",
-            "phone": "123123123",
-            "street": "Shp",
-            "city": "shp",
-            "state": "sindh",
-            "pinCode": "448000"
-          },
-          {
-            "name": "Shahbaz",
-            "email": "shahbaz@gmail.com",
-            "phone": "03300237904",
-            "street": "Latif Shah Shikarpur Sindh",
-            "city": "Shikarpur",
-            "state": "Sindh",
-            "pinCode": "78100"
-          },
-          {
-            "name": "Shahid",
-            "email": "sahid@gmail.com",
-            "phone": "03332323234",
-            "street": "Khanpur Shikarpur Sindh",
-            "city": "Shikarpur",
-            "state": "Sindh",
-            "pinCode": "22003"
-          }
-        ]
-      },
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "Shahid",
-        "email": "sahid@gmail.com",
-        "phone": "03332323234",
-        "street": "Khanpur Shikarpur Sindh",
-        "city": "Shikarpur",
-        "state": "Sindh",
-        "pinCode": "22003"
-      },
-      "status": "pending"
-    },
-    {
-      "id": "2af0",
-      "items": [
-        {
-          "id": "45",
-          "title": "House Showpiece Plant",
-          "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
-          "category": "home-decoration",
-          "price": 39.99,
-          "discountPercentage": 19.45,
-          "rating": 3.61,
-          "stock": 89,
-          "tags": [
-            "home decor",
-            "artificial plants"
-          ],
-          "sku": "LLNHNIFU",
-          "weight": 9,
-          "dimensions": {
-            "width": 27.15,
-            "height": 14.43,
-            "depth": 10.05
-          },
-          "warrantyInformation": "5 year warranty",
-          "shippingInformation": "Ships in 1 week",
-          "availabilityStatus": "In Stock",
-          "reviews": [
-            {
-              "rating": 5,
-              "comment": "Great value for money!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Olivia Anderson",
-              "reviewerEmail": "olivia.anderson@x.dummyjson.com"
-            },
-            {
-              "rating": 2,
-              "comment": "Very unhappy with my purchase!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Grace Perry",
-              "reviewerEmail": "grace.perry@x.dummyjson.com"
-            },
-            {
-              "rating": 5,
-              "comment": "Highly recommended!",
-              "date": "2024-05-23T08:56:21.621Z",
-              "reviewerName": "Emma Wilson",
-              "reviewerEmail": "emma.wilson@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "7 days return policy",
-          "minimumOrderQuantity": 7,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.621Z",
-            "updatedAt": "2024-05-23T08:56:21.621Z",
-            "barcode": "1895440764997",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
-            "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png",
-          "quantity": 1,
-          "user": "dd38"
-        }
-      ],
-      "totalAmount": 39.99,
-      "totalItems": 1,
-      "user": {
-        "id": "dd38",
-        "name": "Ali",
-        "email": "ali@gmail.com",
-        "password": "Ali121212",
-        "addresses": [
-          {
-            "name": "Ali Ahmed",
-            "email": "aliahmed@gmail.com",
-            "phone": "123123123",
-            "street": "Shp",
-            "city": "shp",
-            "state": "sindh",
-            "pinCode": "448000"
-          },
-          {
-            "name": "Shahbaz",
-            "email": "shahbaz@gmail.com",
-            "phone": "03300237904",
-            "street": "Latif Shah Shikarpur Sindh",
-            "city": "Shikarpur",
-            "state": "Sindh",
-            "pinCode": "78100"
-          },
-          {
-            "name": "Shahid",
-            "email": "sahid@gmail.com",
-            "phone": "03332323234",
-            "street": "Khanpur Shikarpur Sindh",
-            "city": "Shikarpur",
-            "state": "Sindh",
-            "pinCode": "22003"
-          }
-        ]
-      },
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "Shahid",
-        "email": "sahid@gmail.com",
-        "phone": "03332323234",
-        "street": "Khanpur Shikarpur Sindh",
-        "city": "Shikarpur",
-        "state": "Sindh",
-        "pinCode": "22003"
-      },
-      "status": "pending"
-    },
-    {
-      "id": "49f2",
+      "id": "3d93",
       "items": [
         {
           "id": "78",
@@ -7173,105 +6677,7 @@
         "name": "Ali",
         "email": "ali@gmail.com",
         "password": "Ali121212",
-        "addresses": [
-          {
-            "name": "Ali",
-            "email": "ali@gmail.com",
-            "phone": "03331212123",
-            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
-            "city": "Shikarpur",
-            "state": "Sindh",
-            "pinCode": "78100"
-          }
-        ]
-      },
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "Ali",
-        "email": "ali@gmail.com",
-        "phone": "03331212123",
-        "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
-        "city": "Shikarpur",
-        "state": "Sindh",
-        "pinCode": "78100"
-      },
-      "status": "pending"
-    },
-    {
-      "id": "1887",
-      "items": [
-        {
-          "id": "9",
-          "title": "Dolce Shine Eau de",
-          "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
-          "category": "fragrances",
-          "price": 69.99,
-          "discountPercentage": 11.47,
-          "rating": 2.68,
-          "stock": 3,
-          "tags": [
-            "fragrances",
-            "perfumes"
-          ],
-          "brand": "Dolce & Gabbana",
-          "sku": "1NBFK980",
-          "weight": 5,
-          "dimensions": {
-            "width": 17,
-            "height": 24.57,
-            "depth": 13.3
-          },
-          "warrantyInformation": "5 year warranty",
-          "shippingInformation": "Ships in 1-2 business days",
-          "availabilityStatus": "Low Stock",
-          "reviews": [
-            {
-              "rating": 4,
-              "comment": "Very satisfied!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Xavier Wright",
-              "reviewerEmail": "xavier.wright@x.dummyjson.com"
-            },
-            {
-              "rating": 1,
-              "comment": "Poor quality!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Mila Hernandez",
-              "reviewerEmail": "mila.hernandez@x.dummyjson.com"
-            },
-            {
-              "rating": 5,
-              "comment": "Very happy with my purchase!",
-              "date": "2024-05-23T08:56:21.619Z",
-              "reviewerName": "Sophia Brown",
-              "reviewerEmail": "sophia.brown@x.dummyjson.com"
-            }
-          ],
-          "returnPolicy": "30 days return policy",
-          "minimumOrderQuantity": 9,
-          "meta": {
-            "createdAt": "2024-05-23T08:56:21.619Z",
-            "updatedAt": "2024-05-23T08:56:21.619Z",
-            "barcode": "1939383392674",
-            "qrCode": "https://dummyjson.com/public/qr-code.png"
-          },
-          "images": [
-            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/2.png",
-            "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png"
-          ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png",
-          "quantity": 1,
-          "user": "dd38"
-        }
-      ],
-      "totalAmount": 69.99,
-      "totalItems": 1,
-      "user": {
-        "id": "dd38",
-        "name": "Ali",
-        "email": "ali@gmail.com",
-        "password": "Ali121212",
+        "role": "admin",
         "addresses": [
           {
             "name": "Ghulam Ali",
@@ -7290,6 +6696,15 @@
             "pinCode": "78100",
             "phone": "03331212124",
             "street": "Mohalla Ghareeb Abad Shikarpur"
+          },
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur"
           }
         ]
       },
@@ -7306,80 +6721,81 @@
       "status": "pending"
     },
     {
-      "id": "a872",
+      "id": "82be",
       "items": [
         {
-          "id": "14",
-          "title": "Knoll Saarinen Executive Conference Chair",
-          "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
-          "category": "furniture",
-          "price": 499.99,
-          "discountPercentage": 15.23,
-          "rating": 4.11,
-          "stock": 47,
+          "id": "10",
+          "title": "Gucci Bloom Eau de",
+          "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
+          "category": "fragrances",
+          "price": 79.99,
+          "discountPercentage": 8.9,
+          "rating": 2.69,
+          "stock": 93,
           "tags": [
-            "furniture",
-            "office chairs"
+            "fragrances",
+            "perfumes"
           ],
-          "brand": "Knoll",
-          "sku": "RKHVJ4FE",
-          "weight": 3,
+          "brand": "Gucci",
+          "sku": "FFKZ6HOF",
+          "weight": 10,
           "dimensions": {
-            "width": 16.59,
-            "height": 21.46,
-            "depth": 29.07
+            "width": 22.28,
+            "height": 17.81,
+            "depth": 27.18
           },
-          "warrantyInformation": "Lifetime warranty",
-          "shippingInformation": "Ships in 3-5 business days",
+          "warrantyInformation": "No warranty",
+          "shippingInformation": "Ships in 2 weeks",
           "availabilityStatus": "In Stock",
           "reviews": [
             {
-              "rating": 4,
-              "comment": "Very happy with my purchase!",
+              "rating": 5,
+              "comment": "Great value for money!",
               "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Leah Gutierrez",
-              "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
+              "reviewerName": "Aria Parker",
+              "reviewerEmail": "aria.parker@x.dummyjson.com"
             },
             {
               "rating": 4,
-              "comment": "Would buy again!",
+              "comment": "Excellent quality!",
               "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Nolan Gonzalez",
-              "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+              "reviewerName": "Natalie Harris",
+              "reviewerEmail": "natalie.harris@x.dummyjson.com"
             },
             {
-              "rating": 2,
-              "comment": "Waste of money!",
+              "rating": 4,
+              "comment": "Fast shipping!",
               "date": "2024-05-23T08:56:21.620Z",
-              "reviewerName": "Stella Morris",
-              "reviewerEmail": "stella.morris@x.dummyjson.com"
+              "reviewerName": "Ava Harris",
+              "reviewerEmail": "ava.harris@x.dummyjson.com"
             }
           ],
-          "returnPolicy": "30 days return policy",
-          "minimumOrderQuantity": 5,
+          "returnPolicy": "No return policy",
+          "minimumOrderQuantity": 10,
           "meta": {
             "createdAt": "2024-05-23T08:56:21.620Z",
             "updatedAt": "2024-05-23T08:56:21.620Z",
-            "barcode": "0726316339746",
+            "barcode": "8232190382069",
             "qrCode": "https://dummyjson.com/public/qr-code.png"
           },
           "images": [
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/2.png",
-            "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/3.png"
+            "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/1.png",
+            "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/2.png",
+            "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/3.png"
           ],
-          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png",
+          "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/thumbnail.png",
           "quantity": 1,
           "user": "dd38"
         }
       ],
-      "totalAmount": 499.99,
+      "totalAmount": 79.99,
       "totalItems": 1,
       "user": {
         "id": "dd38",
         "name": "Ali",
         "email": "ali@gmail.com",
         "password": "Ali121212",
+        "role": "admin",
         "addresses": [
           {
             "name": "Ghulam Ali",
@@ -7398,6 +6814,599 @@
             "pinCode": "78100",
             "phone": "03331212124",
             "street": "Mohalla Ghareeb Abad Shikarpur"
+          },
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Ghulam Ali Soomro",
+        "email": "ghulamalisoomro@gmail.com",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "78100",
+        "phone": "03331212124",
+        "street": "Mohalla Ghareeb Abad Shikarpur"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "d2f1",
+      "items": [
+        {
+          "id": "79",
+          "title": "Asus Zenbook Pro Dual Screen Laptop",
+          "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
+          "category": "laptops",
+          "price": 1799.99,
+          "discountPercentage": 9.21,
+          "rating": 3.14,
+          "stock": 38,
+          "tags": [
+            "laptops"
+          ],
+          "brand": "Asus",
+          "sku": "4A9KFMBG",
+          "weight": 8,
+          "dimensions": {
+            "width": 19.67,
+            "height": 11.05,
+            "depth": 14.32
+          },
+          "warrantyInformation": "No warranty",
+          "shippingInformation": "Ships in 3-5 business days",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "Jack Ward",
+              "reviewerEmail": "jack.ward@x.dummyjson.com"
+            },
+            {
+              "rating": 1,
+              "comment": "Very disappointed!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "Ava Harris",
+              "reviewerEmail": "ava.harris@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Great value for money!",
+              "date": "2024-05-23T08:56:21.622Z",
+              "reviewerName": "Brayden Fleming",
+              "reviewerEmail": "brayden.fleming@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "No return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.622Z",
+            "updatedAt": "2024-05-23T08:56:21.622Z",
+            "barcode": "2899455033799",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png",
+            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/2.png",
+            "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/thumbnail.png",
+          "quantity": 2,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 3599.98,
+      "totalItems": 2,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Ghulam Ali Soomro",
+            "email": "ghulamalisoomro@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212124",
+            "street": "Mohalla Ghareeb Abad Shikarpur"
+          },
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Ghulam Ali Soomro",
+        "email": "ghulamalisoomro@gmail.com",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "78100",
+        "phone": "03331212124",
+        "street": "Mohalla Ghareeb Abad Shikarpur"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "de51",
+      "items": [
+        {
+          "id": "8",
+          "title": "Dior J'adore",
+          "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
+          "category": "fragrances",
+          "price": 89.99,
+          "discountPercentage": 17.44,
+          "rating": 3.31,
+          "stock": 91,
+          "tags": [
+            "fragrances",
+            "perfumes"
+          ],
+          "brand": "Dior",
+          "sku": "E70NB03B",
+          "weight": 10,
+          "dimensions": {
+            "width": 21.51,
+            "height": 7,
+            "depth": 26.51
+          },
+          "warrantyInformation": "Lifetime warranty",
+          "shippingInformation": "Ships in 2 weeks",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Fast shipping!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Zoe Nicholson",
+              "reviewerEmail": "zoe.nicholson@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Excellent quality!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Addison Wright",
+              "reviewerEmail": "addison.wright@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Would buy again!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Clara Berry",
+              "reviewerEmail": "clara.berry@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 8,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.619Z",
+            "updatedAt": "2024-05-23T08:56:21.619Z",
+            "barcode": "0887083199279",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/1.png",
+            "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/2.png",
+            "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 89.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Ghulam Ali Soomro",
+            "email": "ghulamalisoomro@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212124",
+            "street": "Mohalla Ghareeb Abad Shikarpur"
+          },
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Ghulam Ali Soomro",
+        "email": "ghulamalisoomro@gmail.com",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "78100",
+        "phone": "03331212124",
+        "street": "Mohalla Ghareeb Abad Shikarpur"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "9367",
+      "items": [
+        {
+          "id": "16",
+          "title": "Apple",
+          "description": "Fresh and crisp apples, perfect for snacking or incorporating into various recipes.",
+          "category": "groceries",
+          "price": 1.99,
+          "discountPercentage": 1.97,
+          "rating": 2.96,
+          "stock": 9,
+          "tags": [
+            "fruits"
+          ],
+          "sku": "QTROUV79",
+          "weight": 8,
+          "dimensions": {
+            "width": 8.29,
+            "height": 5.58,
+            "depth": 12.41
+          },
+          "warrantyInformation": "2 year warranty",
+          "shippingInformation": "Ships in 2 weeks",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Great product!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Logan Lee",
+              "reviewerEmail": "logan.lee@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Great product!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Elena Long",
+              "reviewerEmail": "elena.long@x.dummyjson.com"
+            },
+            {
+              "rating": 1,
+              "comment": "Not as described!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Grayson Coleman",
+              "reviewerEmail": "grayson.coleman@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "60 days return policy",
+          "minimumOrderQuantity": 44,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.620Z",
+            "updatedAt": "2024-05-23T08:56:21.620Z",
+            "barcode": "2517819903837",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/groceries/Apple/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Apple/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 1.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Ghulam Ali Soomro",
+            "email": "ghulamalisoomro@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212124",
+            "street": "Mohalla Ghareeb Abad Shikarpur"
+          },
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Ghulam Ali Soomro",
+        "email": "ghulamalisoomro@gmail.com",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "78100",
+        "phone": "03331212124",
+        "street": "Mohalla Ghareeb Abad Shikarpur"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "d144",
+      "items": [
+        {
+          "id": "43",
+          "title": "Decoration Swing",
+          "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+          "category": "home-decoration",
+          "price": 59.99,
+          "discountPercentage": 0.65,
+          "rating": 3.56,
+          "stock": 62,
+          "tags": [
+            "home decor",
+            "swing"
+          ],
+          "sku": "MBEK52ST",
+          "weight": 8,
+          "dimensions": {
+            "width": 20.75,
+            "height": 11.18,
+            "depth": 7.92
+          },
+          "warrantyInformation": "Lifetime warranty",
+          "shippingInformation": "Ships in 2 weeks",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Highly recommended!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Aria Roberts",
+              "reviewerEmail": "aria.roberts@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Highly impressed!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Caleb Perkins",
+              "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Great product!",
+              "date": "2024-05-23T08:56:21.621Z",
+              "reviewerName": "Aria Roberts",
+              "reviewerEmail": "aria.roberts@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 2,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.621Z",
+            "updatedAt": "2024-05-23T08:56:21.621Z",
+            "barcode": "6434699988216",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/2.png",
+            "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 59.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Ghulam Ali Soomro",
+            "email": "ghulamalisoomro@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212124",
+            "street": "Mohalla Ghareeb Abad Shikarpur"
+          },
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Ghulam Ali Soomro",
+        "email": "ghulamalisoomro@gmail.com",
+        "city": "Shikarpur",
+        "state": "Sindh",
+        "pinCode": "78100",
+        "phone": "03331212124",
+        "street": "Mohalla Ghareeb Abad Shikarpur"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "dffa",
+      "items": [
+        {
+          "id": "12",
+          "title": "Annibale Colombo Sofa",
+          "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+          "category": "furniture",
+          "price": 2499.99,
+          "discountPercentage": 18.54,
+          "rating": 3.08,
+          "stock": 16,
+          "tags": [
+            "furniture",
+            "sofas"
+          ],
+          "brand": "Annibale Colombo",
+          "sku": "LUU95CQP",
+          "weight": 3,
+          "dimensions": {
+            "width": 20.97,
+            "height": 19.11,
+            "depth": 25.81
+          },
+          "warrantyInformation": "1 month warranty",
+          "shippingInformation": "Ships overnight",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Tyler Davis",
+              "reviewerEmail": "tyler.davis@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Excellent quality!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Hannah Robinson",
+              "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+            },
+            {
+              "rating": 3,
+              "comment": "Waste of money!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Madison Collins",
+              "reviewerEmail": "madison.collins@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.620Z",
+            "updatedAt": "2024-05-23T08:56:21.620Z",
+            "barcode": "0426785817074",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+          "quantity": 1,
+          "user": "dd38"
+        }
+      ],
+      "totalAmount": 2499.99,
+      "totalItems": 1,
+      "user": {
+        "id": "dd38",
+        "name": "Ali",
+        "email": "ali@gmail.com",
+        "password": "Ali121212",
+        "role": "admin",
+        "addresses": [
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100"
+          },
+          {
+            "name": "Ghulam Ali Soomro",
+            "email": "ghulamalisoomro@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212124",
+            "street": "Mohalla Ghareeb Abad Shikarpur"
+          },
+          {
+            "name": "Ghulam Ali",
+            "email": "ghulamali@gmail.com",
+            "city": "Shikarpur",
+            "state": "Sindh",
+            "pinCode": "78100",
+            "phone": "03331212123",
+            "street": "Mohalla Saddar Near Sachal Medical Store Shikarpur"
           }
         ]
       },
