@@ -357,7 +357,7 @@ const Checkout = () => {
           </div>
           {/* cart summery */}
           {/* <div className="lg:col-span-2 lg:fixed lg:right-10 xl:right-80"> */}
-          <div className="lg:col-span-2 ">
+          <div className="lg:col-span-2">
             <div className="mt-12 bg-white mx-auto max-w-7xl px-3 sm:px-3 lg:px-3">
               <div className="border-t border-gray-200 px-0 py-6 sm:px-0">
                 <h1 className="text-4xl my-6 font-bold tracking-tight text-gray-900">

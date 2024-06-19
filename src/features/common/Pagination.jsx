@@ -1,9 +1,9 @@
-import { ITEMS_PER_PAGE } from "../../../app/constant";
+import React from "react";
+import { ITEMS_PER_PAGE } from "../../../src/app/constant";
 import { FaChevronDown, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import React from "react";
-
-const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
+// const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
+const Pagination = ({ page, setPage, handlePage, totalItems }) => {
   return (
     <>
       <div className="flex flex-1 justify-between sm:hidden">

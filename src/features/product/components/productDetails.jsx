@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
-// import { StarIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductByIdAsync, selectedProductById } from "../productSlice";
 import { useParams } from "react-router-dom";
-import { addToCartAsync } from "../../cart/cartSlice";
+import { addToCartAsync, selectCart } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import { selectUserInfo } from "../../user/userSlice";
 
 const colors = [
   { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
@@ -44,16 +42,19 @@ const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const product = useSelector(selectedProductById);
   const user = useSelector(selectLoggedInUser);
-  // const user = useSelector(selectUserInfo);
+  const items = useSelector(selectCart);
   const params = useParams();
   const dispatch = useDispatch();
 
   const handleCart = (e) => {
     e.preventDefault();
-    const newItem = { ...product, quantity: 1, user: user.id };
-    dispatch(addToCartAsync(newItem));
-    // dispatch(addToCartAsync({ ...product, quantity: 1, user: user.id }));
-    toast.success("Added to cart successfully!");
+    if (items.findIndex((item) => item.id === product.id) < 0) {
+      const newItem = { ...product, quantity: 1, user: user.id };
+      dispatch(addToCartAsync(newItem));
+      toast.success("Added to cart successfully!");
+    } else {
+      alert("Product is already added to cart");
+    }
   };
 
   useEffect(() => {

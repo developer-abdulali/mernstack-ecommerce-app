@@ -291,7 +291,6 @@ const UserProfile = () => {
                 noValidate
                 className="bg-white px-5 py-12"
                 onSubmit={handleSubmit((data) => {
-                  console.log(data);
                   handleEdit(data, index);
                 })}
               >

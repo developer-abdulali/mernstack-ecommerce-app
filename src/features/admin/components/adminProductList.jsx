@@ -33,7 +33,7 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import { Link } from "react-router-dom";
-import { ITEMS_PER_PAGE } from "../../../app/constant";
+import { ITEMS_PER_PAGE, discountedPrice } from "../../../app/constant";
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
@@ -78,18 +78,15 @@ export default function AdminProductList() {
       );
       newFilter[section.id].splice(index, 1);
     }
-    console.log({ newFilter });
     setFilter(newFilter);
   };
 
   const handleSort = (e, option) => {
     const sort = { _sort: option.sort, _order: option.order };
-    console.log({ sort });
     setSort(sort);
   };
 
   const handlePage = (page) => {
-    console.log({ page });
     setPage(page);
   };
 
@@ -500,7 +497,6 @@ const ProductGrid = ({ products }) => {
                     </div>
                     <div>
                       <p className="text-sm block font-medium text-gray-900">
-                        $
                         {Math.round(
                           product.price * (1 - product.discountPercentage / 100)
                         )}
