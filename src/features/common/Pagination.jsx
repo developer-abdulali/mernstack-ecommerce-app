@@ -44,7 +44,6 @@ const Pagination = ({ page, setPage, handlePage, totalItems }) => {
               <FaChevronLeft className="h-4 w-5" aria-hidden="true" />
             </div>
             {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }).map(
-              // {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }).map(
               (el, index) => (
                 <div
                   key={index + 1}
