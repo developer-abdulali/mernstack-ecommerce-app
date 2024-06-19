@@ -9,14 +9,7 @@ import {
   fetchBrandsAsync,
 } from "../productSlice";
 import classNames from "classnames";
-import {
-  FaChevronDown,
-  FaChevronLeft,
-  FaChevronRight,
-  FaMinus,
-  FaPlus,
-  FaStar,
-} from "react-icons/fa";
+import { FaChevronDown, FaMinus, FaPlus, FaStar } from "react-icons/fa";
 import { BsFillFunnelFill } from "react-icons/bs";
 import { HiMiniSquares2X2, HiMiniXMark } from "react-icons/hi2";
 import {
@@ -33,8 +26,7 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import { Link } from "react-router-dom";
-import { ITEMS_PER_PAGE } from "../../../app/constant";
-// import Pagination from "../../common/Pagination";
+import Pagination from "../../common/Pagination";
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
   { name: "Price: Low to High", sort: "price", order: "asc", current: false },
@@ -49,8 +41,18 @@ export default function ProductList() {
   const categories = useSelector(selectCategories);
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [ordersPerPage] = useState(10);
 
+  // Calculate indexes for pagination
+  const indexOfLastOrder = currentPage * ordersPerPage;
+  const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
+  const currentProducts = products.slice(indexOfFirstOrder, indexOfLastOrder);
+
+  // Handle page change
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
   const filters = [
     {
       id: "category",
@@ -86,14 +88,14 @@ export default function ProductList() {
     setSort(sort);
   };
 
-  const handlePage = (page) => {
-    setPage(page);
-  };
+  // const handlePage = (page) => {
+  //   setPage(page);
+  // };
 
   useEffect(() => {
-    const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
-    dispatch(fetchAllProductsByFilterAsync({ filter, sort, pagination }));
-  }, [dispatch, filter, sort, page]);
+    // const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
+    dispatch(fetchAllProductsByFilterAsync({ filter, sort }));
+  }, [dispatch, filter, sort]);
 
   useEffect(() => {
     dispatch(fetchCategoriesAsync());
@@ -190,7 +192,7 @@ export default function ProductList() {
 
             {/* Product grid start */}
             <div className="lg:col-span-3">
-              <ProductGrid products={products} />
+              <ProductGrid currentProducts={currentProducts} />
             </div>
             {/* Product grid end */}
           </div>
@@ -198,7 +200,12 @@ export default function ProductList() {
         {/* section of product and filter ends */}
 
         <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-          <Pagination page={page} setPage={setPage} handlePage={handlePage} />
+          <Pagination
+            page={currentPage}
+            setPage={setCurrentPage}
+            handlePage={handlePageChange}
+            totalItems={products.length}
+          />
         </div>
       </main>
     </div>
@@ -382,101 +389,12 @@ const MobileFilters = ({
   );
 };
 
-const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
-  return (
-    <>
-      <div className="flex flex-1 justify-between sm:hidden">
-        <div
-          onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
-          className="relative inline-flex cursor-pointer items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-        >
-          Previous
-        </div>
-        <div
-          onClick={(e) => handlePage(page < 1 ? page - 1 : page)}
-          className="relative ml-3 inline-flex cursor-pointer items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-        >
-          Next
-        </div>
-      </div>
-      <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-        <div>
-          <p className="text-sm text-gray-700">
-            Showing{" "}
-            <span className="font-medium">
-              {(page - 1) * ITEMS_PER_PAGE + 1}
-            </span>{" "}
-            to <span className="font-medium">{page * ITEMS_PER_PAGE} </span> of{" "}
-            <span className="font-medium">{totalItems}</span> results
-          </p>
-        </div>
-        <div>
-          <nav
-            className="isolate inline-flex -space-x-px rounded-md shadow-sm"
-            aria-label="Pagination"
-          >
-            <div
-              onClick={() => handlePage(page > 1 ? page - 1 : page)}
-              // onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
-              className="relative cursor-pointer inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 hover:bg-gray-50 focus:z-20"
-            >
-              <span className="sr-only">Previous</span>
-              <FaChevronLeft className="h-4 w-5" aria-hidden="true" />
-            </div>
-            {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }).map(
-              (el, index) => (
-                <div
-                  key={index + 1}
-                  onClick={() => handlePage(index + 1)}
-                  aria-current="page"
-                  className={`relative cursor-pointer z-10 inline-flex items-center ${
-                    index + 1 === page
-                      ? "bg-indigo-600 text-white"
-                      : "text-gray-400"
-                  } px-4 py-2 text-sm font-semibold focus:z-20 `}
-                >
-                  {index + 1}
-                </div>
-              )
-            )}
-            {/* {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }).map(
-              // {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }).map(
-              (el, index) => (
-                <div
-                  key={index + 1}
-                  onClick={(e) => handlePage(index + 1)}
-                  aria-current="page"
-                  className={`relative cursor-pointer z-10 inline-flex items-center ${
-                    index + 1 === page
-                      ? "bg-indigo-600 text-white"
-                      : "text-gray-400"
-                  } px-4 py-2 text-sm font-semibold focus:z-20 `}
-                >
-                  {index + 1}
-                </div>
-              )
-            )} */}
-
-            <div
-              onClick={() => handlePage(page < totalItems ? page + 1 : page)}
-              // onClick={(e) => handlePage(page < totalItems ? page + 1 : page)}
-              className="relative cursor-pointer inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 hover:bg-gray-50 focus:z-20"
-            >
-              <span className="sr-only">Next</span>
-              <FaChevronRight className="h-4 w-4" aria-hidden="true" />
-            </div>
-          </nav>
-        </div>
-      </div>
-    </>
-  );
-};
-const ProductGrid = ({ products }) => {
+const ProductGrid = ({ currentProducts }) => {
   return (
     <>
       <div className="mx-auto bg-white max-w-2xl px-4 py-16 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {products?.map((product) => (
+          {currentProducts.map((product) => (
             <Link to={`/product-details/${product.id}`}>
               <div
                 key={product.id}

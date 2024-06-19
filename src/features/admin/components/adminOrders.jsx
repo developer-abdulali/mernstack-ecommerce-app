@@ -245,9 +245,9 @@ import { FaChevronUp, FaChevronDown } from "react-icons/fa6";
 
 const AdminOrders = () => {
   const [editableOrderId, setEditableOrderId] = useState(-1);
-  const [currentPage, setCurrentPage] = useState(1);
   const [sort, setSort] = useState({});
-  const [ordersPerPage] = useState(10); // Number of orders per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const [ordersPerPage] = useState(10);
   const dispatch = useDispatch();
   const orders = useSelector(selectOrders);
   const totalOrders = useSelector(selectTotalOrders);
