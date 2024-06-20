@@ -1,8 +1,7 @@
 import React from "react";
 import { ITEMS_PER_PAGE } from "../../../src/app/constant";
-import { FaChevronDown, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-// const Pagination = ({ page, setPage, handlePage, totalItems = 55 }) => {
 const Pagination = ({ page, setPage, handlePage, totalItems }) => {
   return (
     <>
