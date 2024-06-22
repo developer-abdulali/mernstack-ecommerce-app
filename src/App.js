@@ -155,7 +155,7 @@ function App() {
       dispatch(fetchItemsByUserIdAsync(user.id));
       dispatch(fetchLoggedInUserAsync(user.id));
     }
-  }, [dispatch]);
+  }, [dispatch, user]);
   return (
     <div className="App">
       <RouterProvider router={router} />

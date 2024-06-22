@@ -5364,12 +5364,6 @@
   ],
   "brands": [
     {
-      "value": "Apple",
-      "label": "Apple",
-      "checked": false,
-      "id": "76cd"
-    },
-    {
       "value": "Samsung",
       "label": "Samsung",
       "checked": false,

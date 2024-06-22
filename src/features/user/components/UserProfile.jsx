@@ -244,7 +244,7 @@ const UserProfile = () => {
                 </p>
 
                 <ul>
-                  {user.addresses.map((address, index) => (
+                  {user.addresses?.map((address, index) => (
                     <li
                       key={index}
                       className="flex justify-between gap-x-6 py-5 border my-2 px-3"
@@ -284,7 +284,7 @@ const UserProfile = () => {
           </form>
         ) : null}
         <p className="mt-0.5 text-sm text-gray-500">Your Addresses :</p>
-        {user.addresses.map((address, index) => (
+        {user.addresses?.map((address, index) => (
           <div>
             {selectedEditIndex === index ? (
               <form
@@ -464,7 +464,7 @@ const UserProfile = () => {
 
                     {/* <ul role="list"> */}
                     <ul>
-                      {user.addresses.map((address, index) => (
+                      {user.addresses?.map((address, index) => (
                         <li
                           key={index}
                           className="flex justify-between gap-x-6 py-5 border my-2 px-3"
