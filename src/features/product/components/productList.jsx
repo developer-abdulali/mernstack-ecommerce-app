@@ -27,6 +27,8 @@ import {
 } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import Pagination from "../../common/Pagination";
+import Skeleton from "./ProductSkeleton";
+import ProductSkeleton from "./ProductSkeleton";
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
   { name: "Price: Low to High", sort: "price", order: "asc", current: false },
@@ -43,6 +45,7 @@ export default function ProductList() {
   const [sort, setSort] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [ordersPerPage] = useState(10);
+  const [loading, setLoading] = useState(false);
 
   // Calculate indexes for pagination
   const indexOfLastOrder = currentPage * ordersPerPage;
@@ -92,11 +95,23 @@ export default function ProductList() {
   // const handlePage = (page) => {
   //   setPage(page);
   // };
-
   useEffect(() => {
-    // const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
-    dispatch(fetchAllProductsByFilterAsync({ filter, sort }));
+    setLoading(true);
+    dispatch(fetchAllProductsByFilterAsync({ filter, sort }))
+      .then(() => {
+        setLoading(false); // Set loading to false after products are fetched
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false); // Set loading to false even if there's an error
+      });
   }, [dispatch, filter, sort]);
+
+  // useEffect(() => {
+  //   // const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
+  //   dispatch(fetchAllProductsByFilterAsync({ filter, sort }));
+  //   setLoading(true);
+  // }, [dispatch, filter, sort]);
 
   useEffect(() => {
     dispatch(fetchCategoriesAsync());
@@ -182,7 +197,7 @@ export default function ProductList() {
           </div>
         </div>
 
-        <section aria-labelledby="products-heading" className="pb-24 pt-6">
+        <section aria-labelledby="products-heading" className="pb-24">
           <h2 id="products-heading" className="sr-only">
             Products
           </h2>
@@ -193,7 +208,13 @@ export default function ProductList() {
 
             {/* Product grid start */}
             <div className="lg:col-span-3">
-              <ProductGrid currentProducts={currentProducts} />
+              {loading ? (
+                <div>
+                  <ProductSkeleton />
+                </div>
+              ) : (
+                <ProductGrid currentProducts={currentProducts} />
+              )}
             </div>
             {/* Product grid end */}
           </div>

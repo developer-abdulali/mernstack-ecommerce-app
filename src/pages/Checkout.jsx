@@ -26,7 +26,7 @@ const Checkout = () => {
   const items = useSelector(selectCart);
   const currentOrder = useSelector(selectCurrentOrder);
   const totalAmount = items.reduce(
-    (amount, item) => item.price * item.quantity + amount,
+    (amount, item) => item.product?.price * item?.quantity + amount,
     0
   );
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
@@ -43,7 +43,7 @@ const Checkout = () => {
     dispatch(
       updateUserAsync({
         ...user,
-        addresses: [...user.addresses, data],
+        addresses: [...(user?.addresses || []), data],
       })
     )
       .then(() => {
@@ -54,8 +54,9 @@ const Checkout = () => {
         toast.error(error || "Failed to add address.");
       });
   };
+
   const handleAddress = (e) => {
-    setSelectedAddress(user.addresses[e.target.value]);
+    setSelectedAddress(user?.addresses[e.target.value]);
   };
   const handlePayment = (e) => {
     setPaymentMethod(e.target.value);
@@ -66,7 +67,7 @@ const Checkout = () => {
         items,
         totalAmount,
         totalItems,
-        user,
+        user: user.id,
         paymentMethod,
         selectedAddress,
         status: "pending",
@@ -78,8 +79,13 @@ const Checkout = () => {
     }
   };
   const handleQuantity = (e, item) => {
-    dispatch(updateItemsAsync({ ...item, quantity: +e.target.value }));
+    dispatch(updateItemsAsync({ id: item.id, quantity: +e.target.value }));
   };
+
+  // const handleQuantity = (e, item) => {
+  //   dispatch(updateItemsAsync({ id: item.id, quantity: +e.target.value }));
+  //   // dispatch(updateItemsAsync({ ...item, quantity: +e.target.value }));
+  // };
   const handleRemove = (e, id) => {
     dispatch(deleteItemsFromCartAsync(id));
     toast.success("Item removed successfully!");
@@ -265,10 +271,8 @@ const Checkout = () => {
                   <p className="mt-1 text-sm leading-6 text-gray-600">
                     Choose from existing address
                   </p>
-
-                  {/* <ul role="list"> */}
                   <ul>
-                    {user.addresses.map((address, index) => (
+                    {user?.addresses?.map((address, index) => (
                       <li
                         key={index}
                         className="flex justify-between gap-x-6 py-5 border my-2 px-3"
@@ -364,13 +368,14 @@ const Checkout = () => {
                   Cart
                 </h1>
                 <div className="flow-root">
-                  <ul role="list" className="-my-6 divide-y divide-gray-200">
+                  <ul className="-my-6 divide-y divide-gray-200">
                     {items.map((item) => (
                       <li key={item.id} className="flex py-6">
                         <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                           <img
-                            src={item.thumbnail}
-                            alt={item.title}
+                            src={item.product.thumbnail}
+                            // src={item.thumbnail}
+                            alt={item.product.title}
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
@@ -378,11 +383,12 @@ const Checkout = () => {
                         <div className="ml-4 flex flex-1 flex-col">
                           <div>
                             <div className="flex justify-between text-base font-medium text-gray-900">
-                              <h3>{item.title}</h3>
-                              <p className="ml-4">${item.price}</p>
+                              <h3>{item.product.title}</h3>
+                              <p className="ml-4">${item.product.price}</p>
+                              {/* <p className="ml-4">${item.price}</p> */}
                             </div>
                             <p className="mt-1 text-sm text-gray-500">
-                              {item.brand}
+                              {item.product.brand}
                             </p>
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">

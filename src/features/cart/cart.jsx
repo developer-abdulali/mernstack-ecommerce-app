@@ -13,15 +13,18 @@ const Cart = () => {
   const [open, setOpen] = useState(true);
   const items = useSelector(selectCart);
   const totalAmount = items.reduce(
-    (amount, item) => item.price * item.quantity + amount,
+    (amount, item) => item.product?.price * item.quantity + amount,
     0
   );
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
   const dispatch = useDispatch();
-
   const handleQuantity = (e, item) => {
-    dispatch(updateItemsAsync({ ...item, quantity: +e.target.value }));
+    dispatch(updateItemsAsync({ id: item.id, quantity: +e.target.value }));
   };
+
+  // const handleQuantity = (e, item) => {
+  //   dispatch(updateItemsAsync({ ...item, quantity: +e.target.value }));
+  // };
   const handleRemove = (e, id) => {
     dispatch(deleteItemsFromCartAsync(id));
     toast.success("Item removed successfully!");
@@ -41,8 +44,8 @@ const Cart = () => {
                 <li key={item.id} className="flex py-6">
                   <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                     <img
-                      src={item.thumbnail}
-                      alt={item.title}
+                      src={item?.product?.thumbnail}
+                      alt={item?.product?.title}
                       className="h-full w-full object-cover object-center"
                     />
                   </div>
@@ -50,10 +53,12 @@ const Cart = () => {
                   <div className="ml-4 flex flex-1 flex-col">
                     <div>
                       <div className="flex justify-between text-base font-medium text-gray-900">
-                        <h3>{item.title}</h3>
-                        <p className="ml-4">${item.price}</p>
+                        <h3>{item.product?.title}</h3>
+                        <p className="ml-4">${item.product?.price}</p>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500">{item.brand}</p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        {item.product?.brand}
+                      </p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
                       <div className="text-gray-500">
@@ -65,7 +70,7 @@ const Cart = () => {
                         </label>
                         <select
                           onChange={(e) => handleQuantity(e, item)}
-                          value={item.quantity}
+                          value={item?.quantity}
                         >
                           <option value="1">1</option>
                           <option value="2">2</option>

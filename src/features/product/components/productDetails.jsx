@@ -48,8 +48,8 @@ const ProductDetails = () => {
 
   const handleCart = (e) => {
     e.preventDefault();
-    if (items.findIndex((item) => item.id === product.id) < 0) {
-      const newItem = { ...product, quantity: 1, user: user.id };
+    if (items.findIndex((item) => item.product.id === product.id) < 0) {
+      const newItem = { product: product.id, quantity: 1, user: user.id };
       dispatch(addToCartAsync(newItem));
       toast.success("Added to cart successfully!");
     } else {

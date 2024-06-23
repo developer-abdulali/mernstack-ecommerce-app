@@ -41,7 +41,11 @@ const UserProfile = () => {
     setValue("street", address.street);
   };
   const handleAdd = (address) => {
-    const newUser = { ...user, addresses: [...user.addresses, address] };
+    const newUser = {
+      ...user,
+      addresses: [...(user?.addresses || []), address],
+    };
+    // const newUser = { ...user, addresses: [...user.addresses, address] };
     dispatch(updateUserAsync(newUser));
     setShowAddAddressForm(false);
   };
