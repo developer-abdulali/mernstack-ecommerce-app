@@ -57,7 +57,7 @@ const Navbar = ({ children }) => {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) =>
-                          item[user.role] ? (
+                          item[user?.role] ? (
                             <Link
                               key={item.name}
                               to={item.link}
@@ -103,7 +103,7 @@ const Navbar = ({ children }) => {
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
-                              src={user.imageUrl}
+                              src={user?.imageUrl}
                               alt=""
                             />
                           </MenuButton>
@@ -179,16 +179,16 @@ const Navbar = ({ children }) => {
                     <div className="flex-shrink-0">
                       <img
                         className="h-10 w-10 rounded-full"
-                        src={user.imageUrl}
+                        src={user?.imageUrl}
                         alt=""
                       />
                     </div>
                     <div className="ml-3">
                       <div className="text-base font-medium leading-none text-white">
-                        {user.name}
+                        {user?.name}
                       </div>
                       <div className="text-sm font-medium leading-none text-gray-400">
-                        {user.email}
+                        {user?.email}
                       </div>
                     </div>
                     <Link

@@ -15,23 +15,23 @@ const UserProfile = () => {
     setValue,
     formState: { errors },
   } = useForm();
-  const user = useSelector(selectLoggedInUser);
+  const userInfo = useSelector(selectLoggedInUser);
   // const user = useSelector(selectUserInfo);
 
   const handleEdit = (addressUpdate, index) => {
-    const newUser = { ...user, addresses: [...user.addresses] };
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses] };
     newUser.addresses.splice(index, 1, addressUpdate);
     dispatch(updateUserAsync(newUser));
     setSelectedEditIndex(-1);
   };
   const handleRemove = (e, index) => {
-    const newUser = { ...user, addresses: [...user.addresses] };
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses] };
     newUser.addresses.splice(index, 1);
     dispatch(updateUserAsync(newUser));
   };
   const handleEditForm = (index) => {
     setSelectedEditIndex(index);
-    const address = user.addresses[index];
+    const address = userInfo.addresses[index];
     setValue("name", address.name);
     setValue("email", address.email);
     setValue("city", address.city);
@@ -42,8 +42,8 @@ const UserProfile = () => {
   };
   const handleAdd = (address) => {
     const newUser = {
-      ...user,
-      addresses: [...(user?.addresses || []), address],
+      ...userInfo,
+      addresses: [...(userInfo?.addresses || []), address],
     };
     // const newUser = { ...user, addresses: [...user.addresses, address] };
     dispatch(updateUserAsync(newUser));
@@ -54,14 +54,14 @@ const UserProfile = () => {
     <div className="mt-12 bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
         <h1 className="text-4xl my-6 font-bold tracking-tight text-gray-900">
-          Name : {user.name ? user.name : "New user"}
+          Name : {userInfo?.name ? userInfo?.name : "New user"}
         </h1>
         <h3 className="text-xl my-6 font-bold tracking-tight text-red-900">
-          Email Address: {user.email}
+          Email Address: {userInfo?.email}
         </h3>
-        {user.role === "admin" && (
+        {userInfo?.role === "admin" && (
           <h3 className="text-xl my-6 font-bold tracking-tight text-red-900">
-            Role: {user.role}
+            Role: {userInfo?.role}
           </h3>
         )}
       </div>
@@ -82,7 +82,6 @@ const UserProfile = () => {
             noValidate
             className="bg-white px-5 py-12"
             onSubmit={handleSubmit((data) => {
-              console.log(data);
               handleAdd(data);
             })}
           >
@@ -248,7 +247,7 @@ const UserProfile = () => {
                 </p>
 
                 <ul>
-                  {user.addresses?.map((address, index) => (
+                  {userInfo?.addresses?.map((address, index) => (
                     <li
                       key={index}
                       className="flex justify-between gap-x-6 py-5 border my-2 px-3"
@@ -262,22 +261,22 @@ const UserProfile = () => {
                         />
                         <div className="min-w-0 flex-auto">
                           <p className="text-sm font-semibold leading-6 text-gray-900">
-                            {address.name}
+                            {address?.name}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                            {address.street}
+                            {address?.street}
                           </p>
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                            {address.pinCode}
+                            {address?.pinCode}
                           </p>
                         </div>
                       </div>
                       <div className="hidden sm:flex sm:flex-col sm:items-end">
                         <p className="mt-1 truncate text-xs leading-5 text-gray-900">
-                          Phone: {address.phone}
+                          Phone: {address?.phone}
                         </p>
                         <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                          {address.city}
+                          {address?.city}
                         </p>
                       </div>
                     </li>
@@ -288,8 +287,8 @@ const UserProfile = () => {
           </form>
         ) : null}
         <p className="mt-0.5 text-sm text-gray-500">Your Addresses :</p>
-        {user.addresses?.map((address, index) => (
-          <div>
+        {userInfo?.addresses?.map((address, index) => (
+          <div key={index}>
             {selectedEditIndex === index ? (
               <form
                 noValidate
@@ -466,9 +465,8 @@ const UserProfile = () => {
                       Choose from existing address
                     </p>
 
-                    {/* <ul role="list"> */}
                     <ul>
-                      {user.addresses?.map((address, index) => (
+                      {userInfo?.addresses?.map((address, index) => (
                         <li
                           key={index}
                           className="flex justify-between gap-x-6 py-5 border my-2 px-3"
