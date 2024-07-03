@@ -78,7 +78,7 @@ const Navigation = () => {
           className="flex items-center transition-transform transform hover:translate-x-2"
         >
           <FaHeart className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
+          <span className="hidden nav-item-name mt-[3rem]">FAVORITE</span>{" "}
         </Link>
       </div>
 
@@ -104,10 +104,10 @@ const Navigation = () => {
         {dropDownOpen && userInfo && (
           <ul
             className={`absolute right-0 mt-2 mr-14 space-y-2 bg-black text-gray-600 ${
-              !userInfo.isAdmin ? "-top-20" : "-top-80"
+              !userInfo?.isAdmin ? "-top-20" : "-top-80"
             } `}
           >
-            {userInfo.isAdmin && (
+            {userInfo?.isAdmin && (
               <>
                 <li>
                   <Link
