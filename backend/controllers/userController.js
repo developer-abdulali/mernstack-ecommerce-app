@@ -50,6 +50,7 @@ export const loginUser = asyncHandler(async (req, res) => {
         username: userExisting.username,
         email: userExisting.email,
         isAdmin: userExisting.isAdmin,
+        message: "Logged in successfully",
       });
       return;
     }

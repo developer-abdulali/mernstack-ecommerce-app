@@ -22,7 +22,7 @@ export const authenticate = asyncHandler(async (req, res, next) => {
   }
 });
 
-export const authrizeAdmin = (req, res, next) => {
+export const authorizeAdmin = (req, res, next) => {
   if (req.user && req.user.isAdmin) {
     next();
   } else {
