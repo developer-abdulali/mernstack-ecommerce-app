@@ -7,11 +7,28 @@ import { createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import Login from "./pages/Auth/Login.jsx";
+import Register from "./pages/Auth/Register.jsx";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
+import Profile from "./pages/User/Profile.jsx";
+import AdminRoute from "./pages/Admin/AdminRoutes.jsx";
+import UserList from "./pages/Admin/UserList.jsx";
+import PageNotFound from "./components/PageNotFound/404.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
+      <Route path="*" element={<PageNotFound />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="/profile" element={<Profile />} />
+      </Route>
+
+      {/* admin routes */}
+      <Route path="/admin" element={<AdminRoute />}>
+        <Route path="userlist" element={<UserList />} />
+      </Route>
     </Route>
   )
 );

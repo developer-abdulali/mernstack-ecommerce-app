@@ -10,7 +10,7 @@ import {
 import { FaChevronDown, FaHeart } from "react-icons/fa";
 import "./Navigation.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useLoginMutation } from "../../redux/api/usersApiSlice";
+import { useLogoutMutation } from "../../redux/api/usersApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
 
 const Navigation = () => {
@@ -31,7 +31,7 @@ const Navigation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [logoutApiCall] = useLoginMutation();
+  const [logoutApiCall] = useLogoutMutation();
 
   const logoutHandler = async () => {
     try {
@@ -100,9 +100,97 @@ const Navigation = () => {
             />
           )}
         </button>
+
+        {dropDownOpen && userInfo && (
+          <ul
+            className={`absolute right-0 mt-2 mr-14 space-y-2 bg-black text-gray-600 ${
+              !userInfo.isAdmin ? "-top-20" : "-top-80"
+            } `}
+          >
+            {userInfo.isAdmin && (
+              <>
+                <li>
+                  <Link
+                    to="/admin/dashboard"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Dashboard
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/productlist"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/categorylist"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Category
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/orderlist"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/userlist"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Users
+                  </Link>
+                </li>
+              </>
+            )}
+            <li>
+              <Link to="/profile" className="block px-4 py-2 hover:bg-gray-100">
+                Profile
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={logoutHandler}
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        )}
       </div>
 
-      <ul>
+      {!userInfo && (
+        <ul>
+          <li>
+            <Link
+              to="/login"
+              className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+            >
+              <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
+              <span className="hidden nav-item-name">LOGIN</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/register"
+              className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+            >
+              <AiOutlineUserAdd size={26} />
+              <span className="hidden nav-item-name">REGISTER</span>
+            </Link>
+          </li>
+        </ul>
+      )}
+      {/* <ul>
         <li>
           <Link
             to="/login"
@@ -123,7 +211,7 @@ const Navigation = () => {
             </span>{" "}
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };
