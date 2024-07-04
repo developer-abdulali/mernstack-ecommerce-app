@@ -5,6 +5,8 @@ import cookieParser from "cookie-parser";
 import { connectDB } from "./config/db.js";
 import userRouter from "./routes/userRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
+import productRouter from "./routes/productRoutes.js";
+import uploadRouter from "./routes/uploadRoutes.js";
 
 dotenv.config();
 
@@ -20,6 +22,11 @@ app.use(cookieParser());
 // routes
 app.use("/api/users", userRouter);
 app.use("/api/category", categoryRouter);
+app.use("/api/products", productRouter);
+app.use("/api/upload", uploadRouter);
+
+const __dirname = path.resolve();
+app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 
 app.get("/", (req, res) => {
   res.send(`Server listening on ${port}`);

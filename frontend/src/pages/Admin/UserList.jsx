@@ -8,6 +8,7 @@ import {
   useUpdateUserMutation,
 } from "../../redux/api/usersApiSlice";
 import { toast } from "react-toastify";
+import AdminMenu from "./AdminMenu";
 
 const UserList = () => {
   const { data: users, refetch, isLoading, error } = useGetUsersQuery();
@@ -37,24 +38,44 @@ const UserList = () => {
     setEditableUserName(username);
     setEditableUserEmail(email);
   };
-
   const updateHandler = async (id) => {
     try {
-      await updateUser({
+      const response = await updateUser({
         userId: id,
         username: editableUserName,
         email: editableUserEmail,
       });
-      setEditableUserId(null);
-      refetch();
+
+      if (response.error) {
+        const errorMessage = response.error.data || response.error.message;
+        toast.error(errorMessage);
+      } else {
+        setEditableUserId(null);
+        s;
+        refetch();
+      }
     } catch (err) {
-      toast.error(err?.data?.message || err.error);
+      toast.error(err.message);
     }
   };
 
+  // const updateHandler = async (id) => {
+  //   try {
+  //     await updateUser({
+  //       userId: id,
+  //       username: editableUserName,
+  //       email: editableUserEmail,
+  //     });
+  //     setEditableUserId(null);
+  //     refetch();
+  //   } catch (err) {
+  //     toast.error(err?.data?.message || err.error);
+  //   }
+  // };
+
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-semibold mb-4 text-white">Users</h1>
+      <h1 className="text-2xl font-semibold mb-4 !text-white">Users</h1>
       {isLoading ? (
         <div className="flex items-center justify-center h-[100ch]">
           <Loader />
@@ -65,7 +86,7 @@ const UserList = () => {
         </Message>
       ) : (
         <div className="flex flex-col md:flex-row">
-          {/* <AdminMenu /> */}
+          <AdminMenu />
           <table className="w-full md:w-4/5 mx-auto">
             <thead>
               <tr>
@@ -86,7 +107,7 @@ const UserList = () => {
                         <div className="flex items-center">
                           <input
                             type="text"
-                            className="p-[5px] border rounded-lg bg-transparent"
+                            className="p-[5px] text-white border rounded-lg bg-transparent"
                             value={editableUserName}
                             onChange={(e) =>
                               setEditableUserName(e.target.value)
@@ -119,7 +140,7 @@ const UserList = () => {
                         <div className="flex items-center">
                           <input
                             type="text"
-                            className="p-[5px] border rounded-lg bg-transparent"
+                            className="p-[5px] text-white border rounded-lg bg-transparent"
                             value={editableUserEmail}
                             onChange={(e) =>
                               setEditableUserEmail(e.target.value)
