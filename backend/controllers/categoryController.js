@@ -1,7 +1,7 @@
-import asyncHandler from "../middlewares/asyncHandler.js";
 import Category from "../models/categoryModel.js";
+import asyncHandler from "../middlewares/asyncHandler.js";
 
-export const createCategory = asyncHandler(async (req, res) => {
+const createCategory = asyncHandler(async (req, res) => {
   try {
     const { name } = req.body;
 
@@ -23,7 +23,7 @@ export const createCategory = asyncHandler(async (req, res) => {
   }
 });
 
-export const updateCategory = asyncHandler(async (req, res) => {
+const updateCategory = asyncHandler(async (req, res) => {
   try {
     const { name } = req.body;
     const { categoryId } = req.params;
@@ -44,9 +44,9 @@ export const updateCategory = asyncHandler(async (req, res) => {
   }
 });
 
-export const removeCategory = asyncHandler(async (req, res) => {
+const removeCategory = asyncHandler(async (req, res) => {
   try {
-    const removed = await Category.findByIdAndDelete(req.params.categoryId);
+    const removed = await Category.findByIdAndRemove(req.params.categoryId);
     res.json(removed);
   } catch (error) {
     console.error(error);
@@ -54,7 +54,7 @@ export const removeCategory = asyncHandler(async (req, res) => {
   }
 });
 
-export const listCategory = asyncHandler(async (req, res) => {
+const listCategory = asyncHandler(async (req, res) => {
   try {
     const all = await Category.find({});
     res.json(all);
@@ -64,7 +64,7 @@ export const listCategory = asyncHandler(async (req, res) => {
   }
 });
 
-export const readCategory = asyncHandler(async (req, res) => {
+const readCategory = asyncHandler(async (req, res) => {
   try {
     const category = await Category.findOne({ _id: req.params.id });
     res.json(category);
@@ -73,3 +73,11 @@ export const readCategory = asyncHandler(async (req, res) => {
     return res.status(400).json(error.message);
   }
 });
+
+export {
+  createCategory,
+  updateCategory,
+  removeCategory,
+  listCategory,
+  readCategory,
+};

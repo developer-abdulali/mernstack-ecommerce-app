@@ -1,16 +1,18 @@
 import express from "express";
 import {
   createUser,
-  deleteUserById,
+  loginUser,
+  logoutCurrentUser,
   getAllUsers,
   getCurrentUserProfile,
-  getUserById,
-  loginUser,
-  logoutUser,
   updateCurrentUserProfile,
+  deleteUserById,
+  getUserById,
   updateUserById,
 } from "../controllers/userController.js";
+
 import { authenticate, authorizeAdmin } from "../middlewares/authMiddleware.js";
+
 const router = express.Router();
 
 router
@@ -18,15 +20,15 @@ router
   .post(createUser)
   .get(authenticate, authorizeAdmin, getAllUsers);
 
-router.route("/auth").post(loginUser);
-router.route("/logout").post(logoutUser);
+router.post("/auth", loginUser);
+router.post("/logout", logoutCurrentUser);
 
-// admin routes
 router
   .route("/profile")
   .get(authenticate, getCurrentUserProfile)
   .put(authenticate, updateCurrentUserProfile);
 
+// ADMIN ROUTES 👇
 router
   .route("/:id")
   .delete(authenticate, authorizeAdmin, deleteUserById)

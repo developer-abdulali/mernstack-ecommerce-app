@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../components/Loader";
 import { useProfileMutation } from "../../redux/api/usersApiSlice";
-import { setCredientials } from "../../redux/features/auth/authSlice";
+import { setCredentials } from "../../redux/features/auth/authSlice";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
@@ -37,7 +37,7 @@ const Profile = () => {
           email,
           password,
         }).unwrap();
-        dispatch(setCredientials({ ...res }));
+        dispatch(setCredentials({ ...res }));
         toast.success("Profile updated successfully");
       } catch (err) {
         toast.error(err?.data?.message || err.error);

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   useCreateCategoryMutation,
   useUpdateCategoryMutation,
@@ -7,12 +7,12 @@ import {
 } from "../../redux/api/categoryApiSlice";
 
 import { toast } from "react-toastify";
-import CategoryForm from "../../components/CategoryForm/CategoryFrom";
-import Modal from "../../components/Modal/Modal";
+import CategoryForm from "../../components/CategoryForm";
+import Modal from "../../components/Modal";
 import AdminMenu from "./AdminMenu";
 
 const CategoryList = () => {
-  const { data: categories, refetch } = useFetchCategoriesQuery();
+  const { data: categories } = useFetchCategoriesQuery();
   const [name, setName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [updatingName, setUpdatingName] = useState("");
@@ -36,7 +36,6 @@ const CategoryList = () => {
         toast.error(result.error);
       } else {
         setName("");
-        refetch();
         toast.success(`${result.name} is created.`);
       }
     } catch (error) {
@@ -68,12 +67,12 @@ const CategoryList = () => {
         setSelectedCategory(null);
         setUpdatingName("");
         setModalVisible(false);
-        refetch();
       }
     } catch (error) {
       console.error(error);
     }
   };
+
   const handleDeleteCategory = async () => {
     try {
       const result = await deleteCategory(selectedCategory._id).unwrap();
@@ -84,7 +83,6 @@ const CategoryList = () => {
         toast.success(`${result.name} is deleted.`);
         setSelectedCategory(null);
         setModalVisible(false);
-        refetch();
       }
     } catch (error) {
       console.error(error);
@@ -104,6 +102,7 @@ const CategoryList = () => {
         />
         <br />
         <hr />
+
         <div className="flex flex-wrap">
           {categories?.map((category) => (
             <div key={category._id}>

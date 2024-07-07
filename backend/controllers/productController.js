@@ -1,7 +1,7 @@
 import asyncHandler from "../middlewares/asyncHandler.js";
 import Product from "../models/productModel.js";
 
-export const addProduct = asyncHandler(async (req, res) => {
+const addProduct = asyncHandler(async (req, res) => {
   try {
     const { name, description, price, category, quantity, brand } = req.fields;
 
@@ -30,7 +30,7 @@ export const addProduct = asyncHandler(async (req, res) => {
   }
 });
 
-export const updateProductDetails = asyncHandler(async (req, res) => {
+const updateProductDetails = asyncHandler(async (req, res) => {
   try {
     const { name, description, price, category, quantity, brand } = req.fields;
 
@@ -65,7 +65,7 @@ export const updateProductDetails = asyncHandler(async (req, res) => {
   }
 });
 
-export const removeProduct = asyncHandler(async (req, res) => {
+const removeProduct = asyncHandler(async (req, res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
     res.json(product);
@@ -75,7 +75,7 @@ export const removeProduct = asyncHandler(async (req, res) => {
   }
 });
 
-export const fetchProducts = asyncHandler(async (req, res) => {
+const fetchProducts = asyncHandler(async (req, res) => {
   try {
     const pageSize = 6;
 
@@ -103,7 +103,7 @@ export const fetchProducts = asyncHandler(async (req, res) => {
   }
 });
 
-export const fetchProductById = asyncHandler(async (req, res) => {
+const fetchProductById = asyncHandler(async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
     if (product) {
@@ -118,7 +118,7 @@ export const fetchProductById = asyncHandler(async (req, res) => {
   }
 });
 
-export const fetchAllProducts = asyncHandler(async (req, res) => {
+const fetchAllProducts = asyncHandler(async (req, res) => {
   try {
     const products = await Product.find({})
       .populate("category")
@@ -132,7 +132,7 @@ export const fetchAllProducts = asyncHandler(async (req, res) => {
   }
 });
 
-export const addProductReview = asyncHandler(async (req, res) => {
+const addProductReview = asyncHandler(async (req, res) => {
   try {
     const { rating, comment } = req.body;
     const product = await Product.findById(req.params.id);
@@ -174,7 +174,7 @@ export const addProductReview = asyncHandler(async (req, res) => {
   }
 });
 
-export const fetchTopProducts = asyncHandler(async (req, res) => {
+const fetchTopProducts = asyncHandler(async (req, res) => {
   try {
     const products = await Product.find({}).sort({ rating: -1 }).limit(4);
     res.json(products);
@@ -184,7 +184,7 @@ export const fetchTopProducts = asyncHandler(async (req, res) => {
   }
 });
 
-export const fetchNewProducts = asyncHandler(async (req, res) => {
+const fetchNewProducts = asyncHandler(async (req, res) => {
   try {
     const products = await Product.find().sort({ _id: -1 }).limit(5);
     res.json(products);
@@ -194,7 +194,7 @@ export const fetchNewProducts = asyncHandler(async (req, res) => {
   }
 });
 
-export const filterProducts = asyncHandler(async (req, res) => {
+const filterProducts = asyncHandler(async (req, res) => {
   try {
     const { checked, radio } = req.body;
 
@@ -209,3 +209,16 @@ export const filterProducts = asyncHandler(async (req, res) => {
     res.status(500).json({ error: "Server Error" });
   }
 });
+
+export {
+  addProduct,
+  updateProductDetails,
+  removeProduct,
+  fetchProducts,
+  fetchProductById,
+  fetchAllProducts,
+  addProductReview,
+  fetchTopProducts,
+  fetchNewProducts,
+  filterProducts,
+};
