@@ -11,7 +11,8 @@ import {
 import Loader from "../components/Loader";
 import ProductCard from "./Products/ProductCard";
 
-const Shop = () => {
+const Products = () => {
+  // const Shop = () => {
   const dispatch = useDispatch();
   const { categories, products, checked, radio } = useSelector(
     (state) => state.shop
@@ -180,4 +181,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Products;

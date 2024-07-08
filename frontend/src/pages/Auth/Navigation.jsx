@@ -220,106 +220,300 @@
 
 // export default Navigation;
 
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { RiUser3Line } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa6";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FiMenu } from "react-icons/fi";
+import { HiMiniXMark } from "react-icons/hi2";
+import { useSelector, useDispatch } from "react-redux";
+import { useLogoutMutation } from "../../redux/api/usersApiSlice";
+import { logout } from "../../redux/features/auth/authSlice";
+import FavoritesCount from "../Products/FavoritesCount";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { userInfo } = useSelector((state) => state.auth);
+  const { cartItemss } = useSelector((state) => state.cart);
+
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([
+    { id: 1, name: "Apple iPhone 15", price: 599, quantity: 1 },
+    { id: 2, name: "Apple iPad Air", price: 499, quantity: 1 },
+    { id: 3, name: "Apple Watch SE", price: 598, quantity: 2 },
+  ]);
+  const { search } = useLocation();
+  const sp = new URLSearchParams(search);
+  const redirect = sp.get("redirect") || "/";
+  const [logoutApiCall] = useLogoutMutation();
 
-  useEffect(() => {
-    setIsCartOpen(true);
-  }, []);
-
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/login");
+      setIsUserDropdownOpen(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
-            <div className="shrink-0">
-              <a href="#" title="" className="">
-                <img
-                  className="block w-auto h-8 dark:hidden"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg"
-                  alt=""
-                />
-                <img
-                  className="hidden w-auto h-8 dark:block"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg"
-                  alt=""
-                />
-              </a>
-            </div>
+            {/* logo div */}
+            <Link to="/" className="text-black">
+              logo here
+            </Link>
+            <div className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
+              <Link
+                to="/"
+                title=""
+                className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+              >
+                Home
+              </Link>
 
-            <ul className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
-              <li>
-                <Link
-                  to="/"
-                  title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="shrink-0">
-                <Link
-                  to="/shop"
-                  title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  Shop
-                </Link>
-              </li>
-            </ul>
+              <Link
+                to="/products"
+                title=""
+                className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+              >
+                Products
+              </Link>
+            </div>
           </div>
 
           <div className="flex items-center lg:space-x-2">
-            <button
-              id="myCartDropdownButton1"
-              onClick={() => setIsCartOpen(!isCartOpen)}
-              type="button"
-              className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
-            >
-              <span className="sr-only">Cart</span>
-              <HiOutlineShoppingCart className="w-5 h-5 lg:me-1" />
+            {userInfo ? (
+              <>
+                {/* cart btn start */}
+                <button
+                  id="myCartDropdownButton1"
+                  onClick={() => setIsCartOpen(!isCartOpen)}
+                  type="button"
+                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+                >
+                  <span className="sr-only">Cart</span>
+                  <HiOutlineShoppingCart className="w-5 h-5 lg:me-1" />
 
-              <span className="hidden sm:flex">My Cart</span>
-              <FaChevronDown className="hidden sm:flex w-4 h-4 text-gray-900 dark:text-white ms-1" />
-            </button>
+                  <span className="hidden sm:flex">My Cart</span>
+                  <FaChevronDown className="hidden sm:flex w-4 h-4 text-gray-900 dark:text-white ms-1" />
+                </button>
 
-            {isCartOpen && (
-              <div
-                id="myCartDropdown1"
-                className="z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800"
-              >
-                {/* Your cart items here */}
-              </div>
-            )}
+                {isCartOpen && (
+                  <div className="z-10 mx-auto space-y-4 rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800 absolute bottom-full top-14 right-80 h-fit">
+                    {cartItems.map((item) => (
+                      <div key={item.id} className="grid grid-cols-2">
+                        <div>
+                          <a
+                            href="#"
+                            className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
+                          >
+                            {item.name}
+                          </a>
+                          <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
+                            RS: {item.price}
+                          </p>
+                        </div>
 
-            <button
-              id="userDropdownButton1"
-              onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
-              type="button"
-              className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
-            >
-              <RiUser3Line className="w-5 h-5 me-1" />
-              Account
-              <FaChevronDown className="w-4 h-4 text-gray-900 dark:text-white ms-1" />
-            </button>
-            {isUserDropdownOpen && (
-              <div
-                id="userDropdown1"
-                className="z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700"
-              >
-                <Link to="#" className="text-black">
-                  Admin
+                        <div className="flex items-center justify-end gap-6">
+                          <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
+                            Qty: {item.quantity}
+                          </p>
+                          {/* delele btn */}
+                          <button
+                            data-tooltip-target={`tooltipRemoveItem${item.id}`}
+                            type="button"
+                            className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
+                          >
+                            <span className="sr-only">Remove</span>
+
+                            <HiMiniXMark className="h-5 w-5 bg-red-400 text-white rounded-full p-1" />
+                          </button>
+                          <div
+                            id={`tooltipRemoveItem${item.id}`}
+                            role="tooltip"
+                            className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
+                          >
+                            Remove item
+                            <div
+                              className="tooltip-arrow"
+                              data-popper-arrow
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                    {/* Proceed to Checkout btn  */}
+                    <button
+                      className="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium bg-[#1D4ED8] text-white hover:bg-[#1d4fd8dc] focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                      role="button"
+                    >
+                      Proceed to Checkout
+                    </button>
+                  </div>
+                )}
+                {/* cart btn end*/}
+
+                {/* account btn end */}
+                <button
+                  id="userDropdownButton1"
+                  onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
+                  type="button"
+                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+                >
+                  <RiUser3Line className="w-5 h-5 me-1" />
+                  {userInfo.username}
+                  <FaChevronDown className="w-4 h-4 text-gray-900 dark:text-white ms-1" />
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  to={redirect ? `/register?redirect=${redirect}` : "/register"}
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                >
+                  Signup
                 </Link>
-                {/* Your user dropdown items here */}
+
+                <Link
+                  to="/login"
+                  className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                >
+                  Login
+                </Link>
+              </>
+            )}
+            {isUserDropdownOpen && (
+              <div className="absolute bottom-full top-14 right-80 h-fit z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
+                <>
+                  <NavLink
+                    to="/profile"
+                    title="My Account"
+                    onClick={() => setIsUserDropdownOpen(false)}
+                    className={({ isActive }) =>
+                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                        isActive ? "text-red-500" : "text-black"
+                      }`
+                    }
+                  >
+                    My Account
+                  </NavLink>
+                  <NavLink
+                    to="/user-orders"
+                    title="My Orders"
+                    onClick={() => setIsUserDropdownOpen(false)}
+                    className={({ isActive }) =>
+                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                        isActive ? "text-red-500" : "text-black"
+                      }`
+                    }
+                  >
+                    My Orders
+                  </NavLink>
+                  <NavLink
+                    to="/favorite"
+                    title="My Favorites"
+                    className={({ isActive }) =>
+                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                        isActive ? "text-red-500" : "text-black"
+                      }`
+                    }
+                  >
+                    My Favorites
+                  </NavLink>
+                  {userInfo.isAdmin && (
+                    <>
+                      <NavLink
+                        to="/admin/dashboard "
+                        title="Admin Dashboard"
+                        onClick={() => setIsUserDropdownOpen(false)}
+                        className={({ isActive }) =>
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                            isActive ? "text-red-500" : "text-black"
+                          }`
+                        }
+                      >
+                        Admin Dashboard
+                      </NavLink>
+                      <NavLink
+                        to="/admin/productlist"
+                        title="Create Products"
+                        onClick={() => setIsUserDropdownOpen(false)}
+                        className={({ isActive }) =>
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                            isActive ? "text-red-500" : "text-black"
+                          }`
+                        }
+                      >
+                        Create Products
+                      </NavLink>
+                      <NavLink
+                        to="/admin/allproductslist"
+                        title="All Products"
+                        onClick={() => setIsUserDropdownOpen(false)}
+                        className={({ isActive }) =>
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                            isActive ? "text-red-500" : "text-black"
+                          }`
+                        }
+                      >
+                        All Products
+                      </NavLink>
+
+                      <NavLink
+                        to="/admin/categorylist"
+                        title="Create Category"
+                        onClick={() => setIsUserDropdownOpen(false)}
+                        className={({ isActive }) =>
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                            isActive ? "text-red-500" : "text-black"
+                          }`
+                        }
+                      >
+                        Create Catogry
+                      </NavLink>
+                      <NavLink
+                        to="/admin/orderlist"
+                        title="Manage Orders"
+                        onClick={() => setIsUserDropdownOpen(false)}
+                        className={({ isActive }) =>
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                            isActive ? "text-red-500" : "text-black"
+                          }`
+                        }
+                      >
+                        Manage Orders
+                      </NavLink>
+                      <NavLink
+                        to="/admin/userlist"
+                        title="Manage Users"
+                        onClick={() => setIsUserDropdownOpen(false)}
+                        className={({ isActive }) =>
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
+                            isActive ? "text-red-500" : "text-black"
+                          }`
+                        }
+                      >
+                        Manage Users
+                      </NavLink>
+                    </>
+                  )}
+
+                  <button
+                    onClick={logoutHandler}
+                    title="My Favorites"
+                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >
+                    Logout
+                  </button>
+                </>
               </div>
             )}
 
@@ -336,62 +530,23 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-
+        {/* mobile menu btns */}
         {isMobileMenuOpen && (
-          <div
-            id="ecommerce-navbar-menu-1"
-            className="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 px-4 mt-4"
-          >
-            <ul className="text-gray-900 dark:text-white text-sm font-medium dark:text-white space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-primary-700 dark:hover:text-primary-500"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-primary-700 dark:hover:text-primary-500"
-                >
-                  Best Sellers
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-primary-700 dark:hover:text-primary-500"
-                >
-                  Gift Ideas
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-primary-700 dark:hover:text-primary-500"
-                >
-                  Games
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-primary-700 dark:hover:text-primary-500"
-                >
-                  Electronics
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-primary-700 dark:hover:text-primary-500"
-                >
-                  Home & Garden
-                </a>
-              </li>
-            </ul>
+          <div className="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 px-4 mt-4">
+            <div className="text-gray-900 text-sm font-medium dark:text-white space-y-3">
+              <Link
+                to="/"
+                className="hover:text-primary-700 dark:hover:text-primary-500"
+              >
+                Home
+              </Link>
+              <Link
+                to="/products"
+                className="hover:text-primary-700 dark:hover:text-primary-500"
+              >
+                Products
+              </Link>
+            </div>
           </div>
         )}
       </div>

@@ -1,17 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { toast } from "react-toastify";
 import HeartIcon from "./HeartIcon";
 
 const ProductCard = ({ p }) => {
   const dispatch = useDispatch();
+  const { userInfo } = useSelector((state) => state.auth);
 
   const imageUrl = `http://localhost:5000${p.image}`;
 
   const addToCartHandler = (product, qty) => {
+    if (!userInfo) {
+      toast.error("Please login first", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+      return;
+    }
     dispatch(addToCart({ ...product, qty }));
     toast.success("Item added successfully", {
       position: toast.POSITION.TOP_RIGHT,
@@ -40,10 +48,10 @@ const ProductCard = ({ p }) => {
         <div className="flex justify-between">
           <h5 className="mb-2 text-xl text-whiet dark:text-white">{p?.name}</h5>
 
-          <p className="text-black font-semibold text-pink-500">
+          <p className="text-black font-semibold">
             {p?.price?.toLocaleString("en-US", {
               style: "currency",
-              currency: "USD",
+              currency: "PKR",
             })}
           </p>
         </div>

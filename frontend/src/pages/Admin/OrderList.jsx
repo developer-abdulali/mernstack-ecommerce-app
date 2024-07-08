@@ -18,8 +18,6 @@ const OrderList = () => {
         </Message>
       ) : (
         <table className="container mx-auto">
-          <AdminMenu />
-
           <thead className="w-full border">
             <tr className="mb-[5rem]">
               <th className="text-left pl-1">ITEMS</th>
