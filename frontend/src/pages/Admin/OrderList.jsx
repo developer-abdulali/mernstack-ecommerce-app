@@ -38,7 +38,8 @@ const OrderList = () => {
               <tr key={order._id}>
                 <td>
                   <img
-                    src={order.orderItems[0].image}
+                    src={`http://localhost:5000${order.orderItems[0].image}`}
+                    // src={order.orderItems[0]?.image}
                     alt={order._id}
                     className="w-[5rem] pt-4"
                   />
@@ -51,7 +52,7 @@ const OrderList = () => {
                   {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
                 </td>
 
-                <td>$ {order.totalPrice}</td>
+                <td>RS: {order.totalPrice}</td>
 
                 <td className="py-2">
                   {order.isPaid ? (
