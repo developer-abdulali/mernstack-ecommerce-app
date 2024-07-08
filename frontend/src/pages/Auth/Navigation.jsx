@@ -72,6 +72,7 @@ const Navigation = () => {
             <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
           </div>
 
+          {/* badge */}
           <div className="absolute top-9">
             {cartItems.length > 0 && (
               <span>

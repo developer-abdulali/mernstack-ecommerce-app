@@ -1,19 +1,3 @@
-// import mongoose from "mongoose";
-
-// const connectDB = async () => {
-//   try {
-//     await mongoose.connect(process.env.MONGO_URI);
-//     console.log(`Successfully connnected to mongoDB 👍`);
-//   } catch (error) {
-//     console.error(`ERROR: ${error.message}`);
-//     process.exit(1);
-//   }
-// };
-
-// export default connectDB;
-
-// config/db.js
-
 import mongoose from "mongoose";
 
 const connectDB = async () => {
@@ -24,7 +8,7 @@ const connectDB = async () => {
       // Remove useCreateIndex from options
     });
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`MongoDB Connected 👍`);
   } catch (error) {
     console.error(`Error: ${error.message}`);
     process.exit(1); // Exit process with failure

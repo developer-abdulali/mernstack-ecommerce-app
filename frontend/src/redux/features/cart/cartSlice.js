@@ -3,7 +3,7 @@ import { updateCart } from "../../../Utils/cartUtils";
 
 const initialState = localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
-  : { cartItems: [], shippingAddress: {}, paymentMethod: "PayPal" };
+  : { cartItems: [], shippingAddress: {}, paymentMethod: null, receipt: null };
 
 const cartSlice = createSlice({
   name: "cart",
@@ -38,6 +38,11 @@ const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state));
     },
 
+    saveReceipt: (state, action) => {
+      state.receipt = action.payload;
+      localStorage.setItem("cart", JSON.stringify(state));
+    },
+
     clearCartItems: (state, action) => {
       state.cartItems = [];
       localStorage.setItem("cart", JSON.stringify(state));
@@ -54,6 +59,7 @@ export const {
   saveShippingAddress,
   clearCartItems,
   resetCart,
+  saveReceipt,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

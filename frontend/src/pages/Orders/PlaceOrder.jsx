@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
@@ -66,7 +66,8 @@ const PlaceOrder = () => {
                   <tr key={index}>
                     <td className="p-2">
                       <img
-                        src={item.image}
+                        src={`http://localhost:5000${item.image}`}
+                        // src={item.image}
                         alt={item.name}
                         className="w-16 h-16 object-cover"
                       />

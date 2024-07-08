@@ -4,7 +4,7 @@ import Loader from "../../components/Loader";
 import { Link } from "react-router-dom";
 import { useGetMyOrdersQuery } from "../../redux/api/orderApiSlice";
 
-const UserOrder = () => {
+const UserOrders = () => {
   const { data: orders, isLoading, error } = useGetMyOrdersQuery();
 
   return (
@@ -82,4 +82,4 @@ const UserOrder = () => {
   );
 };
 
-export default UserOrder;
+export default UserOrders;
