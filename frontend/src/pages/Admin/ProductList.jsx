@@ -8,6 +8,18 @@ import { useFetchCategoriesQuery } from "../../redux/api/categoryApiSlice";
 import { toast } from "react-toastify";
 import { FaUpload } from "react-icons/fa";
 
+const ProductForm = ({ fieldName, label, type, value, onChange }) => (
+  <div className="form-group">
+    <label className="block text-gray-700 font-bold mb-2">{label}</label>
+    <input
+      type={type}
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      value={value}
+      onChange={onChange}
+    />
+  </div>
+);
+
 const ProductList = () => {
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
@@ -44,11 +56,9 @@ const ProductList = () => {
         toast.error("Product create failed. Try Again.");
       } else {
         toast.success(`${data.name} is created`);
-        console.log(data);
         navigate("/");
       }
     } catch (error) {
-      console.error(error);
       toast.error("Product create failed. Try Again.");
     }
   };
@@ -111,104 +121,45 @@ const ProductList = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-gray-700 font-bold mb-2"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="price"
-                className="block text-gray-700 font-bold mb-2"
-              >
-                Price
-              </label>
-              <input
-                type="number"
-                id="price"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="quantity"
-                className="block text-gray-700 font-bold mb-2"
-              >
-                Quantity
-              </label>
-              <input
-                type="number"
-                id="quantity"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="brand"
-                className="block text-gray-700 font-bold mb-2"
-              >
-                Brand
-              </label>
-              <input
-                type="text"
-                id="brand"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="mb-4">
-            <label
-              htmlFor="description"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Description
-            </label>
-            <textarea
-              id="description"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
+            <ProductForm
+              fieldName="name"
+              label="Name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <ProductForm
+              fieldName="price"
+              label="Price"
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+            <ProductForm
+              fieldName="quantity"
+              label="Quantity"
+              type="number"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+            />
+            <ProductForm
+              fieldName="brand"
+              label="Brand"
+              type="text"
+              value={brand}
+              onChange={(e) => setBrand(e.target.value)}
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label
-                htmlFor="stock"
-                className="block text-gray-700 font-bold mb-2"
-              >
-                Count In Stock
-              </label>
-              <input
-                type="number"
-                id="stock"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                value={stock}
-                onChange={(e) => setStock(e.target.value)}
-              />
-            </div>
-
-            <div>
+            <ProductForm
+              fieldName="stock"
+              label="Count In Stock"
+              type="number"
+              value={stock}
+              onChange={(e) => setStock(e.target.value)}
+            />
+            <div className="form-group">
               <label
                 htmlFor="category"
                 className="block text-gray-700 font-bold mb-2"
@@ -229,6 +180,20 @@ const ProductList = () => {
                 ))}
               </select>
             </div>
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="description"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Description
+            </label>
+            <textarea
+              id="description"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
           </div>
 
           <button
