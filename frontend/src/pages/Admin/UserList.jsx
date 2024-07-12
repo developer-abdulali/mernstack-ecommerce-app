@@ -1,31 +1,35 @@
 import React, { useEffect, useState } from "react";
-import { FaTrash, FaEdit, FaCheck, FaTimes, FaUserEdit } from "react-icons/fa";
+import { FaTrash, FaCheck, FaTimes, FaUserEdit } from "react-icons/fa";
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
 import {
   useDeleteUserMutation,
   useGetUsersQuery,
   useUpdateUserMutation,
+  useRegisterMutation,
 } from "../../redux/api/usersApiSlice";
 import { toast } from "react-toastify";
-// ⚠️⚠️⚠️ don't forget this ⚠️⚠️⚠️⚠️
-// import AdminMenu from "./AdminMenu";
+import EditUserPopup from "./EditUserPopup";
+import AddUserPopup from "./AddUserPopup";
+import { setCredentials } from "../../redux/features/auth/authSlice";
+import { useDispatch } from "react-redux";
 
 const UserList = () => {
+  const dispatch = useDispatch();
   const { data: users, refetch, isLoading, error } = useGetUsersQuery();
-
   const [deleteUser] = useDeleteUserMutation();
-
-  const [editableUserId, setEditableUserId] = useState(null);
-  const [editableUserName, setEditableUserName] = useState("");
-  const [editableUserEmail, setEditableUserEmail] = useState("");
-
   const [updateUser] = useUpdateUserMutation();
+  const [register] = useRegisterMutation();
+
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [isAddOpen, setIsAddOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
     refetch();
   }, [refetch]);
 
+  // delete user functionality
   const deleteHandler = async (id) => {
     if (window.confirm("Are you sure")) {
       try {
@@ -37,29 +41,64 @@ const UserList = () => {
     }
   };
 
-  const toggleEdit = (id, username, email) => {
-    setEditableUserId(id);
-    setEditableUserName(username);
-    setEditableUserEmail(email);
-  };
-
-  const updateHandler = async (id) => {
+  const updateHandler = async (id, username, email) => {
     try {
       await updateUser({
         userId: id,
-        username: editableUserName,
-        email: editableUserEmail,
+        username: username,
+        email: email,
       });
-      setEditableUserId(null);
+      setSelectedUser(null);
       refetch();
     } catch (err) {
       toast.error(err?.data?.message || err.error);
     }
   };
 
+  const toggleEditPopup = (user) => {
+    setSelectedUser(user);
+    setIsEditOpen(!isEditOpen);
+  };
+
+  const toggleAddPopup = () => {
+    setIsAddOpen(!isAddOpen);
+  };
+
+  const submitHandler = async (
+    e,
+    username,
+    email,
+    password,
+    confirmPassword
+  ) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+    } else {
+      try {
+        const res = await register({ username, email, password }).unwrap();
+        dispatch(setCredentials({ ...res }));
+        setIsAddOpen(false);
+        refetch();
+        toast.success("User successfully registered");
+      } catch (err) {
+        console.log(err);
+        toast.error(err.data.message);
+      }
+    }
+  };
+
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-semibold mb-4">Users</h1>
+    <div className="max-w-screen-xl mx-auto p-4">
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-semibold my-4">Users</h1>
+        <button
+          onClick={toggleAddPopup}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+        >
+          Add User
+        </button>
+      </div>
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -67,9 +106,8 @@ const UserList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <div className="flex flex-col md:flex-row">
-          {/* <AdminMenu /> */}
-          <table className="w-full md:w-4/5 mx-auto shadow-md border">
+        <div className="overflow-x-auto">
+          <table className="min-w-full shadow-md border">
             <thead>
               <tr>
                 <th className="px-4 py-2 text-left">ID</th>
@@ -83,37 +121,11 @@ const UserList = () => {
               {users.map((user) => (
                 <tr
                   key={user._id}
-                  className=" border-b hover:bg-orange-100 hover:text-black"
+                  className="border-b hover:bg-orange-100 hover:text-black"
                 >
                   <td className="px-4 py-2">{user._id}</td>
-
-                  <td className="px-4 py-2">
-                    {editableUserId === user._id ? (
-                      <div className="flex items-center">
-                        <input
-                          type="text"
-                          value={editableUserName}
-                          onChange={(e) => setEditableUserName(e.target.value)}
-                          className="w-full p-2 border rounded-lg"
-                        />
-                        <button
-                          onClick={() => updateHandler(user._id)}
-                          className="ml-2 bg-blue-500 text-white py-2 px-4 rounded-lg"
-                        >
-                          <FaCheck />
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="flex items-center">{user.username} </div>
-                    )}
-                  </td>
-                  {/* email td */}
-                  <td className="px-4 py-2">
-                    <div className="flex items-center">
-                      <p>{user.email}</p>{" "}
-                    </div>
-                  </td>
-                  {/* isAdmin or not td */}
+                  <td className="px-4 py-2">{user.username}</td>
+                  <td className="px-4 py-2">{user.email}</td>
                   <td className="px-4 py-2">
                     {user.isAdmin ? (
                       <FaCheck style={{ color: "green" }} />
@@ -121,31 +133,42 @@ const UserList = () => {
                       <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
-
                   <td className="px-4 py-2">
-                    {!user.isAdmin && (
-                      <div className="flex items-center gap-2">
-                        <div className="flex">
-                          <button className="bg-blue-500 hover:bg-blue-700  text-white font-bold py-2 px-4 rounded">
-                            <FaUserEdit />
-                          </button>
-                        </div>
-                        <div className="flex">
-                          <button
-                            onClick={() => deleteHandler(user._id)}
-                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                          >
-                            <FaTrash />
-                          </button>
-                        </div>
-                      </div>
-                    )}
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => toggleEditPopup(user)}
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        <FaUserEdit />
+                      </button>
+                      <button
+                        onClick={() => deleteHandler(user._id)}
+                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        <FaTrash />
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+      )}
+
+      {isEditOpen && (
+        <EditUserPopup
+          user={selectedUser}
+          togglePopup={toggleEditPopup}
+          updateHandler={updateHandler}
+        />
+      )}
+
+      {isAddOpen && (
+        <AddUserPopup
+          togglePopup={toggleAddPopup}
+          submitHandler={submitHandler}
+        />
       )}
     </div>
   );
