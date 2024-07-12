@@ -23,7 +23,7 @@ const OrderList = () => {
               <th className="text-left pl-1">ITEMS</th>
               <th className="text-left pl-1">ID</th>
               <th className="text-left pl-1">USER</th>
-              <th className="text-left pl-1">DATA</th>
+              <th className="text-left pl-1">CREATED AT</th>
               <th className="text-left pl-1">TOTAL</th>
               <th className="text-left pl-1">PAID</th>
               <th className="text-left pl-1">DELIVERED</th>

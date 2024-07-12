@@ -36,6 +36,7 @@ import OrderList from "./pages/Admin/OrderList.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import UserOrders from "./pages/User/UserOrder.jsx";
 import Products from "./pages/Shop.jsx";
+import PageNotFound from "./components/404.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -47,7 +48,6 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/products" element={<Products />} />
-      <Route path="/user-orders" element={<UserOrders />} />
 
       {/* Registered users */}
       <Route path="" element={<PrivateRoute />}>
@@ -55,8 +55,13 @@ const router = createBrowserRouter(
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/placeorder" element={<PlaceOrder />} />
         <Route path="/order/:id" element={<Order />} />
+        <Route path="/user-orders" element={<UserOrders />} />
       </Route>
 
+      {/* page not found route */}
+      <Route path="*" element={<PageNotFound />} />
+
+      {/* admin routes */}
       <Route path="/admin" element={<AdminRoute />}>
         <Route path="userlist" element={<UserList />} />
         <Route path="categorylist" element={<CategoryList />} />
