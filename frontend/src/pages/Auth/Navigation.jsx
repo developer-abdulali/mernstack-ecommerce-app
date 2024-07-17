@@ -8,6 +8,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/usersApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
 import FavoritesCount from "../Products/FavoritesCount";
+import { MdLogin, MdShoppingCart } from "react-icons/md";
+import { IoMdHeart } from "react-icons/io";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -59,8 +61,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             {/* logo div */}
-            <Link to="/" className="text-black">
-              logo here
+            <Link to="/" className="text-[#436C68] text-4xl font-normal">
+              ScentYard
             </Link>
             <div className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
               <Link
@@ -107,18 +109,20 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link
-                  to={redirect ? `/register?redirect=${redirect}` : "/register"}
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  Signup
+                <Link to="/favorite" className="text-[#436C68] text-3xl">
+                  <span>
+                    <IoMdHeart />
+                  </span>
                 </Link>
-
-                <Link
-                  to="/login"
-                  className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                >
-                  Login
+                <Link to="/cart" className="text-[#436C68] text-3xl">
+                  <span>
+                    <MdShoppingCart />
+                  </span>
+                </Link>
+                <Link to="/login" className="text-[#436C68] text-3xl">
+                  <span>
+                    <MdLogin />
+                  </span>
                 </Link>
               </>
             )}
