@@ -56,23 +56,15 @@ const Navbar = () => {
     }
   };
   return (
-    <nav className="bg-white dark:bg-gray-800 antialiased">
-      <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
+    <nav className="bg-white dark:bg-gray-800 antialiased shadow-md">
+      <div className="px-10 mx-auto py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             {/* logo div */}
-            <Link to="/" className="text-[#436C68] text-4xl font-normal">
+            <Link to="/" className="text-[#436C68] text-2xl font-normal">
               ScentYard
             </Link>
             <div className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
-              <Link
-                to="/"
-                title=""
-                className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-              >
-                Home
-              </Link>
-
               <Link
                 to="/products"
                 title=""
@@ -80,6 +72,15 @@ const Navbar = () => {
               >
                 Products
               </Link>
+              {/* {userInfo.isAdmin && (
+                <Link
+                  to="/products"
+                  title=""
+                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+                >
+                  Products
+                </Link>
+              )} */}
             </div>
           </div>
 
@@ -109,17 +110,17 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/favorite" className="text-[#436C68] text-3xl">
+                <Link to="/favorite" className="text-[#436C68] text-xl">
                   <span>
                     <IoMdHeart />
                   </span>
                 </Link>
-                <Link to="/cart" className="text-[#436C68] text-3xl">
+                <Link to="/cart" className="text-[#436C68] text-xl">
                   <span>
                     <MdShoppingCart />
                   </span>
                 </Link>
-                <Link to="/login" className="text-[#436C68] text-3xl">
+                <Link to="/login" className="text-[#436C68] text-xl">
                   <span>
                     <MdLogin />
                   </span>

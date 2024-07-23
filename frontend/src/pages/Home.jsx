@@ -13,8 +13,8 @@ const Home = () => {
 
   return (
     <>
-      <Hero />
       {/* {!keyword ? <Header /> : null} */}
+      <Hero />
       {isLoading ? (
         <Loader />
       ) : isError ? (
