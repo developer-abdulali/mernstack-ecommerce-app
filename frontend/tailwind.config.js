@@ -27,6 +27,7 @@ export default {
           900: "#14532d",
           950: "#052e16",
         },
+        secondary: "#436C68",
       },
     },
     fontFamily: {

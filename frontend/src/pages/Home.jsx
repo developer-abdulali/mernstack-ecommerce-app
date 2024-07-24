@@ -15,6 +15,7 @@ const Home = () => {
     <>
       {/* {!keyword ? <Header /> : null} */}
       <Hero />
+
       {isLoading ? (
         <Loader />
       ) : isError ? (

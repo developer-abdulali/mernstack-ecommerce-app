@@ -57,7 +57,7 @@ const Navbar = () => {
   };
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased shadow-md">
-      <div className="px-10 mx-auto py-4">
+      <div className="px-2 lg:px-10 mx-auto py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             {/* logo div */}
@@ -92,7 +92,7 @@ const Navbar = () => {
                   className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
                 >
                   <HiOutlineShoppingCart className="w-5 h-5 lg:me-1" />
-                  <span className="">My Cart</span>
+                  <span className="hidden md:block">My Cart</span>
                 </NavLink>
 
                 {/* account btn end */}
