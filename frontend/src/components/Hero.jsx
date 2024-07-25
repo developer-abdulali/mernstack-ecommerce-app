@@ -26,7 +26,7 @@ const Hero = () => {
         />
       </Link>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-center my-10 mx-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-center my-20 mx-4">
         <div className="flex flex-col items-center">
           <div className="text-4xl text-green-600">
             <FaCheckCircle />
@@ -63,7 +63,8 @@ const Hero = () => {
       </div>
 
       {/* mix categories */}
-      <div className="grid grid-cols-3 gap-4 px-5 my-20">
+      <div className="text-4xl text-center my-10 font-normal">Categories:</div>
+      <div className="grid grid-cols-3 gap-4 px-5">
         {/* Men Category */}
         <div
           onClick={() => handleCategoryClick("Men")}

@@ -56,21 +56,20 @@ const Navbar = () => {
     }
   };
   return (
-    <nav className="bg-white dark:bg-gray-800 antialiased shadow-md">
+    <nav className="bg-white dark:bg-gray-800 antialiased shadow-md mb-2">
       <div className="px-2 lg:px-10 mx-auto py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center">
             {/* logo div */}
-            <Link to="/" className="text-[#436C68] text-2xl font-normal">
+            <Link to="/" className="text-black text-4xl font-medium">
               ScentYard
             </Link>
-            <div className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
+            <div className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 ">
               <Link
                 to="/products"
-                title=""
-                className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+                className="underline ml-2 flex text-lg font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
               >
-                Products
+                Shop
               </Link>
               {/* {userInfo.isAdmin && (
                 <Link
@@ -82,6 +81,16 @@ const Navbar = () => {
                 </Link>
               )} */}
             </div>
+          </div>
+
+          <div className="flex items-center">
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Search"
+              className="border border-[#436C68] py-2 px-2 rounded-md w-[218px]"
+            />
           </div>
 
           <div className="flex items-center lg:space-x-2">
