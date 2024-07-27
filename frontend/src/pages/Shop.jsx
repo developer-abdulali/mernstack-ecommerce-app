@@ -121,7 +121,7 @@ const Products = () => {
       <div className="flex flex-col md:flex-row">
         {/* filters  */}
         <aside
-          className={`fixed inset-y-0 left-0 z-50 p-4 bg-white md:static md:block transition-transform transform md:transform-none ${
+          className={`md:w-[288px] fixed inset-y-0 left-0 z-50 p-4 bg-white md:static md:block transition-transform transform md:transform-none ${
             isFilterOpen
               ? "translate-x-0"
               : "-translate-x-full md:translate-x-0"

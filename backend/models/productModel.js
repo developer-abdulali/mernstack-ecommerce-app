@@ -72,6 +72,8 @@ const productSchema = mongoose.Schema(
     },
     countInStock: { type: Number, required: true, default: 0 },
     imageData: { type: String },
+    additionalImage1: { type: String },
+    additionalImage2: { type: String },
   },
   { timestamps: true }
 );
