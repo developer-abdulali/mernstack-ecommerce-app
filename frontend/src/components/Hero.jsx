@@ -17,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <Link to="/products">
         <img
           src={HeroImg}
@@ -64,11 +64,11 @@ const Hero = () => {
 
       {/* mix categories */}
       <div className="text-4xl text-center my-10 font-normal">Categories:</div>
-      <div className="grid grid-cols-3 gap-4 px-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
         {/* Men Category */}
         <div
           onClick={() => handleCategoryClick("Men")}
-          className="p-5 border border-[#436C68] h-[402px] w-[609px] rounded-lg cursor-pointer"
+          className="p-5 border border-[#436C68] h-[402px] w-full rounded-lg cursor-pointer"
         >
           <div className="relative h-full">
             <img
@@ -85,7 +85,7 @@ const Hero = () => {
         {/* Women Category */}
         <div
           onClick={() => handleCategoryClick("Women")}
-          className="p-5 border border-[#436C68] h-[402px] w-[609px] rounded-lg cursor-pointer"
+          className="p-5 border border-[#436C68] h-[402px] w-full rounded-lg cursor-pointer"
         >
           <div className="relative h-full">
             <img
@@ -102,7 +102,7 @@ const Hero = () => {
         {/* Men & Women Category */}
         <div
           onClick={() => handleCategoryClick("Men & Women")}
-          className="p-5 border border-[#436C68] h-[402px] w-[609px] rounded-lg cursor-pointer"
+          className="p-5 border border-[#436C68] h-[402px] w-full rounded-lg cursor-pointer"
         >
           <div className="relative h-full">
             <img

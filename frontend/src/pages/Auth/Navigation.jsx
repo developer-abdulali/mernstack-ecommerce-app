@@ -83,7 +83,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex items-center">
+          <div className="hidden md:block">
             <input
               type="text"
               name=""

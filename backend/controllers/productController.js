@@ -1,5 +1,6 @@
 import asyncHandler from "../middlewares/asyncHandler.js";
 import Product from "../models/productModel.js";
+import Category from "../models/categoryModel.js";
 
 const addProduct = asyncHandler(async (req, res) => {
   try {
@@ -194,21 +195,90 @@ const fetchNewProducts = asyncHandler(async (req, res) => {
   }
 });
 
+// const filterProducts = asyncHandler(async (req, res) => {
+//   try {
+//     const { checked, radio, category } = req.body;
+
+//     let args = {};
+//     if (checked && checked.length > 0) args.category = { $in: checked };
+//     if (radio && radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
+//     if (category) {
+//       const categoryDoc = await Category.findOne({ name: category });
+//       if (categoryDoc) {
+//         args.category = categoryDoc._id;
+//       }
+//     }
+
+//     const products = await Product.find(args).populate("category");
+//     res.json(products);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Server Error" });
+//   }
+// });
 const filterProducts = asyncHandler(async (req, res) => {
   try {
-    const { checked, radio } = req.body;
+    const { checked, radio, category, rating, sort } = req.body;
 
     let args = {};
-    if (checked.length > 0) args.category = checked;
-    if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
+    if (checked && checked.length > 0) args.category = { $in: checked };
+    if (radio && radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
+    if (category) {
+      const categoryDoc = await Category.findOne({ name: category });
+      if (categoryDoc) {
+        args.category = categoryDoc._id;
+      }
+    }
+    if (rating) {
+      args.rating = { $gte: rating };
+    }
 
-    const products = await Product.find(args);
+    let sortArgs = {};
+    if (sort === "price-high-to-low") sortArgs.price = -1;
+    if (sort === "price-low-to-high") sortArgs.price = 1;
+
+    const products = await Product.find(args)
+      .populate("category")
+      .sort(sortArgs);
     res.json(products);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server Error" });
   }
 });
+
+// const filterProducts = asyncHandler(async (req, res) => {
+//   try {
+//     const { checked, radio } = req.body;
+
+//     let args = {};
+//     if (checked && checked.length > 0) args.category = checked;
+//     if (radio && radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
+
+//     const products = await Product.find(args);
+//     res.json(products);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Server Error" });
+//   }
+// });
+
+// 1st original code
+// const filterProducts = asyncHandler(async (req, res) => {
+//   try {
+//     const { checked, radio } = req.body;
+
+//     let args = {};
+//     if (checked.length > 0) args.category = checked;
+//     if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
+
+//     const products = await Product.find(args);
+//     res.json(products);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Server Error" });
+//   }
+// });
 
 export {
   addProduct,
