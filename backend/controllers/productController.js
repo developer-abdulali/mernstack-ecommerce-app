@@ -4,7 +4,9 @@ import Category from "../models/categoryModel.js";
 
 const addProduct = asyncHandler(async (req, res) => {
   try {
-    const { name, description, price, category, quantity, brand } = req.fields;
+    const { name, description, price, category, brand, discount } =
+      // const { name, description, price, category, quantity, brand, discount } =
+      req.fields;
 
     // Validation
     switch (true) {
@@ -18,11 +20,13 @@ const addProduct = asyncHandler(async (req, res) => {
         return res.json({ error: "Price is required" });
       case !category:
         return res.json({ error: "Category is required" });
-      case !quantity:
-        return res.json({ error: "Quantity is required" });
+      // case !quantity:
+      // return res.json({ error: "Quantity is required" });
+      case discount < 0 || discount > 100:
+        return res.json({ error: "Discount must be between 0 and 100" });
     }
 
-    const product = new Product({ ...req.fields });
+    const product = new Product({ ...req.fields, discount });
     await product.save();
     res.json(product);
   } catch (error) {

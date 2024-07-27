@@ -137,7 +137,7 @@ const Navbar = () => {
               </>
             )}
             {isUserDropdownOpen && (
-              <div className="absolute bottom-full top-14 right-80 h-fit z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
+              <div className="absolute bottom-full top-14 right-0 h-fit z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
                 <>
                   <NavLink
                     to="/profile"
