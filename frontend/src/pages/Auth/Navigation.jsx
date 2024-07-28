@@ -19,6 +19,7 @@ const Navbar = () => {
 
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
 
   const { search } = useLocation();
   const sp = new URLSearchParams(search);
@@ -26,24 +27,6 @@ const Navbar = () => {
   const [logoutApiCall] = useLogoutMutation();
 
   const dropdownRef = useRef(null);
-
-  // useEffect(() => {
-  //   const closeDropdown = (e) => {
-  //     if (
-  //       dropdownRef.current &&
-  //       !dropdownRef.current.contains(e.target) &&
-  //       isUserDropdownOpen
-  //     ) {
-  //       setIsUserDropdownOpen(false);
-  //     }
-  //   };
-
-  //   document.addEventListener("mousedown", closeDropdown);
-
-  //   return () => {
-  //     document.removeEventListener("mousedown", closeDropdown);
-  //   };
-  // }, [isUserDropdownOpen]);
 
   const logoutHandler = async () => {
     try {
@@ -55,6 +38,33 @@ const Navbar = () => {
       console.error(error);
     }
   };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isUserDropdownOpen &&
+        !event.target.closest("#userDropdownButton1") &&
+        !event.target.closest(".absolute.bottom-full.top-14.right-0")
+      ) {
+        setIsUserDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isUserDropdownOpen]);
+
+  const handleSearchInputChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/products?search=${searchInput}`);
+  };
+
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased shadow-md mb-2">
       <div className="px-2 lg:px-10 mx-auto py-4">
@@ -82,15 +92,18 @@ const Navbar = () => {
               )} */}
             </div>
           </div>
-
           <div className="hidden md:block">
-            <input
-              type="text"
-              name=""
-              id=""
-              placeholder="Search"
-              className="border border-[#436C68] py-2 px-2 rounded-md w-[218px]"
-            />
+            <form onSubmit={handleSearchSubmit}>
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search"
+                value={searchInput}
+                onChange={handleSearchInputChange}
+                className="border border-[#436C68] py-2 px-2 rounded-md w-[218px]"
+              />
+            </form>
           </div>
 
           <div className="flex items-center lg:space-x-2">
@@ -106,7 +119,6 @@ const Navbar = () => {
 
                 {/* account btn end */}
                 <button
-                  // ref={dropdownRef}
                   id="userDropdownButton1"
                   onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
                   type="button"
@@ -136,8 +148,15 @@ const Navbar = () => {
                 </Link>
               </>
             )}
+            {/* admin nav links */}
             {isUserDropdownOpen && (
-              <div className="absolute bottom-full top-14 right-0 h-fit z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
+              <div
+                ref={dropdownRef}
+                className={`absolute bottom-full top-14 right-0 h-fit z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700 ${
+                  isUserDropdownOpen ? "" : "hidden"
+                }`}
+              >
+                {/* <div className="absolute bottom-full top-14 right-0 h-fit z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700"> */}
                 <>
                   <NavLink
                     to="/profile"
@@ -165,14 +184,15 @@ const Navbar = () => {
                   </NavLink>
                   <NavLink
                     to="/favorite"
-                    title="My Favorites"
+                    title="My Wishlist"
+                    onClick={() => setIsUserDropdownOpen(false)}
                     className={({ isActive }) =>
                       `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
                         isActive ? "text-red-500" : "text-black"
                       }`
                     }
                   >
-                    My Favorites
+                    My Wishlist
                   </NavLink>
                   {userInfo.isAdmin && (
                     <>

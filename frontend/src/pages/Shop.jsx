@@ -11,20 +11,25 @@ import Loader from "../components/Loader";
 import ProductCard from "./Products/ProductCard";
 import { FaFilter, FaStar } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
+import { useLocation } from "react-router";
 
 const Products = () => {
+  // const [searchInput, setSearchInput] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  const categoriesQuery = useFetchCategoriesQuery();
+  const [priceFilter, setPriceFilter] = useState("");
+  const [sortFilter, setSortFilter] = useState("");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
   const dispatch = useDispatch();
   const { categories, products, checked, radio } = useSelector(
     (state) => state.shop
   );
 
-  const categoriesQuery = useFetchCategoriesQuery();
-  const [priceFilter, setPriceFilter] = useState("");
-  const [sortFilter, setSortFilter] = useState("");
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const { search } = useLocation();
+  const searchParams = new URLSearchParams(search);
+  const searchInput = searchParams.get("search") || "";
 
   const filteredProductsQuery = useGetFilteredProductsQuery({
     checked,
@@ -34,6 +39,7 @@ const Products = () => {
     sort: sortFilter,
     minPrice,
     maxPrice,
+    search: searchInput,
   });
 
   // Add a new function to handle rating change
@@ -59,13 +65,16 @@ const Products = () => {
       dispatch(setCategories(categoriesQuery.data));
     }
   }, [categoriesQuery.data, dispatch]);
+
   useEffect(() => {
     if (filteredProductsQuery.isSuccess) {
       const filteredProducts = filteredProductsQuery.data.filter((product) => {
         return (
           (!ratingFilter || product.rating >= ratingFilter) &&
           (!minPrice || product.price >= minPrice) &&
-          (!maxPrice || product.price <= maxPrice)
+          (!maxPrice || product.price <= maxPrice) &&
+          (!searchInput ||
+            product.name.toLowerCase().includes(searchInput.toLowerCase()))
         );
       });
 
@@ -87,7 +96,9 @@ const Products = () => {
     sortFilter,
     minPrice,
     maxPrice,
+    searchInput,
   ]);
+
   const handleBrandClick = (brand) => {
     const productsByBrand = filteredProductsQuery.data?.filter(
       (product) => product.brand === brand
@@ -117,15 +128,15 @@ const Products = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="px-5">
       <div className="flex flex-col md:flex-row">
         {/* filters  */}
         <aside
-          className={`md:w-[288px] fixed inset-y-0 left-0 z-50 p-4 bg-white md:static md:block transition-transform transform md:transform-none ${
+          className={`w-[288px] p-4 bg-white sticky top-0 h-screen md:block ${
             isFilterOpen
-              ? "translate-x-0"
-              : "-translate-x-full md:translate-x-0"
-          }`}
+              ? "block translate-x-0"
+              : "hidden -translate-x-full md:translate-x-0"
+          } md:block`}
         >
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-2xl font-medium">Filters</h2>
@@ -279,13 +290,13 @@ const Products = () => {
           </div>
         </aside>
 
-        <div className="p-2 md:p-7">
+        <div className="p-2 md:p-5">
           <div className="flex items-center justify-between">
             {/* Button to toggle filter aside on small screens */}
 
-            <h2 className="mb-2 md:text-xl font-medium">
-              Showing {products?.length} products from{" "}
-              {filteredProductsQuery.data?.length} total products
+            <h2 className="ml-2 md:text-xl font-medium">
+              Showing {products?.length} of {filteredProductsQuery.data?.length}{" "}
+              products
             </h2>
             <button
               className="md:hidden flex items-center justify-center"
@@ -304,7 +315,7 @@ const Products = () => {
             ) : (
               products?.map((p) => (
                 <div className="p-3" key={p._id}>
-                  <ProductCard p={p} />
+                  <ProductCard p={p} searchInput={searchInput} />
                 </div>
               ))
             )}
