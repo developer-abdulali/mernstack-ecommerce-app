@@ -24,6 +24,24 @@ const Shipping = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+
+  //   if (!paymentMethod) {
+  //     alert("Please select a payment method");
+  //     return;
+  //   }
+
+  //   if (paymentMethod !== "CashOnDelivery" && !receipt) {
+  //     alert("Please upload a payment proof");
+  //     return;
+  //   }
+
+  //   dispatch(saveShippingAddress({ address, city, postalCode }));
+  //   dispatch(savePaymentMethod(paymentMethod));
+  //   dispatch(saveReceipt(receipt));
+  //   navigate("/placeorder");
+  // };
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -37,10 +55,15 @@ const Shipping = () => {
       return;
     }
 
-    dispatch(saveShippingAddress({ address, city, postalCode }));
-    dispatch(savePaymentMethod(paymentMethod));
-    dispatch(saveReceipt(receipt));
-    navigate("/placeorder");
+    const reader = new FileReader();
+    reader.readAsDataURL(receipt);
+    reader.onloadend = () => {
+      const base64data = reader.result;
+      dispatch(saveShippingAddress({ address, city, postalCode }));
+      dispatch(savePaymentMethod(paymentMethod));
+      dispatch(saveReceipt(base64data));
+      navigate("/placeorder");
+    };
   };
 
   // Payment

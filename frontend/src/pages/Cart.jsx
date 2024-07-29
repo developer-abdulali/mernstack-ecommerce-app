@@ -192,7 +192,7 @@ const Cart = () => {
                   You will save RS: 0 on this order
                 </div>
                 <button
-                  className="bg-[#436C68] hover:bg-[#436c68e6] text-white mt-4 py-2 px-4 rounded-full text-lg w-full"
+                  className="bg-[#436C68] hover:bg-[#436c68e6] text-white mt-4 py-2 px-4 rounded text-lg w-full"
                   disabled={cartItems.length === 0}
                   onClick={checkoutHandler}
                 >

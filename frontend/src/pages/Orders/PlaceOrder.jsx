@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,6 +10,7 @@ import { clearCartItems } from "../../redux/features/cart/cartSlice";
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
 
@@ -21,26 +22,6 @@ const PlaceOrder = () => {
     }
   }, [cart.paymentMethod, cart.shippingAddress.address, navigate]);
 
-  const dispatch = useDispatch();
-
-  // const placeOrderHandler = async () => {
-  //   try {
-  //     const res = await createOrder({
-  //       orderItems: cart.cartItems,
-  //       shippingAddress: cart.shippingAddress,
-  //       paymentMethod: cart.paymentMethod,
-  //       itemsPrice: cart.itemsPrice,
-  //       shippingPrice: cart.shippingPrice,
-  //       taxPrice: cart.taxPrice,
-  //       totalPrice: cart.totalPrice,
-  //     }).unwrap();
-  //     dispatch(clearCartItems());
-  //     navigate(`/order/${res._id}`);
-  //   } catch (error) {
-  //     toast.error(error);
-  //   }
-  // };
-
   const placeOrderHandler = async () => {
     try {
       const res = await createOrder({
@@ -51,9 +32,13 @@ const PlaceOrder = () => {
         shippingPrice: cart.shippingPrice,
         taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
-      });
+      }).unwrap();
       dispatch(clearCartItems());
-      navigate(`/order/${res.data._id}`);
+      navigate(`/order/${res._id}`);
+      toast.success("Item ordered successfully", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
     } catch (error) {
       toast.error(error);
     }
@@ -133,21 +118,21 @@ const PlaceOrder = () => {
             <div>
               <h2 className="text-2xl font-semibold mb-4">Shipping</h2>
               <p>
-                <strong>Address:</strong> {cart.shippingAddress.address},{" "}
-                {cart.shippingAddress.city} {cart.shippingAddress.postalCode},{" "}
-                {cart.shippingAddress.country}
+                <strong>Address:</strong> {cart?.shippingAddress?.address},{" "}
+                {cart.shippingAddress?.city} {cart?.shippingAddress?.postalCode}
+                , {cart?.shippingAddress?.country}
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-semibold mb-4">Payment Method</h2>
-              <strong>Method:</strong> {cart.paymentMethod}
+              <strong>Method:</strong> {cart?.paymentMethod}
             </div>
           </div>
 
           <button
             type="button"
-            className="bg-pink-500 text-white py-2 px-4 rounded-full text-lg w-full mt-4"
+            className="bg-[#436C68] hover:bg-[#436c68e6] text-white py-2 px-4 rounded text-lg w-full mt-4"
             disabled={cart.cartItems === 0}
             onClick={placeOrderHandler}
           >
