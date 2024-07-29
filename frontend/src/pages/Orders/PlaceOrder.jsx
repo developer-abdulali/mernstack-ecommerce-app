@@ -23,6 +23,24 @@ const PlaceOrder = () => {
 
   const dispatch = useDispatch();
 
+  // const placeOrderHandler = async () => {
+  //   try {
+  //     const res = await createOrder({
+  //       orderItems: cart.cartItems,
+  //       shippingAddress: cart.shippingAddress,
+  //       paymentMethod: cart.paymentMethod,
+  //       itemsPrice: cart.itemsPrice,
+  //       shippingPrice: cart.shippingPrice,
+  //       taxPrice: cart.taxPrice,
+  //       totalPrice: cart.totalPrice,
+  //     }).unwrap();
+  //     dispatch(clearCartItems());
+  //     navigate(`/order/${res._id}`);
+  //   } catch (error) {
+  //     toast.error(error);
+  //   }
+  // };
+
   const placeOrderHandler = async () => {
     try {
       const res = await createOrder({
@@ -33,9 +51,9 @@ const PlaceOrder = () => {
         shippingPrice: cart.shippingPrice,
         taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
-      }).unwrap();
+      });
       dispatch(clearCartItems());
-      navigate(`/order/${res._id}`);
+      navigate(`/order/${res.data._id}`);
     } catch (error) {
       toast.error(error);
     }
@@ -90,7 +108,7 @@ const PlaceOrder = () => {
 
         <div className="mt-8">
           <h2 className="text-2xl font-semibold mb-5">Order Summary</h2>
-          <div className="flex justify-between flex-wrap p-8 bg-[#181818]">
+          <div className="flex justify-between flex-wrap p-8 bg-[#eae6e6]">
             <ul className="text-lg">
               <li>
                 <span className="font-semibold mb-4">Items:</span> RS:

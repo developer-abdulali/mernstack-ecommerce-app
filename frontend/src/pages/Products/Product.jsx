@@ -1,26 +1,88 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeartIcon from "./HeartIcon";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/features/cart/cartSlice";
+import { toast } from "react-toastify";
 
 const Product = ({ product }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { userInfo } = useSelector((state) => state.auth);
+  const { cartItems } = useSelector((state) => state.cart);
+
+  // Calculate discounted price
+  const discountedPrice =
+    product.price - (product.price * (product.discount || 0)) / 100;
   const imageUrl = `http://localhost:5000${product.image}`;
 
-  return (
-    <div className="w-[30rem] ml-[2rem] p-3 relative">
-      <div className="relative">
-        <img src={imageUrl} alt={product.name} className="w-[30rem] rounded" />
-        <HeartIcon product={product} />
-      </div>
+  const addToCartHandler = (product, qty) => {
+    if (!userInfo) {
+      toast.error("Please login first", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+      return;
+    }
+    dispatch(addToCart({ ...product, qty }));
+    toast.success("Item added successfully", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000,
+    });
+  };
 
-      <div className="p-4">
+  const isInCart = cartItems.some((item) => item._id === product._id);
+
+  return (
+    <div className="border border-[#436C68] relative rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <section className="relative">
         <Link to={`/product/${product._id}`}>
-          <h2 className="flex justify-between items-center">
-            <div className="text-lg">{product.name}</div>
-            <span className="bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-              RS: {product.price}
-            </span>
-          </h2>
+          <img
+            className="cursor-pointer w-full rounded-t-[7px]"
+            src={imageUrl}
+            alt={product?.name}
+          />
         </Link>
+        <HeartIcon product={product} />
+      </section>
+
+      <div className="p-1">
+        <Link to={`/product/${product._id}`}>
+          <p className="mb-1 font-normal text-black truncate my-3">
+            {product.name}
+          </p>
+        </Link>
+        <div className="flex justify-between my-2">
+          {product.discount ? (
+            <div className="flex items-center">
+              <p className="text-lg font-medium">
+                RS: {discountedPrice.toFixed(2)}
+              </p>
+              <p className="ml-2 text-sm text-gray-500 line-through">
+                RS: {product.price}
+              </p>
+              <p className="ml-2 text-sm text-green-600">
+                {product.discount}% off
+              </p>
+            </div>
+          ) : (
+            <p className="mb-2 text-black">RS: {product.price}</p>
+          )}
+          {!product.countInStock ? (
+            <div className="text-center text-sm ml-2 text-red-500">
+              Out of Stock
+            </div>
+          ) : null}
+        </div>
+
+        <button
+          onClick={() =>
+            isInCart ? navigate("/cart") : addToCartHandler(product, 1)
+          }
+          className="p-2 rounded-md bg-[#436C68] text-white w-full"
+        >
+          {isInCart ? "Go To Cart" : "Add To Cart"}
+        </button>
       </div>
     </div>
   );

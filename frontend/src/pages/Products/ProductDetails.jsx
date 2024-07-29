@@ -269,64 +269,71 @@ const ProductDetails = () => {
           </div>
 
           <div className="p-2 md:w-6/12">
-            <h2 className="text-xl md:text-2xl font-semibold mb-3">
-              {product.name}
-            </h2>
-            <Ratings
-              value={product.rating}
-              text={`${product.numReviews} reviews`}
-            />
-            <div className="my-5">
-              {product?.discount ? (
+            <div className="xl:w-7/12">
+              <h2 className="text-xl md:text-2xl font-semibold mb-3">
+                {product.name}
+              </h2>
+              <Ratings
+                value={product.rating}
+                text={`${product.numReviews} reviews`}
+              />
+              <div className="my-5">
+                {product?.discount ? (
+                  <div className="flex items-center">
+                    <p className="text-lg font-medium">
+                      RS: {discountedPrice.toFixed(2)}
+                    </p>
+                    <p className="ml-2 text-sm text-gray-500 line-through">
+                      RS: {product?.price}
+                    </p>
+                    <p className="ml-2 text-sm text-green-600">
+                      {product?.discount}% off
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-lg font-medium">RS: {product?.price}</p>
+                )}
+                {!product?.countInStock && (
+                  <div className="text-center text-sm text-red-500">
+                    Out of Stock
+                  </div>
+                )}
+              </div>
+
+              <div className="my-4 text-sm text-gray-600">
                 <div className="flex items-center">
-                  <p className="text-lg font-medium">
-                    RS: {discountedPrice.toFixed(2)}
-                  </p>
-                  <p className="ml-2 text-sm text-gray-500 line-through">
-                    RS: {product?.price}
-                  </p>
-                  <p className="ml-2 text-sm text-green-600">
-                    {product?.discount}% off
-                  </p>
+                  <IoCheckmarkSharp size={20} />
+                  <span className="ml-1">7 Days Money Back Guarantee</span>
                 </div>
-              ) : (
-                <p className="text-lg font-medium">RS: {product?.price}</p>
-              )}
-              {!product?.countInStock && (
-                <div className="text-center text-sm text-red-500">
-                  Out of Stock
+                <div className="flex items-center">
+                  <IoCheckmarkSharp size={20} />
+                  <span className="ml-1"> Cash on Delivery Available</span>
                 </div>
-              )}
-            </div>
+                <div className="flex items-center">
+                  <IoCheckmarkSharp size={20} />
+                  <span className="ml-1"> All cards accepted</span>
+                </div>
+              </div>
+              <hr className="my-4" />
+              <p className="text-[18px] mb-2">Product Details</p>
+              <p className="mb-2">Brand: {product.brand}</p>
+              <p className="mb-2">
+                Availability :{" "}
+                {product.countInStock ? "In Stock" : "Out of Stock"}
+              </p>
+              <p className="mb-2">Delivery : 5 to 7 Days</p>
+              {/* <p className="mb-2">
+                Added: {moment(product.createAt).fromNow()}
+              </p> */}
 
-            <div className="my-4 text-sm text-gray-600">
-              <div className="flex items-center">
-                <IoCheckmarkSharp size={20} />
-                <span className="ml-1">7 Days Money Back Guarantee</span>
-              </div>
-              <div className="flex items-center">
-                <IoCheckmarkSharp size={20} />
-                <span className="ml-1"> Cash on Delivery Available</span>
-              </div>
-              <div className="flex items-center">
-                <IoCheckmarkSharp size={20} />
-                <span className="ml-1"> All cards accepted</span>
-              </div>
+              <button
+                onClick={handleButtonClick}
+                disabled={product.countInStock === 0}
+                className="w-full md:w-auto bg-[#436C68] hover:bg-[#436c68e6] text-white py-2 px-4 rounded-lg disabled:opacity-50"
+              >
+                {isAddedToCart ? "Go To Cart" : "Add To Cart"}
+              </button>
             </div>
-            <hr className="my-4" />
-            <p className="font-semibold mb-2">Product Details</p>
-            <p className="mb-2">Stock: {product.countInStock}</p>
-            <p className="mb-2">Brand: {product.brand}</p>
-            <p className="mb-2">Reviews: {product.numReviews}</p>
-            <p className="mb-2">Added: {moment(product.createAt).fromNow()}</p>
-
-            <button
-              onClick={handleButtonClick}
-              disabled={product.countInStock === 0}
-              className="w-full md:w-auto bg-[#436C68] hover:bg-[#436c68e6] text-white py-2 px-4 rounded-lg disabled:opacity-50"
-            >
-              {isAddedToCart ? "Go To Cart" : "Add To Cart"}
-            </button>
           </div>
         </div>
       )}

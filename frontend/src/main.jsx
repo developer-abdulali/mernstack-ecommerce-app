@@ -22,7 +22,6 @@ import AllProducts from "./pages/Admin/AllProducts";
 import ProductUpdate from "./pages/Admin/ProductUpdate";
 
 import Home from "./pages/Home.jsx";
-import Favorites from "./pages/Products/Favorites.jsx";
 import ProductDetails from "./pages/Products/ProductDetails.jsx";
 
 import Cart from "./pages/Cart.jsx";
@@ -36,6 +35,7 @@ import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import UserOrders from "./pages/User/UserOrder.jsx";
 import Products from "./pages/Shop.jsx";
 import PageNotFound from "./components/404.jsx";
+import WishList from "./pages/Products/WishList.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,7 +43,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route index={true} path="/" element={<Home />} />
-      <Route path="/favorite" element={<Favorites />} />
+      <Route path="/wishlist" element={<WishList />} />
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/products" element={<Products />} />

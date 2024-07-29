@@ -19,6 +19,7 @@ const Shipping = () => {
     shippingAddress.postalCode || ""
   );
   const [receipt, setReceipt] = useState(null);
+  const [showNayaPayDetails, setShowNayaPayDetails] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ const Shipping = () => {
               type="text"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="address"
-              placeholder="Enter address"
+              placeholder="address"
               value={address}
               required
               onChange={(e) => setAddress(e.target.value)}
@@ -83,7 +84,7 @@ const Shipping = () => {
               type="text"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="city"
-              placeholder="Enter city"
+              placeholder="city"
               value={city}
               required
               onChange={(e) => setCity(e.target.value)}
@@ -100,7 +101,7 @@ const Shipping = () => {
               type="text"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="postalCode"
-              placeholder="Enter postal code"
+              placeholder="postal code"
               value={postalCode}
               required
               onChange={(e) => setPostalCode(e.target.value)}
@@ -117,13 +118,13 @@ const Shipping = () => {
                   type="radio"
                   className="form-radio text-pink-500"
                   name="paymentMethod"
-                  value="JazzCash"
-                  checked={paymentMethod === "JazzCash"}
+                  value="NayaPay"
+                  checked={paymentMethod === "NayaPay"}
                   onChange={(e) => setPaymentMethod(e.target.value)}
                 />
-                <span className="ml-1">JazzCash</span>
+                <span className="ml-1">NayaPay</span>
               </label>
-              {paymentMethod === "JazzCash" && (
+              {paymentMethod === "NayaPay" && (
                 <p className="text-gray-300 text-sm">
                   Account Number: +92 305 2879926, Account Title: Abdul Ali
                 </p>
@@ -174,7 +175,7 @@ const Shipping = () => {
             </div>
           )}
           <button
-            className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+            className="bg-[#436C68] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full hover:bg-[#436c68ea]"
             type="submit"
           >
             Continue

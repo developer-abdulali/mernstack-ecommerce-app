@@ -133,7 +133,7 @@ const Products = () => {
         <aside
           className={`w-[288px] p-4 bg-white sticky top-0 h-screen md:block ${
             isFilterOpen
-              ? "block translate-x-0"
+              ? "block translate-x-0 z-10 w-full border"
               : "hidden -translate-x-full md:translate-x-0"
           } md:block`}
         >

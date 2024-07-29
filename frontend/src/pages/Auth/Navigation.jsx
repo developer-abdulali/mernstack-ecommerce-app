@@ -28,8 +28,6 @@ const Navbar = () => {
 
   const dropdownRef = useRef(null);
 
-  console.log(cartItems);
-
   const logoutHandler = async () => {
     try {
       await logoutApiCall().unwrap();
@@ -113,7 +111,7 @@ const Navbar = () => {
               <>
                 <NavLink
                   to="/cart"
-                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white relative"
+                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white relative"
                 >
                   <HiOutlineShoppingCart className="w-5 h-5 lg:me-1" />
                   <span className="hidden md:block">My Cart</span>
@@ -124,12 +122,12 @@ const Navbar = () => {
                   )}
                 </NavLink>
 
-                {/* account btn end */}
+                {/* account btn for desktop */}
                 <button
                   id="userDropdownButton1"
                   onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
                   type="button"
-                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+                  className="hidden sm:inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
                 >
                   <RiUser3Line className="w-5 h-5 me-1" />
                   {userInfo.username}
@@ -163,15 +161,17 @@ const Navbar = () => {
                   isUserDropdownOpen ? "" : "hidden"
                 }`}
               >
-                {/* <div className="absolute bottom-full top-14 right-0 h-fit z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700"> */}
                 <>
                   <NavLink
                     to="/profile"
                     title="My Account"
-                    onClick={() => setIsUserDropdownOpen(false)}
+                    onClick={() => {
+                      setIsUserDropdownOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
                     className={({ isActive }) =>
-                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                        isActive ? "text-red-500" : "text-black"
+                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                        isActive ? "text-blue-600" : "text-black"
                       }`
                     }
                   >
@@ -180,22 +180,28 @@ const Navbar = () => {
                   <NavLink
                     to="/user-orders"
                     title="My Orders"
-                    onClick={() => setIsUserDropdownOpen(false)}
+                    onClick={() => {
+                      setIsUserDropdownOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
                     className={({ isActive }) =>
-                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                        isActive ? "text-red-500" : "text-black"
+                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                        isActive ? "text-blue-600" : "text-black"
                       }`
                     }
                   >
                     My Orders
                   </NavLink>
                   <NavLink
-                    to="/favorite"
+                    to="/wishlist"
                     title="My Wishlist"
-                    onClick={() => setIsUserDropdownOpen(false)}
+                    onClick={() => {
+                      setIsUserDropdownOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
                     className={({ isActive }) =>
-                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                        isActive ? "text-red-500" : "text-black"
+                      `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                        isActive ? "text-blue-600" : "text-black"
                       }`
                     }
                   >
@@ -206,10 +212,13 @@ const Navbar = () => {
                       <NavLink
                         to="/admin/dashboard "
                         title="Admin Dashboard"
-                        onClick={() => setIsUserDropdownOpen(false)}
+                        onClick={() => {
+                          setIsUserDropdownOpen(false);
+                          setIsMobileMenuOpen(false);
+                        }}
                         className={({ isActive }) =>
-                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                            isActive ? "text-red-500" : "text-black"
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                            isActive ? "text-blue-600" : "text-black"
                           }`
                         }
                       >
@@ -218,10 +227,13 @@ const Navbar = () => {
                       <NavLink
                         to="/admin/productlist"
                         title="Create Products"
-                        onClick={() => setIsUserDropdownOpen(false)}
+                        onClick={() => {
+                          setIsUserDropdownOpen(false);
+                          setIsMobileMenuOpen(false);
+                        }}
                         className={({ isActive }) =>
-                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                            isActive ? "text-red-500" : "text-black"
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                            isActive ? "text-blue-600" : "text-black"
                           }`
                         }
                       >
@@ -230,10 +242,13 @@ const Navbar = () => {
                       <NavLink
                         to="/admin/allproductslist"
                         title="All Products"
-                        onClick={() => setIsUserDropdownOpen(false)}
+                        onClick={() => {
+                          setIsUserDropdownOpen(false);
+                          setIsMobileMenuOpen(false);
+                        }}
                         className={({ isActive }) =>
-                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                            isActive ? "text-red-500" : "text-black"
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                            isActive ? "text-blue-600" : "text-black"
                           }`
                         }
                       >
@@ -243,10 +258,13 @@ const Navbar = () => {
                       <NavLink
                         to="/admin/categorylist"
                         title="Create Category"
-                        onClick={() => setIsUserDropdownOpen(false)}
+                        onClick={() => {
+                          setIsUserDropdownOpen(false);
+                          setIsMobileMenuOpen(false);
+                        }}
                         className={({ isActive }) =>
-                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                            isActive ? "text-red-500" : "text-black"
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                            isActive ? "text-blue-600" : "text-black"
                           }`
                         }
                       >
@@ -255,10 +273,13 @@ const Navbar = () => {
                       <NavLink
                         to="/admin/orderlist"
                         title="Manage Orders"
-                        onClick={() => setIsUserDropdownOpen(false)}
+                        onClick={() => {
+                          setIsUserDropdownOpen(false);
+                          setIsMobileMenuOpen(false);
+                        }}
                         className={({ isActive }) =>
-                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                            isActive ? "text-red-500" : "text-black"
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                            isActive ? "text-blue-600" : "text-black"
                           }`
                         }
                       >
@@ -267,10 +288,13 @@ const Navbar = () => {
                       <NavLink
                         to="/admin/userlist"
                         title="Manage Users"
-                        onClick={() => setIsUserDropdownOpen(false)}
+                        onClick={() => {
+                          setIsUserDropdownOpen(false);
+                          setIsMobileMenuOpen(false);
+                        }}
                         className={({ isActive }) =>
-                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 ${
-                            isActive ? "text-red-500" : "text-black"
+                          `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
+                            isActive ? "text-blue-600" : "text-black"
                           }`
                         }
                       >
@@ -282,7 +306,7 @@ const Navbar = () => {
                   <button
                     onClick={logoutHandler}
                     title="My Favorites"
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-600"
+                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-black hover:bg-gray-200 dark:hover:bg-gray-600"
                   >
                     Logout
                   </button>
@@ -295,7 +319,7 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-controls="ecommerce-navbar-menu-1"
               aria-expanded={isMobileMenuOpen}
-              className="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white"
+              className="inline-flex lg:hidden items-center justify-center hover:bg-gray-200 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white"
             >
               <span className="sr-only">Open Menu</span>
 
@@ -305,16 +329,30 @@ const Navbar = () => {
         </div>
         {/* mobile menu btns */}
         {isMobileMenuOpen && (
-          <div className="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 px-4 mt-4">
+          <div className="bg-gray-50 dark:bg-gray-700 dark:border-gray-600  rounded-lg py-3 px-4 mt-4">
+            {/* account btn for small */}
+            <button
+              onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
+              className="inline-flex items-center rounded-lg justify-center hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white md:hidden"
+            >
+              {/* <RiUser3Line className="w-5 h-5 me-1" /> */}
+              <span className="hover:text-primary-700 dark:hover:text-primary-500">
+                {userInfo.username}
+              </span>
+              <FaChevronDown className="w-4 h-4 text-gray-900 dark:text-white ms-1" />
+            </button>
             <div className="text-gray-900 text-sm font-medium dark:text-white space-y-3">
               <Link
                 to="/"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="hover:text-primary-700 dark:hover:text-primary-500"
               >
                 Home
-              </Link>
+              </Link>{" "}
+              <br />
               <Link
                 to="/products"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="hover:text-primary-700 dark:hover:text-primary-500"
               >
                 Products
