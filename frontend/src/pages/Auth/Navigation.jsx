@@ -15,7 +15,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userInfo } = useSelector((state) => state.auth);
-  const { cartItemss } = useSelector((state) => state.cart);
+  const { cartItems } = useSelector((state) => state.cart);
 
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,6 +27,8 @@ const Navbar = () => {
   const [logoutApiCall] = useLogoutMutation();
 
   const dropdownRef = useRef(null);
+
+  console.log(cartItems);
 
   const logoutHandler = async () => {
     try {
@@ -111,10 +113,15 @@ const Navbar = () => {
               <>
                 <NavLink
                   to="/cart"
-                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white relative"
                 >
                   <HiOutlineShoppingCart className="w-5 h-5 lg:me-1" />
                   <span className="hidden md:block">My Cart</span>
+                  {cartItems.length > 0 && (
+                    <span className="absolute -top-2 left-5 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[12px]">
+                      {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                    </span>
+                  )}
                 </NavLink>
 
                 {/* account btn end */}

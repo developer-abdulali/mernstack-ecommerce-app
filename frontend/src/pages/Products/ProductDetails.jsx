@@ -259,16 +259,16 @@ const ProductDetails = () => {
         </Message>
       ) : (
         <div className="px-3 flex flex-col md:flex-row justify-center gap-5 mt-4 relative">
-          <div className="relative">
+          <div className="relative md:w-6/12 h-fit md:flex md:items-end md:justify-end">
             <img
               src={imageUrl}
               alt={product.name}
-              className="max-w-[428px] max-h-[480px] w-full h-auto rounded-lg cursor-pointer shadow-lg"
+              className="md:max-w-[428px] max-h-[480px] w-full h-auto rounded-lg cursor-pointer shadow-lg"
             />
             <HeartIcon product={product} />
           </div>
 
-          <div className="p-2">
+          <div className="p-2 md:w-6/12">
             <h2 className="text-xl md:text-2xl font-semibold mb-3">
               {product.name}
             </h2>

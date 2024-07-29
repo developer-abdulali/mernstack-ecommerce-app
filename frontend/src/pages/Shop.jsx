@@ -14,7 +14,6 @@ import { FaXmark } from "react-icons/fa6";
 import { useLocation } from "react-router";
 
 const Products = () => {
-  // const [searchInput, setSearchInput] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
@@ -242,7 +241,7 @@ const Products = () => {
               ))}
             </div>
           </div>
-
+          {/* sort by */}
           <div>
             <h2 className="mt-4 text-xl">Sort By</h2>
             <div className="flex flex-col">
@@ -280,6 +279,28 @@ const Products = () => {
                   Price - High to Low
                 </label>
               </div>
+              <button
+                className="md:hidden underline mt-2 w-full border bg-gray-100"
+                onClick={() => window.location.reload()}
+              >
+                Clear
+              </button>
+            </div>
+          </div>
+
+          {/* others */}
+          <div>
+            <h2 className="mt-4 text-xl">Others</h2>
+            <div className="flex flex-col">
+              <div className="flex items-center">
+                <input type="checkbox" name="sort" className="w-4 h-4" />
+                <label className="ml-2 text-base font-normal">In Stock</label>
+              </div>
+              <div className="flex items-center">
+                <input type="checkbox" name="sort" className="w-4 h-4" />
+                <label className="ml-2 text-base font-normal">In Stock</label>
+              </div>
+
               <button
                 className="md:hidden underline mt-2 w-full border bg-gray-100"
                 onClick={() => window.location.reload()}
