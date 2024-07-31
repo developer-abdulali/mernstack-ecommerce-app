@@ -104,7 +104,7 @@ const ProductCard = ({ p }) => {
         <button
           className={`p-2 rounded-md ${
             p.countInStock > 0
-              ? "bg-[#436C68] text-white"
+              ? "bg-[#436C68] hover:bg-[#436C68] text-white"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
           } w-full`}
           onClick={() =>

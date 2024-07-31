@@ -305,7 +305,7 @@ const Navbar = () => {
 
                   <button
                     onClick={logoutHandler}
-                    title="My Favorites"
+                    title="Log out"
                     className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-black hover:bg-gray-200 dark:hover:bg-gray-600"
                   >
                     Logout

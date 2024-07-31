@@ -10,6 +10,7 @@ import ProgressSteps from "../../components/ProgressSteps";
 
 const Shipping = () => {
   const cart = useSelector((state) => state.cart);
+
   const { shippingAddress } = cart;
 
   const [paymentMethod, setPaymentMethod] = useState(null);
@@ -24,24 +25,6 @@ const Shipping = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-
-  //   if (!paymentMethod) {
-  //     alert("Please select a payment method");
-  //     return;
-  //   }
-
-  //   if (paymentMethod !== "CashOnDelivery" && !receipt) {
-  //     alert("Please upload a payment proof");
-  //     return;
-  //   }
-
-  //   dispatch(saveShippingAddress({ address, city, postalCode }));
-  //   dispatch(savePaymentMethod(paymentMethod));
-  //   dispatch(saveReceipt(receipt));
-  //   navigate("/placeorder");
-  // };
   const submitHandler = (e) => {
     e.preventDefault();
 
