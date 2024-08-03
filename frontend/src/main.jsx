@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { Route, RouterProvider, createRoutesFromElements } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoutes/PrivateRoute.jsx";
 
 // Auth
 import Login from "./pages/Auth/Login";
@@ -34,7 +34,7 @@ import OrderList from "./pages/Admin/OrderList.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import UserOrders from "./pages/User/UserOrder.jsx";
 import Products from "./pages/Shop.jsx";
-import PageNotFound from "./components/404.jsx";
+import PageNotFound from "./components/PageNotFound/404.jsx";
 import WishList from "./pages/Products/WishList.jsx";
 
 const router = createBrowserRouter(

@@ -166,8 +166,8 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Message from "../../components/Message";
-import Loader from "../../components/Loader";
+import Message from "../../components/Message/Message";
+import Loader from "../../components/Loader/Loader";
 import {
   useDeliverOrderMutation,
   useGetOrderDetailsQuery,

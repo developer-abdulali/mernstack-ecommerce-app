@@ -1,12 +1,17 @@
 import asyncHandler from "../middlewares/asyncHandler.js";
 import Product from "../models/productModel.js";
-import Category from "../models/categoryModel.js";
 
 const addProduct = asyncHandler(async (req, res) => {
   try {
-    const { name, description, price, category, brand, discount } =
-      // const { name, description, price, category, quantity, brand, discount } =
-      req.fields;
+    const { name, description, price, category, brand, discount } = req.fields;
+
+    // Handle file uploads
+    const mainImage = req.files["mainImage"]
+      ? req.files["mainImage"][0].path
+      : null;
+    const additionalImages = req.files["additionalImages"]
+      ? req.files["additionalImages"].map((file) => file.path)
+      : [];
 
     // Validation
     switch (true) {
@@ -20,20 +25,110 @@ const addProduct = asyncHandler(async (req, res) => {
         return res.json({ error: "Price is required" });
       case !category:
         return res.json({ error: "Category is required" });
-      // case !quantity:
-      // return res.json({ error: "Quantity is required" });
       case discount < 0 || discount > 100:
         return res.json({ error: "Discount must be between 0 and 100" });
     }
 
-    const product = new Product({ ...req.fields, discount });
+    const product = new Product({
+      name,
+      description,
+      price,
+      category,
+      brand,
+      discount,
+      image: mainImage, // Set main image
+      additionalImages, // Set additional images
+    });
+
     await product.save();
     res.json(product);
   } catch (error) {
     console.error(error);
-    res.status(400).json(error.message);
+    res.status(400).json({ error: error.message });
   }
 });
+
+// const addProduct = asyncHandler(async (req, res) => {
+//   try {
+//     const { name, description, price, category, brand, discount } = req.fields;
+
+//     // Handle file uploads
+//     const mainImage = req.files["mainImage"]
+//       ? req.files["mainImage"][0].path
+//       : null;
+//     const additionalImages = req.files["additionalImages"]
+//       ? req.files["additionalImages"].map((file) => file.path)
+//       : [];
+
+//     // Validation
+//     switch (true) {
+//       case !name:
+//         return res.json({ error: "Name is required" });
+//       case !brand:
+//         return res.json({ error: "Brand is required" });
+//       case !description:
+//         return res.json({ error: "Description is required" });
+//       case !price:
+//         return res.json({ error: "Price is required" });
+//       case !category:
+//         return res.json({ error: "Category is required" });
+
+//       case discount < 0 || discount > 100:
+//         return res.json({ error: "Discount must be between 0 and 100" });
+//     }
+
+//     const product = new Product({
+//       name,
+//       description,
+//       price,
+//       category,
+//       brand,
+//       discount,
+//       image: mainImage, // Set main image
+//       additionalImages, // Set additional images
+//     });
+
+//     await product.save();
+//     res.json(product);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(400).json({ error: error.message });
+//   }
+// });
+
+// 1st code
+// const addProduct = asyncHandler(async (req, res) => {
+//   try {
+//     const { name, description, price, category, brand, discount } =
+//       // const { name, description, price, category, quantity, brand, discount } =
+//       req.fields;
+
+//     // Validation
+//     switch (true) {
+//       case !name:
+//         return res.json({ error: "Name is required" });
+//       case !brand:
+//         return res.json({ error: "Brand is required" });
+//       case !description:
+//         return res.json({ error: "Description is required" });
+//       case !price:
+//         return res.json({ error: "Price is required" });
+//       case !category:
+//         return res.json({ error: "Category is required" });
+//       // case !quantity:
+//       // return res.json({ error: "Quantity is required" });
+//       case discount < 0 || discount > 100:
+//         return res.json({ error: "Discount must be between 0 and 100" });
+//     }
+
+//     const product = new Product({ ...req.fields, discount });
+//     await product.save();
+//     res.json(product);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(400).json(error.message);
+//   }
+// });
 
 const updateProductDetails = asyncHandler(async (req, res) => {
   try {
@@ -127,7 +222,7 @@ const fetchAllProducts = asyncHandler(async (req, res) => {
   try {
     const products = await Product.find({})
       .populate("category")
-      .limit(12)
+      // .limit(12)
       .sort({ createAt: -1 });
 
     res.json(products);

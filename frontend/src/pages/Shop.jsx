@@ -7,7 +7,7 @@ import {
   setProducts,
   setChecked,
 } from "../redux/features/shop/shopSlice";
-import Loader from "../components/Loader";
+import Loader from "../components/Loader/Loader";
 import ProductCard from "./Products/ProductCard";
 import { FaFilter, FaStar } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
@@ -26,6 +26,7 @@ const Products = () => {
     (state) => state.shop
   );
 
+  console.log("All products", products);
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
   const searchInput = searchParams.get("search") || "";

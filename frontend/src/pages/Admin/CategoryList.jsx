@@ -7,8 +7,8 @@ import {
 } from "../../redux/api/categoryApiSlice";
 
 import { toast } from "react-toastify";
-import CategoryForm from "../../components/CategoryForm";
-import Modal from "../../components/Modal";
+import CategoryForm from "../../components/CategoryForm/CategoryForm";
+import Modal from "../../components/Modal/Modal";
 
 const CategoryList = () => {
   const { data: categories, refetch } = useFetchCategoriesQuery();

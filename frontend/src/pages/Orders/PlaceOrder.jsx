@@ -152,9 +152,9 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../../components/Message";
-import ProgressSteps from "../../components/ProgressSteps";
-import Loader from "../../components/Loader";
+import Message from "../../components/Message/Message";
+import ProgressSteps from "../../components/ProgressSteps/ProgressSteps";
+import Loader from "../../components/Loader/Loader";
 import { useCreateOrderMutation } from "../../redux/api/orderApiSlice";
 import { clearCartItems } from "../../redux/features/cart/cartSlice";
 import {

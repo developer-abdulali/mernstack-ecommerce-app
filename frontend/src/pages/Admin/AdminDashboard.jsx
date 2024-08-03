@@ -9,7 +9,7 @@ import {
 
 import { useState, useEffect } from "react";
 import OrderList from "./OrderList";
-import Loader from "../../components/Loader";
+import Loader from "../../components/Loader/Loader";
 
 const AdminDashboard = () => {
   const { data: sales, isLoading } = useGetTotalSalesQuery();

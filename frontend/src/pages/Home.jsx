@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useGetProductsQuery } from "../redux/api/productApiSlice";
-import Loader from "../components/Loader";
-import Message from "../components/Message";
-import Hero from "../components/Hero";
+import Loader from "../components/Loader/Loader";
+import Message from "../components/Message/Message";
+import Hero from "../components/Herosection/Hero";
 import HorizontalCard from "../components/HorizontalCard/HorizontalCard";
 
 const Home = () => {

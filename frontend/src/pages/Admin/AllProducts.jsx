@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import moment from "moment";
 import { useAllProductsQuery } from "../../redux/api/productApiSlice";
 import { FaArrowRightLong } from "react-icons/fa6";
 import AllProductsSkeleton from "../../components/AllProductsSkeleton/AllProductsSkeleton";
+import { useSelector } from "react-redux";
 
 const AllProducts = () => {
   const { data: products, refetch, isLoading, isError } = useAllProductsQuery();
+  const navigate = useNavigate();
 
   useEffect(() => {
     refetch();
@@ -31,6 +33,16 @@ const AllProducts = () => {
       <div className="text-3xl font-bold text-center text-gray-800 mb-8">
         All Products ({products.length})
       </div>
+      {products.length === 0 && (
+        <div className="flex items-center justify-center">
+          <button
+            onClick={() => navigate("/admin/productlist")}
+            className=" mt-4 px-4 py-2 bg-[#436C68] text-white rounded hover:bg-[#436c68e7]"
+          >
+            Create Product
+          </button>
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.map((product) => (
           <div
@@ -58,6 +70,7 @@ const AllProducts = () => {
               <div className="flex justify-between items-center mt-auto">
                 <p className="text-lg font-semibold text-[#436C68]">
                   Rs: {product?.price}
+                  {/* Rs: {calculateDiscountedPrice} */}
                 </p>
                 <div className="flex space-x-2">
                   <Link
