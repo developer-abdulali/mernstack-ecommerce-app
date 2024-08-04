@@ -59,7 +59,6 @@ const productSchema = mongoose.Schema(
     image: { type: String },
     brand: { type: String, required: true },
     quantity: { type: Number },
-    // quantity: { type: Number, required: true },
     category: { type: ObjectId, ref: "Category", required: true },
     description: { type: String, required: true },
     reviews: [reviewSchema],

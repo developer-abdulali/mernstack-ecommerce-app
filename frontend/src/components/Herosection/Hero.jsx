@@ -21,9 +21,7 @@ const Hero = () => {
           <div className="text-4xl text-green-600">
             <FaCheckCircle />
           </div>
-          <div className="text-xl md:text-2xl font-extrabold">
-            Money Guarantee
-          </div>
+          <div className="text-xl md:text-2xl font-medium">Money Guarantee</div>
           <div className="text-xl md:text-2xl font-normal">
             7 Days Money Back
           </div>
@@ -34,20 +32,15 @@ const Hero = () => {
             <FaTruck />
             {/* <i className="fa-solid fa-truck-fast"></i> */}
           </div>
-          <div className="text-xl md:text-2xl font-extrabold">
-            Fast Delivery
-          </div>
+          <div className="text-xl md:text-2xl font-medium">Fast Delivery</div>
           <div className="text-xl md:text-2xl">Within 3-5 business days</div>
         </div>
 
         <div className="flex flex-col items-center">
           <div className="text-4xl text-green-600">
-            {/* <i className="fa fa-credit-card"></i> */}
             <FaRegCreditCard />
           </div>
-          <div className="text-xl md:text-2xl font-extrabold">
-            Secure Payments
-          </div>
+          <div className="text-xl md:text-2xl font-medium">Secure Payments</div>
           <div className="text-xl md:text-2xl">All Cards Accepted</div>
         </div>
       </div>

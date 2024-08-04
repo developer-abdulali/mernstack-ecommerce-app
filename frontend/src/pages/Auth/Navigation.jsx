@@ -57,12 +57,9 @@ const Navbar = () => {
   }, [isUserDropdownOpen]);
 
   const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    navigate(`/products?search=${searchInput}`);
+    const value = e.target.value;
+    setSearchInput(value);
+    navigate(`/products?search=${value}`);
   };
 
   return (
@@ -81,29 +78,18 @@ const Navbar = () => {
               >
                 Shop
               </Link>
-              {/* {userInfo.isAdmin && (
-                <Link
-                  to="/products"
-                  title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  Products
-                </Link>
-              )} */}
             </div>
           </div>
           <div className="hidden md:block">
-            <form onSubmit={handleSearchSubmit}>
-              <input
-                type="text"
-                name="search"
-                id="search"
-                placeholder="Search"
-                value={searchInput}
-                onChange={handleSearchInputChange}
-                className="border border-[#436C68] py-2 px-2 rounded-md w-[218px]"
-              />
-            </form>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search"
+              value={searchInput}
+              onChange={handleSearchInputChange}
+              className="border border-[#436C68] py-2 px-2 rounded-md w-[218px]"
+            />
           </div>
 
           <div className="flex items-center lg:space-x-2">
