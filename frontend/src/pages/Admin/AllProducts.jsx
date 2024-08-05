@@ -31,9 +31,9 @@ const AllProducts = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-3xl font-bold text-center text-gray-800 mb-8">
-        All Products ({products.length})
+        All Products ({products?.length})
       </div>
-      {products.length === 0 && (
+      {products?.length === 0 && (
         <div className="flex items-center justify-center">
           <button
             onClick={() => navigate("/admin/productlist")}
@@ -44,26 +44,26 @@ const AllProducts = () => {
         </div>
       )}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {products.map((product) => (
+        {products?.map((product) => (
           <div
-            key={product._id}
+            key={product?._id}
             className="relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
           >
-            <Link to={`/admin/product/update/${product._id}`}>
+            <Link to={`/admin/product/update/${product?._id}`}>
               <div className="relative">
                 <img
                   src={`http://localhost:5000${product?.image}`}
-                  alt={product.name}
+                  alt={product?.name}
                   className="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300"
                 />
                 <div className="absolute top-0 left-0 p-2 bg-black bg-opacity-50 text-white text-xs rounded-br-lg">
-                  {moment(product.createdAt).format("MMMM Do YYYY")}
+                  {moment(product?.createdAt).format("MMMM Do YYYY")}
                 </div>
               </div>
             </Link>
             <div className="p-4 flex flex-col">
               <h5 className="text-xl font-semibold mb-2 text-gray-800">
-                {product?.name.length > 20
+                {product?.name?.length > 20
                   ? `${product?.name.substring(0, 20)}...`
                   : product?.name}
               </h5>

@@ -35,7 +35,7 @@ const ProductCard = ({ p }) => {
 
   // Highlight the matching text in the product name
   const highlightedName = searchInput
-    ? p?.name.split(new RegExp(`(${searchInput})`, "gi")).map((part, i) =>
+    ? p?.name?.split(new RegExp(`(${searchInput})`, "gi"))?.map((part, i) =>
         part.toLowerCase() === searchInput.toLowerCase() ? (
           <span key={i} className="text-red-500">
             {part}
