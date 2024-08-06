@@ -132,7 +132,7 @@ const Shipping = () => {
               </label>
               {paymentMethod === "NayaPay" && (
                 <p className="text-gray-300 text-sm">
-                  Account Number: +92 305 2879926, Account Title: Abdul Ali
+                  Account Number: +92 333 1234567, Account Title: Owner AC Title
                 </p>
               )}
               <label className="inline-flex items-center mb-2">

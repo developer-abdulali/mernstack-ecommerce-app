@@ -20,41 +20,21 @@ const addProduct = asyncHandler(async (req, res) => {
       case discount < 0 || discount > 100:
         return res.json({ error: "Discount must be between 0 and 100" });
     }
-    // Handle file uploads
-    let image = "";
-    let additionalImages = [];
 
-    if (req.files) {
-      if (req.files.image) {
-        image = req.files.image[0].path;
-      }
-      if (req.files.additionalImages) {
-        additionalImages = req.files.additionalImages.map((file) => file.path);
-      }
-    }
+    const product = new Product({ ...req.fields, discount });
 
-    const product = new Product({
-      name,
-      description,
-      price,
-      category,
-      brand,
-      discount,
-      image,
-      additionalImages,
-    });
-    const createdProduct = await product.save();
-    res.status(201).json(createdProduct);
+    await product.save();
+    res.json(product);
   } catch (error) {
     console.error(error);
     res.status(400).json(error.message);
   }
 });
 
-//1st code
 // const addProduct = asyncHandler(async (req, res) => {
 //   try {
-//     const { name, description, price, category, brand, discount } = req.fields;
+//     const { name, description, price, category, brand, discount, imagePath } =
+//       req.body;
 
 //     // Validation
 //     switch (true) {
@@ -72,7 +52,10 @@ const addProduct = asyncHandler(async (req, res) => {
 //         return res.json({ error: "Discount must be between 0 and 100" });
 //     }
 
-//     const product = new Product({ ...req.fields, discount });
+//     const product = new Product({
+//       ...req.body,
+//       image: imagePath, // Save the image path
+//     });
 
 //     await product.save();
 //     res.json(product);

@@ -55,8 +55,7 @@ const reviewSchema = mongoose.Schema(
 
 const productSchema = mongoose.Schema(
   {
-    name: { type: String, required: true },
-    image: { type: String },
+    name: { type: String },
     brand: { type: String, required: true },
     quantity: { type: Number },
     category: { type: ObjectId, ref: "Category", required: true },
@@ -70,12 +69,8 @@ const productSchema = mongoose.Schema(
       default: 0,
     },
     countInStock: { type: Number, required: true, default: 0 },
-    imageData: { type: String },
-    additionalImages: [
-      {
-        type: String,
-      },
-    ],
+    image: { type: String, required: true },
+    additionalImages: { type: [String], required: true },
   },
   { timestamps: true }
 );
