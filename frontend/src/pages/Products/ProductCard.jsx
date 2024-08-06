@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { toast } from "react-toastify";
 import HeartIcon from "./HeartIcon";
 
 const ProductCard = ({ p }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
@@ -19,6 +20,7 @@ const ProductCard = ({ p }) => {
         position: toast.POSITION.TOP_RIGHT,
         autoClose: 2000,
       });
+      navigate("/login");
       return;
     }
     dispatch(addToCart({ ...product, qty }));

@@ -69,7 +69,7 @@ const Navbar = () => {
           <div className="flex items-center">
             {/* logo div */}
             <Link to="/" className="text-black text-4xl font-medium">
-              ScentYard
+              ScentsYard
             </Link>
             <div className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 ">
               <Link
@@ -122,7 +122,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/favorite" className="text-[#436C68] text-xl">
+                <Link to="/wishlist" className="text-[#436C68] text-xl">
                   <span>
                     <IoMdHeart />
                   </span>

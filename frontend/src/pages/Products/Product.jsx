@@ -123,6 +123,7 @@ const Product = ({ product }) => {
         position: toast.POSITION.TOP_RIGHT,
         autoClose: 2000,
       });
+
       return;
     }
     dispatch(addToCart({ ...product, qty }));

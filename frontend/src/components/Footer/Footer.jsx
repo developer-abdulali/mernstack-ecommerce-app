@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className={`mt-8 bg-[#CFE1E1] p-8 sm:grid sm:grid-cols-3 sm:gap-8`}>
       <div>
         <Link to="/" className="text-4xl font-bold text-[#49625F]">
-          ScentYard
+          ScentsYard
         </Link>
         <div className="text-sm">
           Choose from our wide variety of fragrances
