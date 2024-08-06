@@ -52,7 +52,8 @@ const AllProducts = () => {
             <Link to={`/admin/product/update/${product?._id}`}>
               <div className="relative">
                 <img
-                  src={`http://localhost:5000${product?.image}`}
+                  src={`http://localhost:5000/${product?.image}`}
+                  // src={`http://localhost:5000${product?.image}`}
                   alt={product?.name}
                   className="w-full h-full object-cover transition-transform transform hover:scale-105 duration-300"
                 />

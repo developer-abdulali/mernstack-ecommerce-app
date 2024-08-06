@@ -11,7 +11,7 @@ const ProductCard = ({ p }) => {
   const { cartItems } = useSelector((state) => state.cart);
   const [searchInput, setSearchInput] = useState("");
 
-  const imageUrl = `http://localhost:5000${p.image}`;
+  const imageUrl = `http://localhost:5000/${p?.image}`;
 
   const addToCartHandler = (product, qty) => {
     if (!userInfo) {
@@ -64,7 +64,7 @@ const ProductCard = ({ p }) => {
   return (
     <div className="w-[300px] md:w-[280px] h-fit border border-[#436C68] relative rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
       <section className="relative">
-        <Link to={`/product/${p._id}`}>
+        <Link to={`/product/${p?._id}`}>
           <img
             className="cursor-pointer w-full rounded-t-[7px]"
             src={imageUrl}

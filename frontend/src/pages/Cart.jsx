@@ -245,9 +245,10 @@ const Cart = () => {
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  console.log(cartItems);
 
   const shop = useSelector((state) => state.shop);
-  const { discountedPrice } = shop;
+  // const { discountedPrice } = shop;
 
   // Calculate the total number of products in the cart
   const totalProductsInCart = cartItems.reduce(
@@ -338,7 +339,7 @@ const Cart = () => {
                   className="flex flex-col sm:flex-row items-center mb-4 p-4 border border-[#436C68] rounded-lg shadow-sm bg-white"
                 >
                   <img
-                    src={`http://localhost:5000${item.image}`}
+                    src={`http://localhost:5000/${item?.image}`}
                     alt={item.name}
                     className="object-cover h-48 w-full sm:w-48"
                   />
@@ -416,10 +417,10 @@ const Cart = () => {
                       .toFixed(2)}
                   </span>
                 </div>
-                <div className="flex justify-between mb-2">
+                {/* <div className="flex justify-between mb-2">
                   <span>Discount</span>
                   <span>- RS: 0</span>
-                </div>
+                </div> */}
                 <div className="flex justify-between mb-2">
                   <span>Delivery Charges</span>
                   <span>RS: 50</span>
@@ -440,9 +441,9 @@ const Cart = () => {
                     ).toFixed(2)}
                   </span>
                 </div>
-                <div className="text-green-500">
+                {/* <div className="text-green-500">
                   You will save RS: 0 on this order
-                </div>
+                </div> */}
                 <button
                   className="bg-[#436C68] hover:bg-[#436c68e6] text-white mt-4 py-2 px-4 rounded text-lg w-full"
                   disabled={cartItems.length === 0}

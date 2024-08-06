@@ -168,6 +168,7 @@ const PlaceOrder = () => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
+  console.log(cart);
   const shop = useSelector((state) => state.shop);
   const { discountedPrice } = shop;
 
@@ -200,7 +201,7 @@ const PlaceOrder = () => {
         orderItems: cart.cartItems,
         shippingAddress: cart.shippingAddress,
         paymentMethod: cart.paymentMethod,
-        itemsPrice: discountedPrice, // Use discounted price
+        itemsPrice: discountedPrice,
         shippingPrice: cart.shippingPrice,
         taxPrice: cart.taxPrice,
         totalPrice: discountedPrice + cart.shippingPrice + cart.taxPrice, // Calculate total price including shipping and tax
@@ -247,7 +248,8 @@ const PlaceOrder = () => {
                   <tr key={index}>
                     <td className="p-2">
                       <img
-                        src={`http://localhost:5000${item.image}`}
+                        src={`http://localhost:5000/${item.image}`}
+                        // src={`http://localhost:5000${item.image}`}
                         alt={item.name}
                         className="w-16 h-16 object-cover"
                       />
@@ -274,7 +276,7 @@ const PlaceOrder = () => {
 
         <div className="mt-8">
           <h2 className="text-2xl font-semibold mb-5">Order Summary</h2>
-          <div className="flex justify-between flex-wrap p-8 bg-[#eae6e6]">
+          <div className="flex justify-between flex-wrap p-8 bg-gray-100 rounded">
             <ul className="text-lg">
               <li>
                 <span className="font-semibold mb-4">Items:</span> RS:
@@ -289,7 +291,7 @@ const PlaceOrder = () => {
                 {taxPrice.toFixed(2)}
               </li>
               <li>
-                <span className="font-semibold mb-4">Total:</span> RS:
+                <span className="font-semibold mb-4">Grand Total</span> RS:
                 {totalPrice.toFixed(2)}
               </li>
             </ul>

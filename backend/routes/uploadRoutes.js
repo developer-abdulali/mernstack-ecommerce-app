@@ -1,6 +1,6 @@
-import path from "path";
 import express from "express";
 import multer from "multer";
+import { createProduct } from "../controllers/productController.js";
 
 const router = express.Router();
 
@@ -9,41 +9,24 @@ const storage = multer.diskStorage({
     cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
-    const extname = path.extname(file.originalname);
-    cb(null, `${file.fieldname}-${Date.now()}${extname}`);
+    cb(null, `${Date.now()}-${file.originalname}`);
   },
 });
 
-const fileFilter = (req, file, cb) => {
-  const filetypes = /jpe?g|png|webp/;
-  const mimetypes = /image\/jpe?g|image\/png|image\/webp/;
+const upload = multer({ storage });
 
-  const extname = path.extname(file.originalname).toLowerCase();
-  const mimetype = file.mimetype;
+router.post(
+  "/create",
+  upload.fields([
+    { name: "mainImage", maxCount: 1 },
+    { name: "additionalImages", maxCount: 4 },
+  ]),
+  createProduct
+);
 
-  if (filetypes.test(extname) && mimetypes.test(mimetype)) {
-    cb(null, true);
-  } else {
-    cb(new Error("Images only"), false);
-  }
-};
-
-const upload = multer({ storage, fileFilter });
-const uploadSingleImage = upload.single("image");
-
-router.post("/", (req, res) => {
-  uploadSingleImage(req, res, (err) => {
-    if (err) {
-      res.status(400).send({ message: err.message });
-    } else if (req.file) {
-      res.status(200).send({
-        message: "Image uploaded successfully",
-        imagePath: `/${req.file.path}`,
-      });
-    } else {
-      res.status(400).send({ message: "No image file provided" });
-    }
-  });
+// Add a test route to check if this router works
+router.get("/test", (req, res) => {
+  res.send("Upload route is working");
 });
 
 export default router;

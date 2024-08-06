@@ -1,35 +1,158 @@
 import asyncHandler from "../middlewares/asyncHandler.js";
 import Product from "../models/productModel.js";
+import Category from "../models/categoryModel.js";
+import mongoose from "mongoose";
+import fs from "fs";
+import path from "path";
 
-const addProduct = asyncHandler(async (req, res) => {
+// const addProduct = asyncHandler(async (req, res) => {
+//   try {
+//     const { name, description, price, category, brand, discount } = req.fields;
+
+//     // Validation
+//     switch (true) {
+//       case !name:
+//         return res.json({ error: "Name is required" });
+//       case !brand:
+//         return res.json({ error: "Brand is required" });
+//       case !description:
+//         return res.json({ error: "Description is required" });
+//       case !price:
+//         return res.json({ error: "Price is required" });
+//       case !category:
+//         return res.json({ error: "Category is required" });
+//       case discount < 0 || discount > 100:
+//         return res.json({ error: "Discount must be between 0 and 100" });
+//     }
+
+//     const product = new Product({ ...req.fields, discount });
+
+//     await product.save();
+//     res.json(product);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(400).json(error.message);
+//   }
+// });
+
+const createProduct = async (req, res) => {
   try {
-    const { name, description, price, category, brand, discount } = req.fields;
+    const {
+      name,
+      description,
+      price,
+      category: categoryName,
+      brand,
+      countInStock,
+      discount,
+    } = req.body;
 
-    // Validation
-    switch (true) {
-      case !name:
-        return res.json({ error: "Name is required" });
-      case !brand:
-        return res.json({ error: "Brand is required" });
-      case !description:
-        return res.json({ error: "Description is required" });
-      case !price:
-        return res.json({ error: "Price is required" });
-      case !category:
-        return res.json({ error: "Category is required" });
-      case discount < 0 || discount > 100:
-        return res.json({ error: "Discount must be between 0 and 100" });
+    // Find category by name
+    const category = await Category.findOne({ name: categoryName });
+
+    if (!category) {
+      return res.status(400).json({ message: "Category does not exist" });
     }
 
-    const product = new Product({ ...req.fields, discount });
+    const mainImage = req.files["mainImage"]
+      ? req.files["mainImage"][0].path
+      : null;
+    const additionalImages = req.files["additionalImages"]
+      ? req.files["additionalImages"].map((file) => file.path)
+      : [];
 
-    await product.save();
-    res.json(product);
+    const product = new Product({
+      name,
+      description,
+      price,
+      category: category._id,
+      brand,
+      countInStock,
+      discount,
+      image: mainImage,
+      additionalImages,
+    });
+
+    const createdProduct = await product.save();
+
+    // // Delete uploaded files from the uploads folder
+    // const removeFiles = (files) => {
+    //   files.forEach((file) => {
+    //     fs.unlink(file, (err) => {
+    //       if (err) console.error(`Error deleting file ${file}: ${err.message}`);
+    //     });
+    //   });
+    // };
+
+    // // Remove main image and additional images
+    // if (mainImage) removeFiles([mainImage]);
+    // if (additionalImages.length > 0) removeFiles(additionalImages);
+
+    res.status(201).json({
+      message: "Product created successfully",
+      product: createdProduct,
+    });
   } catch (error) {
-    console.error(error);
-    res.status(400).json(error.message);
+    res
+      .status(500)
+      .json({ message: "Product creation failed", error: error.message });
   }
-});
+};
+
+/// good working code
+// const createProduct = async (req, res) => {
+//   try {
+//     const {
+//       name,
+//       description,
+//       price,
+//       category: categoryName, // Expecting category as a name
+//       brand,
+//       countInStock,
+//       discount,
+//     } = req.body;
+
+//     // Log the received categoryName for debugging
+//     console.log("Received categoryName:", categoryName);
+
+//     // Find category by name
+//     const category = await Category.findOne({ name: categoryName });
+
+//     if (!category) {
+//       return res.status(400).json({ message: "Category does not exist" });
+//     }
+
+//     const mainImage = req.files["mainImage"]
+//       ? req.files["mainImage"][0].path
+//       : null;
+//     const additionalImages = req.files["additionalImages"]
+//       ? req.files["additionalImages"].map((file) => file.path)
+//       : [];
+
+//     const product = new Product({
+//       name,
+//       description,
+//       price,
+//       category: category._id, // Use the ObjectId of the found category
+//       brand,
+//       countInStock,
+//       discount,
+//       image: mainImage,
+//       additionalImages,
+//     });
+
+//     const createdProduct = await product.save();
+
+//     res.status(201).json({
+//       message: "Product created successfully",
+//       product: createdProduct,
+//     });
+//   } catch (error) {
+//     res
+//       .status(500)
+//       .json({ message: "Product creation failed", error: error.message });
+//   }
+// };
 
 const updateProductDetails = asyncHandler(async (req, res) => {
   try {
@@ -213,7 +336,8 @@ const filterProducts = asyncHandler(async (req, res) => {
 });
 
 export {
-  addProduct,
+  createProduct,
+  // addProduct,
   updateProductDetails,
   removeProduct,
   fetchProducts,
