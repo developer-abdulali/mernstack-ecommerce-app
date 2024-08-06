@@ -75,6 +75,13 @@ const CategoryList = () => {
   };
 
   const handleDeleteCategory = async () => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this category?"
+    );
+
+    if (!confirmed) {
+      return;
+    }
     try {
       const result = await deleteCategory(selectedCategory._id).unwrap();
 
