@@ -31,40 +31,6 @@ const addProduct = asyncHandler(async (req, res) => {
   }
 });
 
-// const addProduct = asyncHandler(async (req, res) => {
-//   try {
-//     const { name, description, price, category, brand, discount, imagePath } =
-//       req.body;
-
-//     // Validation
-//     switch (true) {
-//       case !name:
-//         return res.json({ error: "Name is required" });
-//       case !brand:
-//         return res.json({ error: "Brand is required" });
-//       case !description:
-//         return res.json({ error: "Description is required" });
-//       case !price:
-//         return res.json({ error: "Price is required" });
-//       case !category:
-//         return res.json({ error: "Category is required" });
-//       case discount < 0 || discount > 100:
-//         return res.json({ error: "Discount must be between 0 and 100" });
-//     }
-
-//     const product = new Product({
-//       ...req.body,
-//       image: imagePath, // Save the image path
-//     });
-
-//     await product.save();
-//     res.json(product);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(400).json(error.message);
-//   }
-// });
-
 const updateProductDetails = asyncHandler(async (req, res) => {
   try {
     const { name, description, price, category, quantity, brand } = req.fields;
