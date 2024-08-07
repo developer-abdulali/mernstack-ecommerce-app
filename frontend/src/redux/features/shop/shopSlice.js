@@ -51,8 +51,6 @@ const initialState = {
   brandCheckboxes: {},
   checkedBrands: [],
   price: 0,
-  discount: 0,
-  discountedPrice: 0,
 };
 
 const shopSlice = createSlice({
@@ -77,13 +75,6 @@ const shopSlice = createSlice({
     setPrice: (state, action) => {
       state.price = action.payload;
     },
-    setDiscount: (state, action) => {
-      state.discount = action.payload;
-    },
-    calculateDiscountedPrice: (state) => {
-      state.discountedPrice =
-        state.price - (state.price * state.discount) / 100;
-    },
   },
 });
 
@@ -94,8 +85,6 @@ export const {
   setRadio,
   setSelectedBrand,
   setPrice,
-  setDiscount,
-  calculateDiscountedPrice,
 } = shopSlice.actions;
 
 export default shopSlice.reducer;

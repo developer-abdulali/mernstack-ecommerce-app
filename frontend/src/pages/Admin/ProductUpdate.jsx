@@ -13,7 +13,6 @@
 // const AdminProductUpdate = () => {
 //   const params = useParams();
 //   const { data: productData } = useGetProductByIdQuery(params._id);
-//   console.log(productData);
 
 //   const [image, setImage] = useState(productData?.image || "");
 //   const [name, setName] = useState(productData?.name || "");
@@ -22,7 +21,7 @@
 //   );
 //   const [price, setPrice] = useState(productData?.price || "");
 //   const [category, setCategory] = useState(productData?.category || "");
-//   const [discount, setDiscount] = useState(productData?.quantity || "");
+//   // const [discount, setDiscount] = useState(productData?.discount || "");
 //   // const [quantity, setQuantity] = useState(productData?.quantity || "");
 //   const [brand, setBrand] = useState(productData?.brand || "");
 //   const [stock, setStock] = useState(productData?.countInStock || "");
@@ -40,7 +39,7 @@
 //       setDescription(productData.description);
 //       setPrice(productData.price);
 //       setCategory(productData.category?._id);
-//       setDiscount(productData.discount);
+//       // setDiscount(productData.discount);
 //       // setQuantity(productData.quantity);
 //       setBrand(productData.brand);
 //       setImage(productData.image);
@@ -57,7 +56,7 @@
 //         position: toast.POSITION.TOP_RIGHT,
 //         autoClose: 2000,
 //       });
-//       setImage(res.image);
+//       setImage(res.image); // Assuming `res.image` is the relative path to the uploaded image
 //     } catch (err) {
 //       toast.error("Image upload failed", {
 //         position: toast.POSITION.TOP_RIGHT,
@@ -75,7 +74,8 @@
 //       formData.append("description", description);
 //       formData.append("price", price);
 //       formData.append("category", category);
-//       formData.append("quantity", quantity);
+//       // formData.append("discount", discount);
+//       // formData.append("quantity", quantity); // Uncomment if you have quantity field
 //       formData.append("brand", brand);
 //       formData.append("countInStock", stock);
 
@@ -131,7 +131,7 @@
 //         {image && (
 //           <div className="text-center mb-4">
 //             <img
-//               src={`http://localhost:5000${image}`}
+//               src={`http://localhost:5000/${image}`} // Ensure base URL and path are correct
 //               alt="product"
 //               className="mx-auto max-w-xs h-auto"
 //             />
@@ -188,8 +188,8 @@
 //             </div>
 //           </div>
 
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-//             <div>
+//           <div className="grid grid-cols-1 gap-4 mb-4">
+//             {/* <div>
 //               <label className="block mb-2 text-sm font-medium text-gray-700">
 //                 Discount
 //               </label>
@@ -200,7 +200,7 @@
 //                 value={discount}
 //                 onChange={(e) => setDiscount(e.target.value)}
 //               />
-//             </div>
+//             </div> */}
 
 //             <div>
 //               <label className="block mb-2 text-sm font-medium text-gray-700">
@@ -261,14 +261,14 @@
 //           <div className="flex justify-between">
 //             <button
 //               type="submit"
-//               className="py-3 px-6 rounded-lg text-lg font-bold bg-[#436C68] text-white hover:bg-[#436c68e6]"
+//               className="py-3 px-6 rounded-lg text-lg font-semibold bg-[#436C68] text-white hover:bg-[#436c68e6]"
 //             >
 //               Update
 //             </button>
 //             <button
 //               type="button"
 //               onClick={handleDelete}
-//               className="py-3 px-6 rounded-lg text-lg font-bold bg-pink-600 text-white hover:bg-pink-700"
+//               className="py-3 px-6 rounded-lg text-lg font-semibold bg-pink-600 text-white hover:bg-pink-700"
 //             >
 //               Delete
 //             </button>
@@ -276,7 +276,6 @@
 //         </form>
 //       </div>
 //     </div>
-//     // </div>
 //   );
 // };
 
@@ -305,7 +304,7 @@ const AdminProductUpdate = () => {
   );
   const [price, setPrice] = useState(productData?.price || "");
   const [category, setCategory] = useState(productData?.category || "");
-  const [discount, setDiscount] = useState(productData?.discount || "");
+  // const [discount, setDiscount] = useState(productData?.discount || "");
   // const [quantity, setQuantity] = useState(productData?.quantity || "");
   const [brand, setBrand] = useState(productData?.brand || "");
   const [stock, setStock] = useState(productData?.countInStock || "");
@@ -323,7 +322,7 @@ const AdminProductUpdate = () => {
       setDescription(productData.description);
       setPrice(productData.price);
       setCategory(productData.category?._id);
-      setDiscount(productData.discount);
+      // setDiscount(productData.discount);
       // setQuantity(productData.quantity);
       setBrand(productData.brand);
       setImage(productData.image);
@@ -340,7 +339,7 @@ const AdminProductUpdate = () => {
         position: toast.POSITION.TOP_RIGHT,
         autoClose: 2000,
       });
-      setImage(res.image); // Assuming `res.image` is the relative path to the uploaded image
+      setImage(res.image);
     } catch (err) {
       toast.error("Image upload failed", {
         position: toast.POSITION.TOP_RIGHT,
@@ -353,13 +352,16 @@ const AdminProductUpdate = () => {
     e.preventDefault();
     try {
       const formData = new FormData();
-      formData.append("image", image);
+      if (image instanceof File) {
+        // Check if image is a file object
+        formData.append("image", image);
+      } else {
+        formData.append("image", image); // If image is a URL, handle accordingly
+      }
       formData.append("name", name);
       formData.append("description", description);
       formData.append("price", price);
       formData.append("category", category);
-      formData.append("discount", discount);
-      // formData.append("quantity", quantity); // Uncomment if you have quantity field
       formData.append("brand", brand);
       formData.append("countInStock", stock);
 
@@ -384,6 +386,41 @@ const AdminProductUpdate = () => {
       });
     }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const formData = new FormData();
+  //     formData.append("image", image);
+  //     formData.append("name", name);
+  //     formData.append("description", description);
+  //     formData.append("price", price);
+  //     formData.append("category", category);
+  //    if you have quantity field
+  //     formData.append("brand", brand);
+  //     formData.append("countInStock", stock);
+
+  //     const data = await updateProduct({ productId: params._id, formData });
+  //     if (data?.error) {
+  //       toast.error(data.error, {
+  //         position: toast.POSITION.TOP_RIGHT,
+  //         autoClose: 2000,
+  //       });
+  //     } else {
+  //       toast.success("Product successfully updated", {
+  //         position: toast.POSITION.TOP_RIGHT,
+  //         autoClose: 2000,
+  //       });
+  //       navigate("/admin/allproductslist");
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     toast.error("Product update failed. Try again.", {
+  //       position: toast.POSITION.TOP_RIGHT,
+  //       autoClose: 2000,
+  //     });
+  //   }
+  // };
 
   const handleDelete = async () => {
     try {
@@ -472,20 +509,7 @@ const AdminProductUpdate = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <div>
-              <label className="block mb-2 text-sm font-medium text-gray-700">
-                Discount
-              </label>
-              <input
-                type="number"
-                min="1"
-                className="block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-900"
-                value={discount}
-                onChange={(e) => setDiscount(e.target.value)}
-              />
-            </div>
-
+          <div className="grid grid-cols-1 gap-4 mb-4">
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-700">
                 Brand
@@ -545,14 +569,14 @@ const AdminProductUpdate = () => {
           <div className="flex justify-between">
             <button
               type="submit"
-              className="py-3 px-6 rounded-lg text-lg font-bold bg-[#436C68] text-white hover:bg-[#436c68e6]"
+              className="py-3 px-6 rounded-lg text-lg font-semibold bg-[#436C68] text-white hover:bg-[#436c68e6]"
             >
               Update
             </button>
             <button
               type="button"
               onClick={handleDelete}
-              className="py-3 px-6 rounded-lg text-lg font-bold bg-pink-600 text-white hover:bg-pink-700"
+              className="py-3 px-6 rounded-lg text-lg font-semibold bg-pink-600 text-white hover:bg-pink-700"
             >
               Delete
             </button>

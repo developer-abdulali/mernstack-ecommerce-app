@@ -51,11 +51,12 @@ const HorizontalCard = () => {
         return (
           <div
             key={product._id}
-            className="flex flex-col md:flex-row items-center p-2 border border-[#436C68] rounded-md mb-4 w-full"
+            className=" p-2 border border-[#436C68] rounded-md mb-4 w-full"
+            // className="flex flex-col md:flex-row items-center p-2 border border-[#436C68] rounded-md mb-4 w-full"
           >
             <img
-              src={`http://localhost:5000${product?.image}`}
-              className="w-full md:w-40 h-40 object-cover"
+              src={`http://localhost:5000/${product?.image}`}
+              className="w-full md:w-40 md:h-40 object-cover"
               alt={product.name}
             />
 

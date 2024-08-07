@@ -834,11 +834,7 @@ import ProgressSteps from "../../components/ProgressSteps/ProgressSteps";
 import Loader from "../../components/Loader/Loader";
 import { useCreateOrderMutation } from "../../redux/api/orderApiSlice";
 import { clearCartItems } from "../../redux/features/cart/cartSlice";
-import {
-  setPrice,
-  setDiscount,
-  calculateDiscountedPrice,
-} from "../../redux/features/shop/shopSlice";
+import { setPrice } from "../../redux/features/shop/shopSlice";
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
@@ -866,8 +862,6 @@ const PlaceOrder = () => {
         0
       );
       dispatch(setPrice(totalPrice));
-      dispatch(setDiscount(totalDiscount));
-      dispatch(calculateDiscountedPrice());
     }
   }, [cart.cartItems, cart.shippingAddress.address, navigate, dispatch]);
 
@@ -928,7 +922,7 @@ const PlaceOrder = () => {
                   <th className="p-3 text-left">Product</th>
                   <th className="p-3 text-left">Quantity</th>
                   <th className="p-3 text-left">Original Price</th>
-                  <th className="p-3 text-left">Discounted Price</th>
+                  <th className="p-3 text-left">Total Price</th>
                 </tr>
               </thead>
               <tbody>
@@ -944,7 +938,7 @@ const PlaceOrder = () => {
                     <td className="p-2">
                       <Link
                         to={`/product/${item.product}`}
-                        className="text-blue-600 hover:underline"
+                        className="text-gray-600 hover:underline"
                       >
                         {item.name}
                       </Link>

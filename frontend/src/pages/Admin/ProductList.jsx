@@ -4,11 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { FaUpload } from "react-icons/fa";
 import { useFetchCategoriesQuery } from "../../redux/api/categoryApiSlice";
-import {
-  setPrice,
-  setDiscount,
-  calculateDiscountedPrice,
-} from "../../redux/features/shop/shopSlice";
+import { setPrice } from "../../redux/features/shop/shopSlice";
 import { useDispatch } from "react-redux";
 
 const ProductForm = ({
@@ -40,7 +36,6 @@ const ProductList = () => {
   const [category, setCategory] = useState("");
   const [brand, setBrand] = useState("");
   const [stock, setStock] = useState(0);
-  const [discount, setDiscountState] = useState(0);
   const [additionalImageUrls, setAdditionalImageUrls] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -60,7 +55,6 @@ const ProductList = () => {
     formData.append("category", category);
     formData.append("brand", brand);
     formData.append("countInStock", stock);
-    formData.append("discount", discount);
 
     try {
       const response = await axios.post(
@@ -84,7 +78,6 @@ const ProductList = () => {
       setCategory("");
       setBrand("");
       setStock("");
-      setDiscount("");
     } catch (error) {
       toast.error("Product creation failed. Try Again.");
     }
@@ -104,17 +97,7 @@ const ProductList = () => {
     const price = e.target.value;
     setPriceState(price);
     dispatch(setPrice(price));
-    dispatch(calculateDiscountedPrice());
   };
-
-  const handleDiscountChange = (e) => {
-    const discount = e.target.value;
-    setDiscountState(discount);
-    dispatch(setDiscount(discount));
-    dispatch(calculateDiscountedPrice());
-  };
-
-  const discountedPrice = price - (price * discount) / 100;
 
   return (
     <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-100 to-gray-200">
@@ -212,7 +195,7 @@ const ProductList = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ProductForm
               fieldName="name"
               placeholder="Product name"
@@ -231,7 +214,7 @@ const ProductList = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="form-group mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
                 Category
@@ -259,7 +242,7 @@ const ProductList = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <ProductForm
               fieldName="price"
               placeholder="Price"
@@ -276,28 +259,6 @@ const ProductList = () => {
               value={stock}
               onChange={(e) => setStock(e.target.value)}
             />
-            <ProductForm
-              fieldName="discount"
-              placeholder="Discount (%)"
-              label="Discount"
-              type="number"
-              value={discount}
-              onChange={handleDiscountChange}
-            />
-          </div>
-
-          <div className="mb-8">
-            <div className="form-group">
-              <label className="block text-gray-700 font-semibold mb-2">
-                Discounted Price
-              </label>
-              <input
-                type="text"
-                className="w-full px-3 py-2 text-gray-700 border rounded-lg bg-gray-100 focus:outline-none"
-                value={discountedPrice.toFixed(2)}
-                readOnly
-              />
-            </div>
           </div>
 
           <div className="flex justify-center">

@@ -104,7 +104,7 @@ const ProductTabs = ({
         )}
 
         {activeTab === 2 && (
-          <div className="mt-4 w-full">
+          <div className="mt-4 w-full md:w-[40rem]">
             {product.reviews.length === 0 && <p>No Reviews</p>}
 
             {product.reviews.map((review) => (
