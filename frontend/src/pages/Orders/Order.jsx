@@ -311,7 +311,7 @@ const Order = () => {
                 <button
                   type="button"
                   disabled={loadingDeliver}
-                  className="bg-pink-500 text-white w-full py-2 rounded-md"
+                  className="bg-[#436C68] text-white w-full py-2 rounded-md hover:bg-[#436c68e8] ease"
                   onClick={deliverHandler}
                 >
                   Mark As Delivered

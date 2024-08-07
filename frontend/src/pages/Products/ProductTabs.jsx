@@ -28,11 +28,10 @@ const ProductTabs = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
-      {/* <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row w-full"> */}
+    <div className="w-full md:w-auto px-5 flex flex-col md:flex-row overflow-hidden">
       <section className="mr-0 md:mr-8">
         <div
-          className={`p-4 cursor-pointer text-lg ${
+          className={`mt-4 cursor-pointer text-lg ${
             activeTab === 1 ? "font-bold" : ""
           }`}
           onClick={() => handleTabClick(1)}
@@ -40,7 +39,7 @@ const ProductTabs = ({
           Write Your Review
         </div>
         <div
-          className={`p-4 cursor-pointer text-lg ${
+          className={`mt-4 cursor-pointer text-lg ${
             activeTab === 2 ? "font-bold" : ""
           }`}
           onClick={() => handleTabClick(2)}
@@ -51,10 +50,10 @@ const ProductTabs = ({
 
       <section className="w-full">
         {activeTab === 1 && (
-          <div className="mt-4">
+          <div>
             {userInfo ? (
               <form onSubmit={submitHandler}>
-                <div className="my-2">
+                <div className="my-4">
                   <label htmlFor="rating" className="block text-xl mb-2">
                     Rating
                   </label>
@@ -63,7 +62,7 @@ const ProductTabs = ({
                     required
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}
-                    className="p-2 border rounded-lg w-full md:w-[40rem] text-black"
+                    className="p-2 border rounded-lg w-full md:w-[30rem] lg:w-[40rem] text-black shadow appearance-none py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
                   >
                     <option value="">Select</option>
                     <option value="1">Inferior</option>
@@ -85,7 +84,7 @@ const ProductTabs = ({
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                     placeholder="Write your review here..."
-                    className="p-2 border rounded-lg w-full md:w-[40rem] text-black"
+                    className="p-2 border rounded-lg w-full md:w-[30rem] lg:w-[40rem] text-black shadow appearance-none py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
                   ></textarea>
                 </div>
                 <button
@@ -111,11 +110,11 @@ const ProductTabs = ({
             {product.reviews.map((review) => (
               <div
                 key={review._id}
-                className="border w-full p-4 rounded-lg mb-5"
+                className="border w-full md:w-[40rem] p-4 rounded-lg mb-5"
               >
                 <div className="flex justify-between">
-                  <strong className="text-[#B0B0B0]">{review.name}</strong>
-                  <p className="text-[#B0B0B0]">
+                  <strong className="text-gray-700">{review.name}</strong>
+                  <p className="text-gray-700">
                     {review.createdAt.substring(0, 10)}
                   </p>
                 </div>

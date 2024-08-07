@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Loader from "../../components/Loader/Loader";
 import { useRegisterMutation } from "../../redux/api/usersApiSlice";
 import { setCredentials } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -85,6 +87,7 @@ const Register = () => {
                     placeholder="John"
                     type="text"
                     onChange={(e) => setUsername(e.target.value)}
+                    required
                     className="border placeholder-gray-400 focus:outline-none
                 focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                 border-gray-300 rounded-md"
@@ -95,9 +98,10 @@ const Register = () => {
                     Email
                   </p>
                   <input
-                    placeholder="123@ex.com"
+                    placeholder="example@example.com"
                     type="email"
                     value={email}
+                    required
                     onChange={(e) => setEmail(e.target.value)}
                     className="border placeholder-gray-400 focus:outline-none
                 focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
@@ -113,13 +117,21 @@ const Register = () => {
                   </p>
                   <input
                     placeholder="Password"
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     value={password}
+                    required
                     onChange={(e) => setPassword(e.target.value)}
                     className="border placeholder-gray-400 focus:outline-none
                 focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                 border-gray-300 rounded-md"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute top-1/2 right-3 transform -translate-y-1/2"
+                  >
+                    {showPassword ? <FaEye /> : <FaEyeSlash />}
+                  </button>
                 </div>
                 <div className="relative">
                   <p
@@ -130,13 +142,21 @@ const Register = () => {
                   </p>
                   <input
                     placeholder="Confirm Password"
-                    type="password"
+                    type={showConfirmPassword ? "text" : "password"}
                     value={confirmPassword}
+                    required
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     className="border placeholder-gray-400 focus:outline-none
                 focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                 border-gray-300 rounded-md"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute top-1/2 right-3 transform -translate-y-1/2"
+                  >
+                    {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
+                  </button>
                 </div>
 
                 <div className="relative">

@@ -102,7 +102,7 @@ const Navbar = () => {
                   <HiOutlineShoppingCart className="w-5 h-5 lg:me-1" />
                   <span className="hidden md:block">My Cart</span>
                   {cartItems.length > 0 && (
-                    <span className="absolute -top-2 left-5 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[12px]">
+                    <span className="absolute -top-2 left-5 bg- text-white rounded-full w-4 h-4 flex items-center justify-center text-[12px]">
                       {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                     </span>
                   )}
@@ -157,7 +157,7 @@ const Navbar = () => {
                     }}
                     className={({ isActive }) =>
                       `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                        isActive ? "text-blue-600" : "text-black"
+                        isActive ? "text-[#436c68]" : "text-black"
                       }`
                     }
                   >
@@ -172,7 +172,7 @@ const Navbar = () => {
                     }}
                     className={({ isActive }) =>
                       `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                        isActive ? "text-blue-600" : "text-black"
+                        isActive ? "text-[#436c68]" : "text-black"
                       }`
                     }
                   >
@@ -187,7 +187,7 @@ const Navbar = () => {
                     }}
                     className={({ isActive }) =>
                       `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                        isActive ? "text-blue-600" : "text-black"
+                        isActive ? "text-[#436c68]" : "text-black"
                       }`
                     }
                   >
@@ -204,7 +204,7 @@ const Navbar = () => {
                         }}
                         className={({ isActive }) =>
                           `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                            isActive ? "text-blue-600" : "text-black"
+                            isActive ? "text-[#436c68]" : "text-black"
                           }`
                         }
                       >
@@ -219,7 +219,7 @@ const Navbar = () => {
                         }}
                         className={({ isActive }) =>
                           `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                            isActive ? "text-blue-600" : "text-black"
+                            isActive ? "text-[#436c68]" : "text-black"
                           }`
                         }
                       >
@@ -234,7 +234,7 @@ const Navbar = () => {
                         }}
                         className={({ isActive }) =>
                           `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                            isActive ? "text-blue-600" : "text-black"
+                            isActive ? "text-[#436c68]" : "text-black"
                           }`
                         }
                       >
@@ -250,7 +250,7 @@ const Navbar = () => {
                         }}
                         className={({ isActive }) =>
                           `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                            isActive ? "text-blue-600" : "text-black"
+                            isActive ? "text-[#436c68]" : "text-black"
                           }`
                         }
                       >
@@ -265,7 +265,7 @@ const Navbar = () => {
                         }}
                         className={({ isActive }) =>
                           `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                            isActive ? "text-blue-600" : "text-black"
+                            isActive ? "text-[#436c68]" : "text-black"
                           }`
                         }
                       >
@@ -280,7 +280,7 @@ const Navbar = () => {
                         }}
                         className={({ isActive }) =>
                           `inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600 ${
-                            isActive ? "text-blue-600" : "text-black"
+                            isActive ? "text-[#436c68]" : "text-black"
                           }`
                         }
                       >

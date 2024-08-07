@@ -140,7 +140,10 @@ const ProductList = () => {
                 <label className="block text-gray-700 font-medium mb-2">
                   <span className="sr-only">Choose product image</span>
                   <div className="flex items-center justify-center w-full">
-                    <label className="flex flex-col items-center justify-center w-full h-80 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
+                    <label
+                      title={`Upload Main Image`}
+                      className="flex flex-col items-center justify-center w-full h-80 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
+                    >
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <FaUpload className="w-10 h-10 text-[#436C68] mb-3" />
                         <p className="text-sm text-gray-500 text-center">
@@ -169,6 +172,7 @@ const ProductList = () => {
                 {[...Array(4)].map((_, index) => (
                   <label
                     key={index}
+                    title={`Upload Additional Image`}
                     className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
                   >
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -189,15 +193,17 @@ const ProductList = () => {
               {additionalImages.length > 0 && (
                 <div className="mt-4">
                   <h3 className="text-lg font-semibold mb-2">
-                    Uploaded Images
+                    Uploaded Additional Images
                   </h3>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-4 gap-1">
+                    {/* <div className="grid grid-cols-3 gap-2"> */}
                     {additionalImages?.map((img, index) => (
                       <img
                         key={index}
                         src={URL.createObjectURL(img)}
                         alt={`additional ${index}`}
-                        className="w-full h-20 object-cover rounded-md shadow-md"
+                        title={`Additional image`}
+                        className="h-20 object-cover rounded-md shadow-md"
                       />
                     ))}
                   </div>
