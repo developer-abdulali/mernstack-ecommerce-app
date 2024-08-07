@@ -115,9 +115,9 @@ const UserOrders = () => {
                 <th className="py-2">ID</th>
                 <th className="py-2">DATE</th>
                 <th className="py-2">TOTAL</th>
-                <th className="py-2">PAID</th>
+                {/* <th className="py-2">PAID</th> */}
                 <th className="py-2">DELIVERED</th>
-                <th className="py-2"></th>
+                <th className="py-2">Details</th>
               </tr>
             </thead>
             <tbody>
@@ -133,7 +133,7 @@ const UserOrders = () => {
                   <td className="py-2">{order._id}</td>
                   <td className="py-2">{order.createdAt.substring(0, 10)}</td>
                   <td className="py-2">RS: {order.totalPrice.toFixed(2)}</td>
-                  <td className="py-2">
+                  {/* <td className="py-2">
                     {order.isPaid ? (
                       <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
                         Completed
@@ -143,7 +143,7 @@ const UserOrders = () => {
                         Pending
                       </p>
                     )}
-                  </td>
+                  </td> */}
                   <td className="px-2 py-2">
                     {order.isDelivered ? (
                       <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
@@ -157,7 +157,7 @@ const UserOrders = () => {
                   </td>
                   <td className="px-2 py-2">
                     <Link to={`/order/${order._id}`}>
-                      <button className="bg-pink-400 text-black py-2 px-3 rounded-lg hover:bg-pink-500 transition duration-300">
+                      <button className=" text-black rounded-lg transition duration-300">
                         View Details
                       </button>
                     </Link>

@@ -245,7 +245,7 @@ const Cart = () => {
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-  console.log(cartItems);
+  // console.log(cartItems);
 
   const shop = useSelector((state) => state.shop);
   // const { discountedPrice } = shop;

@@ -1,9 +1,8 @@
 // import React from "react";
 // import { Link, useParams } from "react-router-dom";
 // import { useSelector } from "react-redux";
-// import { toast } from "react-toastify";
-// import Message from "../../components/Message";
-// import Loader from "../../components/Loader";
+// import Message from "../../components/Message/Message";
+// import Loader from "../../components/Loader/Loader";
 // import {
 //   useDeliverOrderMutation,
 //   useGetOrderDetailsQuery,
@@ -22,10 +21,19 @@
 //   const [deliverOrder, { isLoading: loadingDeliver }] =
 //     useDeliverOrderMutation();
 //   const { userInfo } = useSelector((state) => state.auth);
+//   const shop = useSelector((state) => state.shop);
+
+//   const { discountedPrice } = shop;
 
 //   const deliverHandler = async () => {
 //     await deliverOrder(orderId);
 //     refetch();
+//   };
+
+//   // Calculate total order price including shipping and additional charges
+//   const calculateTotalPrice = () => {
+//     if (!order) return 0;
+//     return order.itemsPrice + order.shippingPrice + (order.taxPrice || 0);
 //   };
 
 //   return (
@@ -111,12 +119,6 @@
 //               <p className="mb-3">
 //                 <strong>Method:</strong> {order.paymentMethod}
 //               </p>
-
-//               {/* {order.isPaid ? ( */}
-//               {/* <Message variant="success">Paid on {order.paidAt}</Message> */}
-//               {/* // ) : ( */}
-//               {/* //   <Message variant="danger">Not paid</Message> */}
-//               {/* // )} */}
 //             </div>
 
 //             <div className="border border-gray-300 rounded-md p-4">
@@ -125,17 +127,22 @@
 //                 <span>Items</span>
 //                 <span>RS: {order.itemsPrice}</span>
 //               </div>
+//               {/* <div className="flex justify-between mb-2">
+//                 <span>Discounted Price</span>
+//                 <span>RS: {discountedPrice.toFixed(2)}</span>
+//               </div> */}
 //               <div className="flex justify-between mb-2">
 //                 <span>Shipping</span>
-//                 <span>RS: {order.shippingPrice}</span>
+//                 <span>RS: 50</span>
+//                 {/* <span>RS: {order.shippingPrice}</span> */}
 //               </div>
-//               <div className="flex justify-between mb-2">
+//               {/* <div className="flex justify-between mb-2">
 //                 <span>Tax</span>
-//                 <span>RS: {order.taxPrice}</span>
-//               </div>
+//                 <span>RS: {order.taxPrice || "0.00"}</span>
+//               </div> */}
 //               <div className="flex justify-between mb-2">
 //                 <span>Total</span>
-//                 <span>RS: {order.totalPrice}</span>
+//                 <span>RS: {calculateTotalPrice().toFixed(2)}</span>
 //               </div>
 
 //               {loadingDeliver && (
@@ -147,7 +154,362 @@
 //                 <button
 //                   type="button"
 //                   disabled={loadingDeliver}
-//                   className="bg-pink-500 text-white w-full py-2 rounded-md"
+//                   className="bg-[#436C68] text-white w-full py-2 rounded-md hover:bg-[#436c68e8] ease"
+//                   onClick={deliverHandler}
+//                 >
+//                   Mark As Delivered
+//                 </button>
+//               )}
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Order;
+
+// good code
+// import React from "react";
+// import { Link, useParams } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import Message from "../../components/Message/Message";
+// import Loader from "../../components/Loader/Loader";
+// import {
+//   useDeliverOrderMutation,
+//   useGetOrderDetailsQuery,
+// } from "../../redux/api/orderApiSlice";
+
+// const Order = () => {
+//   const { id: orderId } = useParams();
+
+//   const {
+//     data: order,
+//     refetch,
+//     isLoading,
+//     error,
+//   } = useGetOrderDetailsQuery(orderId);
+
+//   const [deliverOrder, { isLoading: loadingDeliver }] =
+//     useDeliverOrderMutation();
+//   const { userInfo } = useSelector((state) => state.auth);
+//   const shop = useSelector((state) => state.shop);
+
+//   const { discountedPrice } = shop;
+
+//   const deliverHandler = async () => {
+//     await deliverOrder(orderId);
+//     refetch();
+//   };
+
+//   // Fixed shipping price
+//   const fixedShippingPrice = 50;
+
+//   // Calculate total order price including shipping and additional charges
+//   const calculateTotalPrice = () => {
+//     if (!order) return 0;
+//     return order.itemsPrice + fixedShippingPrice + (order.taxPrice || 0);
+//   };
+
+//   return (
+//     <div className="container mx-auto my-8 px-4 lg:px-4 xl:px-0 overflow-hidden">
+//       {isLoading ? (
+//         <div className="flex justify-center">
+//           <Loader />
+//         </div>
+//       ) : error ? (
+//         <Message variant="danger">{error.data.message}</Message>
+//       ) : (
+//         <div className="flex flex-col md:flex-row gap-8">
+//           <div className="md:w-2/3">
+//             <div className="border border-gray-300 rounded-md p-4 mb-4 overflow-x-auto">
+//               {order.orderItems.length === 0 ? (
+//                 <Message>Order is empty</Message>
+//               ) : (
+//                 <table className="w-full">
+//                   <thead className="border-b-2">
+//                     <tr>
+//                       <th className="p-2 text-left">Image</th>
+//                       <th className="p-2 text-left">Product</th>
+//                       <th className="p-2 text-center">Quantity</th>
+//                       <th className="p-2 text-right">Unit Price</th>
+//                       <th className="p-2 text-right">Total</th>
+//                     </tr>
+//                   </thead>
+
+//                   <tbody>
+//                     {order.orderItems.map((item, index) => (
+//                       <tr key={index}>
+//                         <td className="p-2">
+//                           <img
+//                             src={new URL(
+//                               item.image,
+//                               "http://localhost:5000"
+//                             ).toString()}
+//                             alt={item.name}
+//                             className="w-16 h-16 object-cover"
+//                           />
+//                         </td>
+
+//                         <td className="p-2">
+//                           <Link to={`/product/${item.product}`}>
+//                             {item.name}
+//                           </Link>
+//                         </td>
+
+//                         <td className="p-2 text-center">{item.qty}</td>
+//                         <td className="p-2 text-right">{item.price}</td>
+//                         <td className="p-2 text-right">
+//                           RS: {(item.qty * item.price).toFixed(2)}
+//                         </td>
+//                       </tr>
+//                     ))}
+//                   </tbody>
+//                 </table>
+//               )}
+//             </div>
+//           </div>
+
+//           <div className="md:w-1/3">
+//             <div className="border border-gray-300 rounded-md p-4 mb-4">
+//               <h2 className="text-xl font-bold mb-4">Shipping</h2>
+//               <p className="mb-3">
+//                 <strong>Order:</strong> {order._id}
+//               </p>
+
+//               <p className="mb-3">
+//                 <strong>Name:</strong> {order.user?.username}
+//               </p>
+
+//               <p className="mb-3">
+//                 <strong>Email:</strong> {order.user?.email}
+//               </p>
+
+//               <p className="mb-3">
+//                 <strong>Address:</strong> {order.shippingAddress.address},{" "}
+//                 {order.shippingAddress.city} {order.shippingAddress.postalCode},{" "}
+//                 {order.shippingAddress.country}
+//               </p>
+
+//               <p className="mb-3">
+//                 <strong>Method:</strong> {order.paymentMethod}
+//               </p>
+//             </div>
+
+//             <div className="border border-gray-300 rounded-md p-4">
+//               <h2 className="text-xl font-bold mb-4">Order Summary</h2>
+//               <div className="flex justify-between mb-2">
+//                 <span>Items</span>
+//                 <span>RS: {order.itemsPrice.toFixed(2)}</span>
+//               </div>
+//               <div className="flex justify-between mb-2">
+//                 <span>Shipping</span>
+//                 <span>RS: {fixedShippingPrice.toFixed(2)}</span>
+//               </div>
+//               {order.taxPrice && (
+//                 <div className="flex justify-between mb-2">
+//                   <span>Tax</span>
+//                   <span>RS: {order.taxPrice.toFixed(2)}</span>
+//                 </div>
+//               )}
+//               <div className="flex justify-between mb-2">
+//                 <span>Total</span>
+//                 <span>RS: {calculateTotalPrice().toFixed(2)}</span>
+//               </div>
+
+//               {loadingDeliver && (
+//                 <div className="flex justify-center">
+//                   <Loader />
+//                 </div>
+//               )}
+//               {userInfo && userInfo.isAdmin && !order.isDelivered && (
+//                 <button
+//                   type="button"
+//                   disabled={loadingDeliver}
+//                   className="bg-[#436C68] text-white w-full py-2 rounded-md hover:bg-[#436c68e8] ease"
+//                   onClick={deliverHandler}
+//                 >
+//                   Mark As Delivered
+//                 </button>
+//               )}
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Order;
+
+//another new code
+// import React from "react";
+// import { Link, useParams } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import Message from "../../components/Message/Message";
+// import Loader from "../../components/Loader/Loader";
+// import {
+//   useDeliverOrderMutation,
+//   useGetOrderDetailsQuery,
+// } from "../../redux/api/orderApiSlice";
+
+// const Order = () => {
+//   const { id: orderId } = useParams();
+
+//   const {
+//     data: order,
+//     refetch,
+//     isLoading,
+//     error,
+//   } = useGetOrderDetailsQuery(orderId);
+
+//   console.log("Order with id", order);
+
+//   const [deliverOrder, { isLoading: loadingDeliver }] =
+//     useDeliverOrderMutation();
+//   const { userInfo } = useSelector((state) => state.auth);
+
+//   const deliverHandler = async () => {
+//     await deliverOrder(orderId);
+//     refetch();
+//   };
+
+//   // Fixed shipping price
+//   const fixedShippingPrice = 50;
+
+//   // Calculate total order price including shipping and additional charges
+//   const calculateTotalPrice = () => {
+//     if (!order) return 0;
+//     const itemsTotal = order.orderItems.reduce((total, item) => {
+//       const discountPrice =
+//         item.price * (item.discount ? (100 - item.discount) / 100 : 1);
+//       return total + discountPrice * item.qty;
+//     }, 0);
+//     return itemsTotal + fixedShippingPrice + (order.taxPrice || 0);
+//   };
+
+//   return (
+//     <div className="container mx-auto my-8 px-4 lg:px-4 xl:px-0 overflow-hidden">
+//       {isLoading ? (
+//         <div className="flex justify-center">
+//           <Loader />
+//         </div>
+//       ) : error ? (
+//         <Message variant="danger">{error.data.message}</Message>
+//       ) : (
+//         <div className="flex flex-col md:flex-row gap-8">
+//           <div className="md:w-2/3">
+//             <div className="border border-gray-300 rounded-md p-4 mb-4 overflow-x-auto">
+//               {order.orderItems.length === 0 ? (
+//                 <Message>Order is empty</Message>
+//               ) : (
+//                 <table className="w-full">
+//                   <thead className="border-b-2">
+//                     <tr>
+//                       <th className="p-2 text-left">Image</th>
+//                       <th className="p-2 text-left">Product</th>
+//                       <th className="p-2 text-center">Quantity</th>
+//                       <th className="p-2 text-right">Unit Price</th>
+//                       <th className="p-2 text-right">Total</th>
+//                     </tr>
+//                   </thead>
+
+//                   <tbody>
+//                     {order.orderItems.map((item, index) => (
+//                       <tr key={index}>
+//                         <td className="p-2">
+//                           <img
+//                             src={new URL(
+//                               item.image,
+//                               "http://localhost:5000"
+//                             ).toString()}
+//                             alt={item.name}
+//                             className="w-16 h-16 object-cover"
+//                           />
+//                         </td>
+
+//                         <td className="p-2">
+//                           <Link to={`/product/${item.product}`}>
+//                             {item.name}
+//                           </Link>
+//                         </td>
+
+//                         <td className="p-2 text-center">{item.qty}</td>
+//                         <td className="p-2 text-right">{item.price}</td>
+//                         <td className="p-2 text-right">
+//                           RS:{" "}
+//                           {(
+//                             item.qty *
+//                             item.price *
+//                             (item.discount ? (100 - item.discount) / 100 : 1)
+//                           ).toFixed(2)}
+//                         </td>
+//                       </tr>
+//                     ))}
+//                   </tbody>
+//                 </table>
+//               )}
+//             </div>
+//           </div>
+
+//           <div className="md:w-1/3">
+//             <div className="border border-gray-300 rounded-md p-4 mb-4">
+//               <h2 className="text-xl font-bold mb-4">Shipping</h2>
+//               <p className="mb-3">
+//                 <strong>Order:</strong> {order._id}
+//               </p>
+
+//               <p className="mb-3">
+//                 <strong>Name:</strong> {order.user?.username}
+//               </p>
+
+//               <p className="mb-3">
+//                 <strong>Email:</strong> {order.user?.email}
+//               </p>
+
+//               <p className="mb-3">
+//                 <strong>Address:</strong> {order.shippingAddress.address},{" "}
+//                 {order.shippingAddress.city} {order.shippingAddress.postalCode},{" "}
+//                 {order.shippingAddress.country}
+//               </p>
+
+//               <p className="mb-3">
+//                 <strong>Method:</strong> {order.paymentMethod}
+//               </p>
+//             </div>
+
+//             <div className="border border-gray-300 rounded-md p-4">
+//               <h2 className="text-xl font-bold mb-4">Order Summary</h2>
+//               <div className="flex justify-between mb-2">
+//                 <span>Items</span>
+//                 <span>RS: {order.itemsPrice.toFixed(2)}</span>
+//               </div>
+//               <div className="flex justify-between mb-2">
+//                 <span>Shipping</span>
+//                 <span>RS: {fixedShippingPrice.toFixed(2)}</span>
+//               </div>
+//               {order.taxPrice && (
+//                 <div className="flex justify-between mb-2">
+//                   <span>Tax</span>
+//                   <span>RS: {order.taxPrice.toFixed(2)}</span>
+//                 </div>
+//               )}
+//               <div className="flex justify-between mb-2">
+//                 <span>Total</span>
+//                 <span>RS: {calculateTotalPrice().toFixed(2)}</span>
+//               </div>
+
+//               {loadingDeliver && (
+//                 <div className="flex justify-center">
+//                   <Loader />
+//                 </div>
+//               )}
+//               {userInfo && userInfo.isAdmin && !order.isDelivered && (
+//                 <button
+//                   type="button"
+//                   disabled={loadingDeliver}
+//                   className="bg-[#436C68] text-white w-full py-2 rounded-md hover:bg-[#436c68e8] ease"
 //                   onClick={deliverHandler}
 //                 >
 //                   Mark As Delivered
@@ -183,15 +545,28 @@ const Order = () => {
     error,
   } = useGetOrderDetailsQuery(orderId);
 
+  console.log("Order with id", order);
+
   const [deliverOrder, { isLoading: loadingDeliver }] =
     useDeliverOrderMutation();
   const { userInfo } = useSelector((state) => state.auth);
-  const shop = useSelector((state) => state.shop);
-  const { discountedPrice } = shop;
 
   const deliverHandler = async () => {
     await deliverOrder(orderId);
     refetch();
+  };
+
+  // Fixed shipping price
+  const fixedShippingPrice = 50;
+
+  // Calculate total order price including shipping and additional charges
+  const calculateTotalPrice = () => {
+    if (!order) return 0;
+    const itemsTotal = order.orderItems.reduce((total, item) => {
+      const discountPrice = item.discountedPrice || item.price;
+      return total + discountPrice * item.qty;
+    }, 0);
+    return itemsTotal + fixedShippingPrice + (order.taxPrice || 0);
   };
 
   return (
@@ -215,7 +590,7 @@ const Order = () => {
                       <th className="p-2 text-left">Image</th>
                       <th className="p-2 text-left">Product</th>
                       <th className="p-2 text-center">Quantity</th>
-                      <th className="p-2 text-right">Unit Price</th>
+                      <th className="p-2 text-right">Discounted Price</th>
                       <th className="p-2 text-right">Total</th>
                     </tr>
                   </thead>
@@ -241,9 +616,15 @@ const Order = () => {
                         </td>
 
                         <td className="p-2 text-center">{item.qty}</td>
-                        <td className="p-2 text-right">{item.price}</td>
                         <td className="p-2 text-right">
-                          RS: {(item.qty * item.price).toFixed(2)}
+                          RS: {(item.discountedPrice || item.price).toFixed(2)}
+                        </td>
+                        <td className="p-2 text-right">
+                          {/* RS:{" "} */}
+                          RS: {(item.discountedPrice || item.price).toFixed(2)}
+                          {/* {(
+                            item.qty * (item.discountedPrice || item.price)
+                          ).toFixed(2)} */}
                         </td>
                       </tr>
                     ))}
@@ -283,23 +664,23 @@ const Order = () => {
               <h2 className="text-xl font-bold mb-4">Order Summary</h2>
               <div className="flex justify-between mb-2">
                 <span>Items</span>
-                <span>RS: {order.itemsPrice}</span>
-              </div>
-              <div className="flex justify-between mb-2">
-                <span>Discounted Price</span>
-                <span>RS: {discountedPrice.toFixed(2)}</span>
+                <span>RS: {calculateTotalPrice().toFixed(2)}</span>
+
+                {/* <span>RS: {order.itemsPrice.toFixed(2)}</span> */}
               </div>
               <div className="flex justify-between mb-2">
                 <span>Shipping</span>
-                <span>RS: {order.shippingPrice}</span>
+                <span>RS: {fixedShippingPrice.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between mb-2">
-                <span>Tax</span>
-                <span>RS: {order.taxPrice}</span>
-              </div>
+              {/* {order.taxPrice && (
+                <div className="flex justify-between mb-2">
+                  <span>Tax</span>
+                  <span>RS: {order.taxPrice.toFixed(2)}</span>
+                </div>
+              )} */}
               <div className="flex justify-between mb-2">
                 <span>Total</span>
-                <span>RS: {order.totalPrice}</span>
+                <span>RS: {calculateTotalPrice().toFixed(2)}</span>
               </div>
 
               {loadingDeliver && (

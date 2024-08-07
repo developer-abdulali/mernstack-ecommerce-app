@@ -92,12 +92,12 @@ const UserList = () => {
     <div className="max-w-screen-xl mx-auto p-4">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold my-4">Users</h1>
-        <button
+        {/* <button
           onClick={toggleAddPopup}
           className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
         >
           Add User
-        </button>
+        </button> */}
       </div>
       {isLoading ? (
         <Loader />
